@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;600&display=swap');
+
+:root {
+  --background: hsl(44, 78%, 96%);
+  --foreground: hsl(215, 25%, 27%);
+  --muted: hsl(44, 24%, 94%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(215, 25%, 27%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(215, 25%, 27%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(355, 78%, 60%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(44, 78%, 96%);
+  --secondary-foreground: hsl(215, 25%, 27%);
+  --accent: hsl(48, 100%, 67%);
+  --accent-foreground: hsl(215, 25%, 27%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(215, 25%, 27%);
+  --radius: 0.5rem;
+
+  /* Custom Donatello colors */
+  --cheese-gold: hsl(48, 100%, 67%);
+  --tomato-red: hsl(355, 78%, 60%);
+  --garlic-cream: hsl(44, 78%, 96%);
+  --warm-gray: hsl(215, 25%, 27%);
+  --rich-brown: hsl(25, 65%, 35%);
+}
+
+.dark {
+  --background: hsl(215, 25%, 27%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(217, 32%, 17%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --popover: hsl(215, 25%, 27%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(215, 25%, 27%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(217, 32%, 17%);
+  --input: hsl(217, 32%, 17%);
+  --primary: hsl(355, 78%, 60%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(217, 32%, 17%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(48, 100%, 67%);
+  --accent-foreground: hsl(215, 25%, 27%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(217, 32%, 17%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-dancing {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .text-cheese-gold {
+    color: var(--cheese-gold);
+  }
+
+  .text-tomato-red {
+    color: var(--tomato-red);
+  }
+
+  .text-garlic-cream {
+    color: var(--garlic-cream);
+  }
+
+  .text-warm-gray {
+    color: var(--warm-gray);
+  }
+
+  .bg-cheese-gold {
+    background-color: var(--cheese-gold);
+  }
+
+  .bg-tomato-red {
+    background-color: var(--tomato-red);
+  }
+
+  .bg-garlic-cream {
+    background-color: var(--garlic-cream);
+  }
+
+  .bg-warm-gray {
+    background-color: var(--warm-gray);
+  }
+
+  .border-cheese-gold {
+    border-color: var(--cheese-gold);
+  }
+
+  .border-tomato-red {
+    border-color: var(--tomato-red);
+  }
+
+  .hover\:bg-cheese-gold:hover {
+    background-color: var(--cheese-gold);
+  }
+
+  .hover\:bg-tomato-red:hover {
+    background-color: var(--tomato-red);
+  }
+
+  .hover\:text-cheese-gold:hover {
+    color: var(--cheese-gold);
+  }
+
+  .hover\:text-tomato-red:hover {
+    color: var(--tomato-red);
+  }
+
+  .gradient-overlay {
+    background: linear-gradient(135deg, rgba(230, 57, 70, 0.8) 0%, rgba(255, 217, 90, 0.6) 100%);
+  }
+
+  .nav-blur {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px rgba(255, 217, 90, 0.5);
+  }
+
+  .ingredient-float {
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .ingredient-float:hover {
+    transform: translateY(-5px) rotate(2deg);
+    filter: brightness(1.1);
+  }
+
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  .parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-bounce-gentle {
+    animation: bounce 2s infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
