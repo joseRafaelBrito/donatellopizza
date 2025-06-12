@@ -25,16 +25,16 @@ export default function Hero() {
       <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
         <div className={`max-w-4xl mx-auto transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-playfair font-bold text-white mb-6 leading-tight">
-            Welcome to <span className="text-cheese-gold">Donatello</span>
+            Welcome to <span className="text-white">Donatello</span>
           </h1>
-          <p className="text-xl sm:text-2xl lg:text-3xl text-garlic-cream mb-8 font-light">
-            Artisan Pizza, Born in Fire
+          <p className="text-xl sm:text-2xl lg:text-3xl text-white mb-8 font-light">
+            Nuestras Pizzas
           </p>
           <button 
-            onClick={() => scrollToSection('menu')}
+            onClick={() => window.location.href = '/menu'}
             className="bg-tomato-red hover:bg-red-600 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
           >
-            See Our Pizzas
+            Our Pizzas
             <i className="fas fa-arrow-down ml-2 animate-bounce-gentle"></i>
           </button>
         </div>

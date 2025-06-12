@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import logoImage from "@assets/logo_1_1_320x320_1749689353534.png";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,7 +37,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <div className="w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center hover:shadow-xl hover-glow transition-all duration-300 overflow-hidden">
               <img 
-                src="/attached_assets/logo_1_1_320x320_1749689353534.png" 
+                src={logoImage} 
                 alt="Donatello Logo" 
                 className="w-full h-full object-cover rounded-full"
               />
@@ -56,7 +57,7 @@ export default function Header() {
               Home
             </button>
             <button 
-              onClick={() => scrollToSection('menu')}
+              onClick={() => window.location.href = '/menu'}
               className="text-white hover:text-cheese-gold transition-colors duration-300 font-medium"
             >
               Menu
@@ -100,7 +101,7 @@ export default function Header() {
               Home
             </button>
             <button 
-              onClick={() => scrollToSection('menu')}
+              onClick={() => window.location.href = '/menu'}
               className="block w-full text-left text-white hover:text-cheese-gold transition-colors duration-300 font-medium py-2"
             >
               Menu
