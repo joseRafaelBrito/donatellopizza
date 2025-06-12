@@ -34,10 +34,12 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center space-x-4">
-            <div className="w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center hover:shadow-xl hover-glow transition-all duration-300">
-              <div className="w-10 h-10 bg-gradient-to-br from-cheese-gold to-tomato-red rounded-full flex items-center justify-center">
-                <i className="fas fa-pizza-slice text-white text-lg"></i>
-              </div>
+            <div className="w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center hover:shadow-xl hover-glow transition-all duration-300 overflow-hidden">
+              <img 
+                src="/attached_assets/logo_1_1_320x320_1749689353534.png" 
+                alt="Donatello Logo" 
+                className="w-full h-full object-cover rounded-full"
+              />
             </div>
             <div className="hidden sm:block">
               <h1 className="text-2xl font-playfair font-bold text-white">Donatello</h1>

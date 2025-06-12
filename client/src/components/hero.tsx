@@ -16,17 +16,9 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative h-screen overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full">
-        {/* Placeholder for autoplay video - in production, this would be a video element */}
-        <div 
-          className="w-full h-full bg-cover bg-center bg-no-repeat parallax-bg" 
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080')"
-          }}
-        >
-          <div className="absolute inset-0 gradient-overlay"></div>
-        </div>
+      {/* Melting Cheese Background */}
+      <div className="absolute inset-0 w-full h-full bg-melting-cheese">
+        <div className="absolute inset-0 melting-cheese-gradient"></div>
       </div>
 
       {/* Hero Content */}
