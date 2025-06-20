@@ -14,10 +14,10 @@ export default function PizzaSections() {
     <section id="menu" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-playfair font-bold text-warm-gray mb-4">
+          <h2 className="text-4xl sm:text-5xl font-playfair font-bold text-warm-gray mb-4 animate-bounce-in">
             Our Signature Pizzas
           </h2>
-          <p className="text-xl text-gray-600">Crafted with love, served with pride</p>
+          <p className="text-xl text-gray-600 animate-fade-in">Crafted with love, served with pride</p>
         </div>
 
         {/* Detroit Style Pizza */}
@@ -71,7 +71,7 @@ export default function PizzaSections() {
 
               <button 
                 onClick={scrollToOrder}
-                className="bg-tomato-red hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="bg-tomato-red hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 animate-pulse-gentle hover:animate-wiggle"
               >
                 Order Detroit Style
               </button>
@@ -146,7 +146,7 @@ export default function PizzaSections() {
 
               <button 
                 onClick={scrollToOrder}
-                className="bg-tomato-red hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="bg-tomato-red hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 animate-pulse-gentle hover:animate-wiggle"
               >
                 Order New York Style
               </button>

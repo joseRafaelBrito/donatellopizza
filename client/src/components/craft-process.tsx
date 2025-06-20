@@ -11,33 +11,54 @@ export default function CraftProcess() {
 
         <div className="grid md:grid-cols-3 gap-8">
           <div className="text-center group">
-            <img 
-              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" 
-              alt="Hands kneading pizza dough" 
-              className="w-full h-64 object-cover rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 mb-6 transform group-hover:scale-105"
-            />
-            <h3 className="text-2xl font-playfair font-bold text-warm-gray mb-4">Hand-Crafted Dough</h3>
-            <p className="text-gray-600">Our dough is made fresh daily using traditional techniques passed down through generations.</p>
+            <div className="relative w-full h-64 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 mb-6 transform group-hover:scale-105 overflow-hidden">
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <source src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0fd273d2c6d9a064f3ae35579b2bbdf&profile_id=139&oauth2_token_id=57447761" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+            <h3 className="text-2xl font-playfair font-bold text-warm-gray mb-4 animate-fade-in">Detroit Style Craft</h3>
+            <p className="text-gray-600 animate-slide-up">Authentic Detroit-style pizza with signature square shape and caramelized edges, perfected over decades.</p>
           </div>
           
           <div className="text-center group">
-            <img 
-              src="https://pixabay.com/get/ga387524d60ab3c557a52230b3015944d7d24d8480a1807f9690d8db1142d68092dfe648f6361ff6959a3bf74fec6dde23704cfe9b0884f9168280b4e420788f1_1280.jpg" 
-              alt="Fresh pizza ingredients" 
-              className="w-full h-64 object-cover rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 mb-6 transform group-hover:scale-105"
-            />
-            <h3 className="text-2xl font-playfair font-bold text-warm-gray mb-4">Premium Ingredients</h3>
-            <p className="text-gray-600">We source only the finest ingredients, from imported Italian tomatoes to local artisan cheeses.</p>
+            <div className="relative w-full h-64 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 mb-6 transform group-hover:scale-105 overflow-hidden">
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69417c150a9905a775749bf38c861c7e9&profile_id=139&oauth2_token_id=57447761" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+            <h3 className="text-2xl font-playfair font-bold text-warm-gray mb-4 animate-fade-in">New York Tradition</h3>
+            <p className="text-gray-600 animate-slide-up">Classic thin-crust New York style pizza, hand-tossed and folded the traditional way.</p>
           </div>
           
           <div className="text-center group">
-            <img 
-              src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" 
-              alt="Wood-fired pizza oven with flames" 
-              className="w-full h-64 object-cover rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 mb-6 transform group-hover:scale-105"
-            />
-            <h3 className="text-2xl font-playfair font-bold text-warm-gray mb-4">Wood-Fired Perfection</h3>
-            <p className="text-gray-600">Our authentic wood-fired ovens create the perfect char and flavor that makes every bite memorable.</p>
+            <div className="relative w-full h-64 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 mb-6 transform group-hover:scale-105 overflow-hidden">
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <source src="https://player.vimeo.com/external/429553244.sd.mp4?s=bf98f4e9a029b95ea05d8b902c43e462e9e83e0a&profile_id=139&oauth2_token_id=57447761" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+            <h3 className="text-2xl font-playfair font-bold text-warm-gray mb-4 animate-fade-in">Wood-Fired Mastery</h3>
+            <p className="text-gray-600 animate-slide-up">Our authentic wood-fired ovens create the perfect char and flavor that makes every bite memorable.</p>
           </div>
         </div>
       </div>

@@ -17,7 +17,7 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-2xl font-playfair font-bold">Donatello</h3>
-                <p className="text-sm text-gray-300 font-dancing">We believe in the craft</p>
+                <p className="text-sm text-cheese-gold font-dancing">We believe in the craft</p>
               </div>
             </div>
             <p className="text-gray-300 mb-6">

@@ -40,7 +40,8 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="bg-garlic-cream p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="bg-garlic-cream p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-scale-in"
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-cheese-gold rounded-full flex items-center justify-center mr-4">

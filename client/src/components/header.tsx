@@ -35,11 +35,11 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center space-x-4">
-            <div className="w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center hover:shadow-xl hover-glow transition-all duration-300 overflow-hidden">
+            <div className="w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center hover:shadow-xl hover-glow transition-all duration-300 overflow-hidden animate-float">
               <img 
                 src={logoImage} 
                 alt="Donatello Logo" 
-                className="w-full h-full object-cover rounded-full"
+                className="w-full h-full object-cover rounded-full transform hover:scale-110 transition-transform duration-300"
               />
             </div>
             <div className="hidden sm:block">
@@ -49,7 +49,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 animate-fade-in">
             <button 
               onClick={() => scrollToSection('home')}
               className="text-white hover:text-cheese-gold transition-colors duration-300 font-medium"
