@@ -12,17 +12,27 @@ export default function Home() {
       <Header />
       <Hero />
       <section className="py-16 bg-gradient-to-r from-garlic-cream to-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-            className="w-full h-full object-cover"
-          >
-            <source src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0fd273d2c6d9a064f3ae35579b2bbdf&profile_id=139&oauth2_token_id=57447761" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-cheese-gold/70 to-yellow-400/60"></div>
+        <div className="absolute inset-0">
+          <div 
+            className="w-full h-full bg-cover bg-center bg-no-repeat animate-pulse-gentle"
+            style={{
+              backgroundImage: "url('https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=600')",
+              filter: 'sepia(40%) saturate(1.5) brightness(1.2)'
+            }}
+          ></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-cheese-gold/60 to-yellow-400/50"></div>
+          <div className="absolute inset-0 animate-float" style={{ opacity: 0.6 }}>
+            <video 
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover mix-blend-overlay"
+              style={{ filter: 'sepia(50%) saturate(2) brightness(1.3)' }}
+            >
+              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl sm:text-5xl font-playfair font-bold text-warm-gray mb-4 animate-fade-in">
