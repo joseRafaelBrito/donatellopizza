@@ -11,7 +11,7 @@ export default function PizzaSections() {
   };
 
   return (
-    <section id="menu" className="py-20 bg-white">
+    <section id="menu" className="py-20 bg-white relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-playfair font-bold text-warm-gray mb-4 animate-bounce-in">

@@ -26,7 +26,13 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-r from-garlic-cream to-white">
+    <section id="contact" className="py-20 bg-gradient-to-r from-garlic-cream to-white relative">
+      {/* Curved bottom divider */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+        <svg className="relative block w-full h-16" preserveAspectRatio="none" viewBox="0 0 1200 120">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#3c4142"></path>
+        </svg>
+      </div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-playfair font-bold text-warm-gray mb-4">
