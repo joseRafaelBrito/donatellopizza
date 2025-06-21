@@ -10,9 +10,13 @@ export default function Hero() {
         muted
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-0"
+        onLoadedData={(e) => {
+          const video = e.target as HTMLVideoElement;
+          video.play().catch(console.error);
+        }}
       >
-        <source src="https://videos.pexels.com/video-files/3196170/3196170-uhd_2560_1440_30fps.mp4" type="video/mp4" />
-        <source src="https://videos.pexels.com/video-files/4252965/4252965-hd_1920_1080_30fps.mp4" type="video/mp4" />
+        <source src="/attached_assets/356026553653461001_1749689326847.mp4" type="video/mp4" />
+        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
       </video>
       
       {/* Orange overlay */}
