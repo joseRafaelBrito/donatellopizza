@@ -6,6 +6,7 @@ import Testimonials from "@/components/testimonials";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 import PizzaPyramids from "@/components/pizza-pyramids";
+import PizzaWorld from "@/components/pizza-world";
 
 export default function Home() {
   return (
