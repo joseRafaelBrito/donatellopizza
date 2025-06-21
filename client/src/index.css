@@ -491,4 +491,26 @@
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
   }
+
+  /* Pizza Pyramid Animations */
+  .pizza-pyramid-eye {
+    animation: pyramid-eye-blink 4s ease-in-out infinite;
+  }
+
+  @keyframes pyramid-eye-blink {
+    0%, 90%, 100% { opacity: 1; }
+    95% { opacity: 0.3; }
+  }
+
+  .pyramid-eye-movement {
+    animation: pyramid-eye-look 3s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  @keyframes pyramid-eye-look {
+    0%, 20% { transform: translateX(0px); }
+    30%, 50% { transform: translateX(-2px); }
+    60%, 80% { transform: translateX(2px); }
+    90%, 100% { transform: translateX(0px); }
+  }
 }

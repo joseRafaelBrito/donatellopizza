@@ -5,6 +5,7 @@ import CraftProcess from "@/components/craft-process";
 import Testimonials from "@/components/testimonials";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
+import PizzaPyramids from "@/components/pizza-pyramids";
 
 export default function Home() {
   return (
@@ -77,6 +78,7 @@ export default function Home() {
         </div>
       </section>
       <PizzaSections />
+      <PizzaPyramids />
       <CraftProcess />
       <Testimonials />
       <Contact />
