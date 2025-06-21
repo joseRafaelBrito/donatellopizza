@@ -367,4 +367,38 @@
       transform: scale(1);
     }
   }
+
+  /* Pizza Wheel Animations */
+  .pizza-wheel-glow {
+    box-shadow: 0 0 30px rgba(255, 165, 0, 0.6), 0 0 60px rgba(255, 165, 0, 0.4);
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      box-shadow: 0 0 30px rgba(255, 165, 0, 0.6), 0 0 60px rgba(255, 165, 0, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(255, 165, 0, 0.8), 0 0 80px rgba(255, 165, 0, 0.6);
+    }
+  }
+
+  /* Gradient text effects */
+  .text-gradient-fire {
+    background: linear-gradient(45deg, #ff6b6b, #ffa500, #ffff00, #ffa500, #ff6b6b);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 4s ease-in-out infinite;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
 }
