@@ -81,6 +81,44 @@ export default function PizzaSliceButton({ onClick, children, className = "" }: 
           </span>
         </div>
       </div>
+      
+      {/* Melted Cheese Fountain */}
+      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-16 overflow-hidden">
+        <svg width="128" height="64" viewBox="0 0 128 64" className="absolute bottom-0">
+          {/* Cheese fountain flowing to the left */}
+          <path
+            d="M64 0 Q50 10 40 15 Q25 20 15 25 Q8 28 5 32 Q3 35 2 40 Q1 45 0 50"
+            stroke="#FFD700"
+            strokeWidth="8"
+            fill="none"
+            strokeLinecap="round"
+            className="cheese-flow-left"
+          />
+          <path
+            d="M64 2 Q48 12 38 17 Q22 22 12 27 Q6 30 4 34 Q2 37 1 42"
+            stroke="#FFA500"
+            strokeWidth="6"
+            fill="none"
+            strokeLinecap="round"
+            className="cheese-flow-left"
+            style={{ animationDelay: '0.5s' }}
+          />
+          <path
+            d="M64 4 Q46 14 36 19 Q20 24 10 29 Q5 32 3 36"
+            stroke="#FFFF00"
+            strokeWidth="4"
+            fill="none"
+            strokeLinecap="round"
+            className="cheese-flow-left"
+            style={{ animationDelay: '1s' }}
+          />
+          
+          {/* Cheese drops */}
+          <circle cx="20" cy="35" r="2" fill="#FFD700" className="cheese-drip" />
+          <circle cx="8" cy="42" r="1.5" fill="#FFA500" className="cheese-drip" style={{ animationDelay: '0.3s' }} />
+          <circle cx="2" cy="48" r="1" fill="#FFFF00" className="cheese-drip" style={{ animationDelay: '0.8s' }} />
+        </svg>
+      </div>
     </button>
   );
 }

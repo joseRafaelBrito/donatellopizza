@@ -513,4 +513,49 @@
     60%, 80% { transform: translateX(2px); }
     90%, 100% { transform: translateX(0px); }
   }
+
+  /* Cheese Fountain Animations */
+  .cheese-flow-left {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: cheese-flow 3s ease-in-out infinite;
+  }
+
+  @keyframes cheese-flow {
+    0% {
+      stroke-dashoffset: 200;
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 0.8;
+    }
+  }
+
+  .cheese-drip {
+    animation: cheese-drip-fall 2s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  @keyframes cheese-drip-fall {
+    0% {
+      transform: translateY(-10px) scale(0);
+      opacity: 0;
+    }
+    30% {
+      transform: translateY(0px) scale(1);
+      opacity: 1;
+    }
+    70% {
+      transform: translateY(5px) scale(1.2);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(15px) scale(0.8);
+      opacity: 0;
+    }
+  }
 }
