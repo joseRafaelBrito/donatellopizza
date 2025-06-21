@@ -22,82 +22,81 @@ export default function Hero() {
       {/* Orange overlay */}
       <div className="absolute inset-0 bg-[#f59e0b] opacity-80 z-10"></div>
 
-      {/* Cheese Pyramid in Background */}
-      <div className="absolute inset-0 flex items-center justify-center z-15">
-        <svg width="400" height="350" viewBox="0 0 400 350" className="opacity-30">
+      {/* Cheese Pyramid in Center */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-15">
+        <svg width="300" height="260" viewBox="0 0 300 260" className="opacity-60">
           {/* Pyramid Base */}
           <path 
-            d="M200 50 L350 300 L50 300 Z" 
-            fill="#FFD700" 
-            stroke="#FFA500" 
+            d="M150 40 L250 220 L50 220 Z" 
+            fill="#8B4513" 
+            stroke="#654321" 
             strokeWidth="3"
-            opacity="0.8"
           />
           
           {/* Pyramid Left Side */}
           <path 
-            d="M200 50 L50 300 L200 280 Z" 
-            fill="#F4A460" 
-            opacity="0.9"
+            d="M150 40 L50 220 L150 200 Z" 
+            fill="#A0522D" 
           />
           
           {/* Pyramid Right Side */}
           <path 
-            d="M200 50 L350 300 L200 280 Z" 
-            fill="#DAA520" 
-            opacity="0.9"
+            d="M150 40 L250 220 L150 200 Z" 
+            fill="#D2B48C" 
           />
           
-          {/* Cheese Texture Lines */}
-          <path d="M80 280 L170 100" stroke="#FFA500" strokeWidth="2" opacity="0.6"/>
-          <path d="M120 290 L180 120" stroke="#FFA500" strokeWidth="2" opacity="0.6"/>
-          <path d="M280 290 L220 120" stroke="#FFA500" strokeWidth="2" opacity="0.6"/>
-          <path d="M320 280 L230 100" stroke="#FFA500" strokeWidth="2" opacity="0.6"/>
+          {/* Stone Block Lines */}
+          <path d="M70 200 L230 200" stroke="#654321" strokeWidth="2"/>
+          <path d="M80 180 L220 180" stroke="#654321" strokeWidth="2"/>
+          <path d="M90 160 L210 160" stroke="#654321" strokeWidth="2"/>
+          <path d="M100 140 L200 140" stroke="#654321" strokeWidth="2"/>
+          <path d="M110 120 L190 120" stroke="#654321" strokeWidth="2"/>
+          <path d="M120 100 L180 100" stroke="#654321" strokeWidth="2"/>
+          <path d="M130 80 L170 80" stroke="#654321" strokeWidth="2"/>
+          <path d="M140 60 L160 60" stroke="#654321" strokeWidth="2"/>
           
-          {/* Horizontal cheese lines */}
-          <path d="M70 250 L330 250" stroke="#FFA500" strokeWidth="1.5" opacity="0.5"/>
-          <path d="M90 200 L310 200" stroke="#FFA500" strokeWidth="1.5" opacity="0.5"/>
-          <path d="M110 150 L290 150" stroke="#FFA500" strokeWidth="1.5" opacity="0.5"/>
+          {/* Vertical divisions */}
+          <path d="M100 220 L130 80" stroke="#654321" strokeWidth="1.5"/>
+          <path d="M150 220 L150 40" stroke="#654321" strokeWidth="1.5"/>
+          <path d="M200 220 L170 80" stroke="#654321" strokeWidth="1.5"/>
           
           {/* Sun at the tip */}
           <circle 
-            cx="200" 
-            cy="50" 
-            r="25" 
-            fill="#FFF700" 
+            cx="150" 
+            cy="40" 
+            r="20" 
+            fill="#FFFF00" 
             stroke="#FFD700" 
             strokeWidth="2"
             className="animate-pulse"
           />
           
           {/* Sun rays */}
-          <g stroke="#FFF700" strokeWidth="3" strokeLinecap="round" className="animate-spin" style={{transformOrigin: '200px 50px', animationDuration: '20s'}}>
-            <path d="M200 15 L200 5"/>
-            <path d="M225 25 L232 18"/>
-            <path d="M235 50 L245 50"/>
-            <path d="M225 75 L232 82"/>
-            <path d="M200 85 L200 95"/>
-            <path d="M175 75 L168 82"/>
-            <path d="M165 50 L155 50"/>
-            <path d="M175 25 L168 18"/>
+          <g stroke="#FFFF00" strokeWidth="2" strokeLinecap="round" className="animate-spin" style={{transformOrigin: '150px 40px', animationDuration: '15s'}}>
+            <path d="M150 15 L150 8"/>
+            <path d="M170 20 L175 15"/>
+            <path d="M185 40 L192 40"/>
+            <path d="M170 60 L175 65"/>
+            <path d="M150 65 L150 72"/>
+            <path d="M130 60 L125 65"/>
+            <path d="M115 40 L108 40"/>
+            <path d="M130 20 L125 15"/>
           </g>
           
-          {/* Inner sun glow */}
+          {/* Inner sun core */}
           <circle 
-            cx="200" 
-            cy="50" 
-            r="15" 
-            fill="#FFFF99" 
-            opacity="0.8"
+            cx="150" 
+            cy="40" 
+            r="12" 
+            fill="#FFFACD" 
           />
           
-          {/* Pyramid entrance/door */}
+          {/* Pyramid entrance */}
           <path 
-            d="M180 280 L200 240 L220 280 Z" 
-            fill="#CD853F" 
-            stroke="#8B4513" 
+            d="M135 200 L150 170 L165 200 Z" 
+            fill="#8B4513" 
+            stroke="#654321" 
             strokeWidth="2"
-            opacity="0.7"
           />
         </svg>
       </div>
