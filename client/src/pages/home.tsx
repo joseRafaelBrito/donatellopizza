@@ -41,7 +41,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <h2 className="text-6xl sm:text-7xl lg:text-8xl font-playfair font-bold text-white mb-6 animate-fade-in drop-shadow-lg leading-tight">
+              <h2 className="text-6xl sm:text-7xl lg:text-8xl font-playfair font-bold text-white mb-6 animate-fade-in drop-shadow-lg leading-tight [text-shadow:_2px_2px_0_#000,_-2px_-2px_0_#000,_2px_-2px_0_#000,_-2px_2px_0_#000]">
                 Respect the craft
               </h2>
               <p className="text-xl text-white max-w-2xl animate-slide-up drop-shadow-md">
