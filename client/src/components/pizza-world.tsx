@@ -1,6 +1,14 @@
 export default function PizzaWorld() {
   return (
-    <div className="relative min-h-[400px] bg-gradient-to-b from-sky-200 via-green-100 to-green-200 overflow-hidden">
+    <div className="relative min-h-[500px] bg-gradient-to-br from-tomato-red via-orange-500 to-cheese-gold overflow-hidden"
+      style={{
+        backgroundImage: `
+          radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 40% 40%, rgba(255, 193, 7, 0.3) 0%, transparent 50%)
+        `
+      }}
+    >
       {/* Background Sky and Ground */}
       <div className="absolute inset-0">
         {/* Clouds */}
@@ -103,19 +111,21 @@ export default function PizzaWorld() {
 
       {/* Central Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full py-16">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-playfair font-bold text-center mb-4 text-bounce">
-          <span className="bg-gradient-to-r from-green-600 via-blue-500 to-orange-500 bg-clip-text text-transparent drop-shadow-2xl">
-            Pizza Community
-          </span>
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6 animate-fade-in drop-shadow-2xl text-bounce">
+          Welcome to Donatello
         </h1>
         
-        <p className="text-lg sm:text-xl text-warm-gray text-center max-w-2xl mb-8 animate-fade-in">
-          Where pizza slices come together to share stories
+        <p className="text-xl sm:text-2xl text-white mb-8 max-w-3xl mx-auto animate-slide-up drop-shadow-lg text-center">
+          Artisan Detroit & New York Style Pizzas
         </p>
+        
+        <button className="bg-tomato-red hover:bg-red-600 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 animate-scale-in shadow-xl hover-lift hover:scale-110 mb-8">
+          Ver Menú
+        </button>
 
         {/* Animated Down Arrow */}
         <div className="animate-bounce">
-          <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </div>
