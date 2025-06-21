@@ -10,7 +10,7 @@ import PizzaWorld from "@/components/pizza-world";
 
 export default function Home() {
   return (
-    <>
+    <div className="min-h-screen">
       <Header />
       <Hero />
       <section className="py-16 relative overflow-hidden">
@@ -84,6 +84,6 @@ export default function Home() {
       <Testimonials />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }

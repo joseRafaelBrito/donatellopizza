@@ -76,40 +76,28 @@ export default function Header() {
               />
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-2xl font-playfair font-bold text-white">Donatello</h1>
-              <p className="text-sm text-garlic-cream font-dancing">We believe in the craft</p>
+              <h1 className="text-2xl font-playfair font-bold text-white [text-shadow:_2px_2px_0_#000,_-2px_-2px_0_#000,_2px_-2px_0_#000,_-2px_2px_0_#000]">Donatello</h1>
+              <p className="text-sm text-garlic-cream font-dancing [text-shadow:_1px_1px_0_#000,_-1px_-1px_0_#000,_1px_-1px_0_#000,_-1px_1px_0_#000]">We believe in the craft</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8 animate-fade-in">
             <button 
-              onClick={() => scrollToSection('home')}
-              className="text-white hover:text-cheese-gold transition-colors duration-300 font-medium"
-            >
-              Home
-            </button>
-            <button 
               onClick={() => window.location.href = '/menu'}
-              className="text-white hover:text-cheese-gold transition-colors duration-300 font-medium"
+              className="text-white hover:text-cheese-gold transition-colors duration-300 font-medium [text-shadow:_2px_2px_0_#000,_-2px_-2px_0_#000,_2px_-2px_0_#000,_-2px_2px_0_#000]"
             >
               Menu
             </button>
             <button 
-              onClick={() => scrollToSection('order')}
-              className="text-white hover:text-cheese-gold transition-colors duration-300 font-medium"
-            >
-              Order
-            </button>
-            <button 
               onClick={() => scrollToSection('about')}
-              className="text-white hover:text-cheese-gold transition-colors duration-300 font-medium"
+              className="text-white hover:text-cheese-gold transition-colors duration-300 font-medium [text-shadow:_2px_2px_0_#000,_-2px_-2px_0_#000,_2px_-2px_0_#000,_-2px_2px_0_#000]"
             >
               About
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="text-white hover:text-cheese-gold transition-colors duration-300 font-medium"
+              className="text-white hover:text-cheese-gold transition-colors duration-300 font-medium [text-shadow:_2px_2px_0_#000,_-2px_-2px_0_#000,_2px_-2px_0_#000,_-2px_2px_0_#000]"
             >
               Contact
             </button>
@@ -150,13 +138,13 @@ export default function Header() {
             </button>
             <button 
               onClick={() => scrollToSection('about')}
-              className="block w-full text-left text-white hover:text-cheese-gold transition-colors duration-300 font-medium py-2"
+              className="block w-full text-left text-white hover:text-cheese-gold transition-colors duration-300 font-medium py-2 [text-shadow:_2px_2px_0_#000,_-2px_-2px_0_#000,_2px_-2px_0_#000,_-2px_2px_0_#000]"
             >
               About
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="block w-full text-left text-white hover:text-cheese-gold transition-colors duration-300 font-medium py-2"
+              className="block w-full text-left text-white hover:text-cheese-gold transition-colors duration-300 font-medium py-2 [text-shadow:_2px_2px_0_#000,_-2px_-2px_0_#000,_2px_-2px_0_#000,_-2px_2px_0_#000]"
             >
               Contact
             </button>
