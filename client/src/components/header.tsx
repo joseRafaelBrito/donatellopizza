@@ -76,7 +76,7 @@ export default function Header() {
               />
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-2xl font-playfair font-bold text-white [text-shadow:_2px_2px_0_#000,_-2px_-2px_0_#000,_2px_-2px_0_#000,_-2px_2px_0_#000]">Donatello</h1>
+              <h1 className="text-2xl font-playfair font-bold text-white">Donatello</h1>
               <p className="text-sm text-garlic-cream font-dancing [text-shadow:_1px_1px_0_#000,_-1px_-1px_0_#000,_1px_-1px_0_#000,_-1px_1px_0_#000]">We believe in the craft</p>
             </div>
           </div>

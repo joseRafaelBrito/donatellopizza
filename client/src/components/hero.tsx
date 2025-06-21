@@ -2,9 +2,24 @@ import { useEffect, useState } from "react";
 
 export default function Hero() {
   return (
-    <section id="home" className="h-screen bg-[#f59e0b] flex flex-col items-center justify-center text-center px-4 relative">
+    <section id="home" className="h-screen relative flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+      {/* Background Video */}
+      <video 
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src="https://videos.pexels.com/video-files/3196170/3196170-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+        <source src="https://videos.pexels.com/video-files/4252965/4252965-hd_1920_1080_30fps.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Orange overlay */}
+      <div className="absolute inset-0 bg-[#f59e0b] opacity-80 z-10"></div>
+
       {/* Main Content */}
-      <div className="flex-1 flex flex-col items-center justify-center">
+      <div className="flex-1 flex flex-col items-center justify-center relative z-20">
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6 leading-tight">
           Welcome to Donatello Pizza
         </h1>
@@ -14,7 +29,7 @@ export default function Hero() {
       </div>
 
       {/* Animated Down Arrow */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
         <svg 
           className="w-8 h-8 text-white" 
           fill="none" 
