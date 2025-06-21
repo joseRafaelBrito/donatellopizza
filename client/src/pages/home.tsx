@@ -31,10 +31,10 @@ export default function Home() {
 
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex items-center justify-between">
-            <div className="flex-1">
-              <h2 className="text-6xl sm:text-7xl lg:text-8xl font-playfair font-bold text-white mb-4 animate-fade-in drop-shadow-lg leading-tight">
-                We believe in the craft
+          <div className="flex items-center justify-between min-h-[400px]">
+            <div className="flex-1 pr-8">
+              <h2 className="text-6xl sm:text-7xl lg:text-8xl font-playfair font-bold text-white mb-6 animate-fade-in drop-shadow-lg leading-tight">
+                Respect the craft
               </h2>
               <p className="text-xl text-white max-w-2xl animate-slide-up drop-shadow-md">
                 Every pizza is a masterpiece, hand-crafted with passion and baked to perfection in our wood-fired ovens.
@@ -42,15 +42,20 @@ export default function Home() {
             </div>
             
             {/* Small video in top right corner */}
-            <div className="hidden lg:block w-80 h-48 rounded-2xl overflow-hidden shadow-2xl ml-8">
+            <div className="w-80 h-48 rounded-2xl overflow-hidden shadow-2xl bg-black flex-shrink-0">
               <video 
                 autoPlay
                 loop
                 muted
                 playsInline
                 className="w-full h-full object-cover"
+                onLoadedData={(e) => {
+                  const video = e.target as HTMLVideoElement;
+                  video.play().catch(console.error);
+                }}
               >
-                <source src="https://videos.pexels.com/video-files/4252965/4252965-hd_1920_1080_30fps.mp4" type="video/mp4" />
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+                <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
