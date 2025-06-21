@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import PizzaSliceButton from "@/components/pizza-slice-button";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -112,12 +113,9 @@ export default function Header() {
             >
               Contact
             </button>
-            <button 
-              onClick={() => setIsPreorderModalOpen(true)}
-              className="bg-tomato-red hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105"
-            >
-              Preorder
-            </button>
+            <PizzaSliceButton onClick={() => setIsPreorderModalOpen(true)}>
+              Preordenar
+            </PizzaSliceButton>
           </div>
 
           {/* Mobile Menu Button */}
@@ -162,12 +160,11 @@ export default function Header() {
             >
               Contact
             </button>
-            <button 
-              onClick={() => setIsPreorderModalOpen(true)}
-              className="block w-full text-left bg-tomato-red hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 mt-2"
-            >
-              Preorder
-            </button>
+            <div className="mt-2 flex justify-center">
+              <PizzaSliceButton onClick={() => setIsPreorderModalOpen(true)}>
+                Preordenar
+              </PizzaSliceButton>
+            </div>
           </div>
         </div>
       </nav>
@@ -176,7 +173,7 @@ export default function Header() {
       <Dialog open={isPreorderModalOpen} onOpenChange={setIsPreorderModalOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-playfair text-warm-gray">Preorder Your Pizza</DialogTitle>
+            <DialogTitle className="text-2xl font-playfair text-warm-gray text-bounce">Preordena Tu Pizza</DialogTitle>
           </DialogHeader>
           <form onSubmit={handlePreorderSubmit} className="space-y-4">
             <div>
@@ -239,8 +236,8 @@ export default function Header() {
                 required
               />
             </div>
-            <Button type="submit" className="w-full bg-tomato-red hover:bg-red-600">
-              Confirm Preorder
+            <Button type="submit" className="w-full bg-tomato-red hover:bg-red-600 hover-lift transition-all duration-300">
+              Confirmar Preorden
             </Button>
           </form>
         </DialogContent>
