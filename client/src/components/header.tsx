@@ -1,9 +1,24 @@
 import { useState, useEffect } from "react";
 import logoImage from "@assets/logo_1_1_320x320_1749689353534.png";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isPreorderModalOpen, setIsPreorderModalOpen] = useState(false);
+  const [preorderForm, setPreorderForm] = useState({
+    name: '',
+    phone: '',
+    pizza: '',
+    quantity: '1',
+    pickupTime: ''
+  });
+  const { toast } = useToast();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +35,23 @@ export default function Header() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
     setIsMenuOpen(false);
+  };
+
+  const handlePreorderSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Simulate preorder submission
+    toast({
+      title: "Preorder Confirmed!",
+      description: `Your ${preorderForm.pizza} pizza will be ready for pickup at ${preorderForm.pickupTime}. We'll call you at ${preorderForm.phone}.`,
+    });
+    setIsPreorderModalOpen(false);
+    setPreorderForm({
+      name: '',
+      phone: '',
+      pizza: '',
+      quantity: '1',
+      pickupTime: ''
+    });
   };
 
   return (
@@ -80,6 +112,12 @@ export default function Header() {
             >
               Contact
             </button>
+            <button 
+              onClick={() => setIsPreorderModalOpen(true)}
+              className="bg-tomato-red hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105"
+            >
+              Preorder
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -124,9 +162,89 @@ export default function Header() {
             >
               Contact
             </button>
+            <button 
+              onClick={() => setIsPreorderModalOpen(true)}
+              className="block w-full text-left bg-tomato-red hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 mt-2"
+            >
+              Preorder
+            </button>
           </div>
         </div>
       </nav>
+
+      {/* Preorder Modal */}
+      <Dialog open={isPreorderModalOpen} onOpenChange={setIsPreorderModalOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-playfair text-warm-gray">Preorder Your Pizza</DialogTitle>
+          </DialogHeader>
+          <form onSubmit={handlePreorderSubmit} className="space-y-4">
+            <div>
+              <Label htmlFor="name">Name</Label>
+              <Input
+                id="name"
+                value={preorderForm.name}
+                onChange={(e) => setPreorderForm({...preorderForm, name: e.target.value})}
+                required
+              />
+            </div>
+            <div>
+              <Label htmlFor="phone">Phone Number</Label>
+              <Input
+                id="phone"
+                type="tel"
+                value={preorderForm.phone}
+                onChange={(e) => setPreorderForm({...preorderForm, phone: e.target.value})}
+                required
+              />
+            </div>
+            <div>
+              <Label htmlFor="pizza">Pizza Type</Label>
+              <Select value={preorderForm.pizza} onValueChange={(value) => setPreorderForm({...preorderForm, pizza: value})}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Choose your pizza" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="detroit-classic">Detroit Classic</SelectItem>
+                  <SelectItem value="detroit-pepperoni">Detroit Pepperoni</SelectItem>
+                  <SelectItem value="ny-margherita">NY Margherita</SelectItem>
+                  <SelectItem value="ny-pepperoni">NY Pepperoni</SelectItem>
+                  <SelectItem value="meat-lovers">Meat Lovers</SelectItem>
+                  <SelectItem value="veggie-deluxe">Veggie Deluxe</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div>
+              <Label htmlFor="quantity">Quantity</Label>
+              <Select value={preorderForm.quantity} onValueChange={(value) => setPreorderForm({...preorderForm, quantity: value})}>
+                <SelectTrigger>
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="1">1</SelectItem>
+                  <SelectItem value="2">2</SelectItem>
+                  <SelectItem value="3">3</SelectItem>
+                  <SelectItem value="4">4</SelectItem>
+                  <SelectItem value="5">5</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div>
+              <Label htmlFor="pickupTime">Pickup Time</Label>
+              <Input
+                id="pickupTime"
+                type="time"
+                value={preorderForm.pickupTime}
+                onChange={(e) => setPreorderForm({...preorderForm, pickupTime: e.target.value})}
+                required
+              />
+            </div>
+            <Button type="submit" className="w-full bg-tomato-red hover:bg-red-600">
+              Confirm Preorder
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
     </header>
   );
 }

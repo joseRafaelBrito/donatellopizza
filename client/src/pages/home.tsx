@@ -33,6 +33,14 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex items-center justify-between min-h-[400px]">
             <div className="flex-1 pr-8">
+              {/* Daily Production Counter */}
+              <div className="mb-6">
+                <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 animate-bounce-in">
+                  <span className="text-cheese-gold text-3xl font-bold mr-2">50</span>
+                  <span className="text-white text-lg font-medium">pizzas a day</span>
+                </div>
+              </div>
+              
               <h2 className="text-6xl sm:text-7xl lg:text-8xl font-playfair font-bold text-white mb-6 animate-fade-in drop-shadow-lg leading-tight">
                 Respect the craft
               </h2>
