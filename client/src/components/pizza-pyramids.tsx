@@ -17,7 +17,7 @@ export default function PizzaPyramids() {
             <path
               d="M10 90 L60 10 L110 90 Z"
               fill="url(#pizzaTexture1)"
-              stroke="#8B4513"
+              stroke="#654321"
               strokeWidth="2"
             />
             
@@ -46,7 +46,7 @@ export default function PizzaPyramids() {
             <path
               d="M10 120 L75 10 L140 120 Z"
               fill="url(#pizzaTexture2)"
-              stroke="#8B4513"
+              stroke="#654321"
               strokeWidth="2"
             />
             
@@ -75,7 +75,7 @@ export default function PizzaPyramids() {
             <path
               d="M10 100 L65 10 L120 100 Z"
               fill="url(#pizzaTexture3)"
-              stroke="#8B4513"
+              stroke="#654321"
               strokeWidth="2"
             />
             
@@ -98,33 +98,46 @@ export default function PizzaPyramids() {
         </div>
       </div>
 
+      {/* "In God we trust" text under center pyramid */}
+      <div className="mt-8">
+        <p className="text-2xl sm:text-3xl font-playfair font-bold text-warm-gray text-center tracking-wider">
+          In God we trust
+        </p>
+      </div>
+
       {/* SVG Definitions for Pizza Textures */}
       <svg width="0" height="0">
         <defs>
-          {/* Pizza Texture 1 */}
+          {/* Pizza Texture 1 - Rich Pizza Crust */}
           <pattern id="pizzaTexture1" patternUnits="userSpaceOnUse" width="20" height="20">
-            <rect width="20" height="20" fill="#D2691E"/>
-            <circle cx="5" cy="5" r="2" fill="#DC143C"/>
-            <circle cx="15" cy="10" r="1.5" fill="#228B22"/>
-            <circle cx="10" cy="15" r="2" fill="#FFD700" opacity="0.7"/>
+            <rect width="20" height="20" fill="#8B4513"/>
+            <rect x="0" y="0" width="20" height="4" fill="#DAA520" opacity="0.8"/>
+            <circle cx="5" cy="8" r="2" fill="#DC143C"/>
+            <circle cx="15" cy="12" r="1.5" fill="#228B22"/>
+            <circle cx="10" cy="16" r="2" fill="#FFD700" opacity="0.9"/>
+            <circle cx="3" cy="14" r="1" fill="#FF6347"/>
           </pattern>
           
-          {/* Pizza Texture 2 */}
+          {/* Pizza Texture 2 - Authentic Pizza Base */}
           <pattern id="pizzaTexture2" patternUnits="userSpaceOnUse" width="25" height="25">
-            <rect width="25" height="25" fill="#CD853F"/>
-            <circle cx="6" cy="6" r="2.5" fill="#DC143C"/>
-            <circle cx="18" cy="12" r="2" fill="#228B22"/>
-            <circle cx="12" cy="18" r="2.5" fill="#FFD700" opacity="0.7"/>
-            <circle cx="20" cy="20" r="1.5" fill="#DC143C"/>
+            <rect width="25" height="25" fill="#A0522D"/>
+            <rect x="0" y="0" width="25" height="5" fill="#F4A460" opacity="0.8"/>
+            <circle cx="6" cy="8" r="2.5" fill="#DC143C"/>
+            <circle cx="18" cy="14" r="2" fill="#228B22"/>
+            <circle cx="12" cy="20" r="2.5" fill="#FFD700" opacity="0.9"/>
+            <circle cx="20" cy="22" r="1.5" fill="#DC143C"/>
+            <circle cx="4" cy="18" r="1.5" fill="#FF6347"/>
           </pattern>
           
-          {/* Pizza Texture 3 */}
+          {/* Pizza Texture 3 - Deep Dish Style */}
           <pattern id="pizzaTexture3" patternUnits="userSpaceOnUse" width="22" height="22">
-            <rect width="22" height="22" fill="#DEB887"/>
-            <circle cx="7" cy="7" r="2" fill="#DC143C"/>
-            <circle cx="16" cy="11" r="1.5" fill="#228B22"/>
-            <circle cx="11" cy="16" r="2" fill="#FFD700" opacity="0.7"/>
-            <circle cx="18" cy="18" r="1" fill="#DC143C"/>
+            <rect width="22" height="22" fill="#964B00"/>
+            <rect x="0" y="0" width="22" height="4" fill="#DEB887" opacity="0.8"/>
+            <circle cx="7" cy="9" r="2" fill="#DC143C"/>
+            <circle cx="16" cy="13" r="1.5" fill="#228B22"/>
+            <circle cx="11" cy="18" r="2" fill="#FFD700" opacity="0.9"/>
+            <circle cx="18" cy="20" r="1" fill="#DC143C"/>
+            <circle cx="4" cy="16" r="1.2" fill="#FF6347"/>
           </pattern>
         </defs>
       </svg>
