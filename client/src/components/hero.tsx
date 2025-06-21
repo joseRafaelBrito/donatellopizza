@@ -1,48 +1,33 @@
 import { useEffect, useState } from "react";
 
 export default function Hero() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <section id="home" className="relative h-screen overflow-hidden">
-      {/* Melting Cheese Background */}
-      <div className="absolute inset-0 w-full h-full bg-melting-cheese">
-        <div className="absolute inset-0 melting-cheese-gradient"></div>
+    <section id="home" className="h-screen bg-[#f59e0b] flex flex-col items-center justify-center text-center px-4 relative">
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col items-center justify-center">
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6 leading-tight">
+          Welcome to Donatello Pizza
+        </h1>
+        <p className="text-xl sm:text-2xl lg:text-3xl text-white font-light">
+          Artisan Detroit & NY Pizza
+        </p>
       </div>
 
-      {/* Hero Content */}
-      <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
-        <div className={`max-w-4xl mx-auto transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-playfair font-bold text-white mb-6 leading-tight">
-            Welcome to <span className="text-white">Donatello</span>
-          </h1>
-          <p className="text-xl sm:text-2xl lg:text-3xl text-white mb-8 font-light">
-            Nuestras Pizzas
-          </p>
-          <button 
-            onClick={() => window.location.href = '/menu'}
-            className="bg-tomato-red hover:bg-red-600 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-          >
-            Our Pizzas
-            <i className="fas fa-arrow-down ml-2 animate-bounce-gentle"></i>
-          </button>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
+      {/* Animated Down Arrow */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <i className="fas fa-chevron-down text-white text-2xl"></i>
+        <svg 
+          className="w-8 h-8 text-white" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth={2} 
+            d="M19 14l-7 7m0 0l-7-7m7 7V3" 
+          />
+        </svg>
       </div>
     </section>
   );
