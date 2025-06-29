@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logoImage from "@assets/logo_1_1_320x320_1749689353534.png";
+// import logoImage from "../attached_assets/logo_1_1_320x320_1749689353534.png";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
@@ -70,7 +70,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <div className="w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center hover:shadow-xl hover-glow transition-all duration-300 overflow-hidden animate-float">
               <img 
-                src={logoImage} 
+                src="/attached_assets/logo_1_1_320x320_1749689353534.png" 
                 alt="Donatello Logo" 
                 className="w-full h-full object-cover rounded-full transform hover:scale-110 transition-transform duration-300"
               />
