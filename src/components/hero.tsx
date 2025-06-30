@@ -17,11 +17,15 @@ export default function Hero() {
           const video = e.target as HTMLVideoElement;
           video.play().catch(console.error);
         }}
+        onError={(e) => {
+          console.error("Error loading video:", e);
+        }}
       >
         <source
           src="/attached_assets/356026553653461001_1749689326847.mp4"
           type="video/mp4"
         />
+<<<<<<< Updated upstream:src/components/hero.tsx
         <source
           src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
           type="video/mp4"
@@ -109,6 +113,12 @@ export default function Hero() {
           />
         </svg>
       </div>
+=======
+      </video>
+
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black opacity-40 z-10"></div>
+>>>>>>> Stashed changes:client/src/components/hero.tsx
 
       {/* Orbiting Cheese Planet */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-16">
@@ -125,7 +135,11 @@ export default function Hero() {
                   cy="32"
                   r="30"
                   fill="#FFD700"
+<<<<<<< Updated upstream:src/components/hero.tsx
                   stroke="#FFA500"
+=======
+                  stroke="#DAA520"
+>>>>>>> Stashed changes:client/src/components/hero.tsx
                   strokeWidth="2"
                 />
 
@@ -139,21 +153,33 @@ export default function Hero() {
                 {/* Cheese texture */}
                 <path
                   d="M15 20 Q25 25 35 20"
+<<<<<<< Updated upstream:src/components/hero.tsx
                   stroke="#FFA500"
+=======
+                  stroke="#DAA520"
+>>>>>>> Stashed changes:client/src/components/hero.tsx
                   strokeWidth="1"
                   fill="none"
                   opacity="0.6"
                 />
                 <path
                   d="M20 35 Q30 40 40 35"
+<<<<<<< Updated upstream:src/components/hero.tsx
                   stroke="#FFA500"
+=======
+                  stroke="#DAA520"
+>>>>>>> Stashed changes:client/src/components/hero.tsx
                   strokeWidth="1"
                   fill="none"
                   opacity="0.6"
                 />
                 <path
                   d="M25 50 Q35 45 45 50"
+<<<<<<< Updated upstream:src/components/hero.tsx
                   stroke="#FFA500"
+=======
+                  stroke="#DAA520"
+>>>>>>> Stashed changes:client/src/components/hero.tsx
                   strokeWidth="1"
                   fill="none"
                   opacity="0.6"
@@ -183,7 +209,11 @@ export default function Hero() {
             <span className="absolute inset-0 text-yellow-300 transform translate-x-1 translate-y-1">
               Welcome to Donatello Pizza
             </span>
+<<<<<<< Updated upstream:src/components/hero.tsx
             <span className="absolute inset-0 text-yellow-400 transform translate-x-0.5 translate-y-0.5">
+=======
+            <span className="absolute inset-0 text-yellow-500 transform translate-x-0.5 translate-y-0.5">
+>>>>>>> Stashed changes:client/src/components/hero.tsx
               Welcome to Donatello Pizza
             </span>
             <span className="relative text-white drop-shadow-2xl">
@@ -206,7 +236,11 @@ export default function Hero() {
               />
               <path
                 d="M0 0 Q25 6 50 0 Q75 10 100 0 Q125 8 150 0 Q175 12 200 0 Q225 6 250 0 Q275 10 300 0 Q325 8 350 0 Q375 12 400 0 Q425 6 450 0 Q475 10 500 0 Q525 8 550 0 Q575 12 600 0 Q625 6 650 0 Q675 10 700 0 Q725 8 750 0 Q775 12 800 0 L800 16 L0 16 Z"
+<<<<<<< Updated upstream:src/components/hero.tsx
                 fill="#FFD700"
+=======
+                fill="#DAA520"
+>>>>>>> Stashed changes:client/src/components/hero.tsx
                 opacity="0.6"
               />
             </svg>
