@@ -15,7 +15,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Serve static files from attached_assets folder
   app.use("/attached_assets", (req, res, next) => {
-    const filePath = path.join(__dirname, "..", "attached_assets", req.path);
+    const filePath = path.join(
+      __dirname,
+      "..",
+      "public",
+      "attached_assets",
+      req.path
+    );
     res.sendFile(filePath, (err) => {
       if (err) {
         console.error(`Error serving file ${filePath}:`, err);
