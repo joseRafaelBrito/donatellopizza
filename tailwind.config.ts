@@ -2,7 +2,40 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
+  safelist: [
+    // Dynamic classes found in the codebase
+    "text-yellow-400",
+    "text-gray-300",
+    "animate-pulse",
+    "scale-110",
+    "hover-lift",
+    "fa-times",
+    "fa-bars",
+    "block",
+    "hidden",
+    "bg-warm-gray",
+    "bg-opacity-95",
+    "nav-blur",
+    "rounded-lg",
+    "mt-2",
+    "mx-4",
+    "text-tomato-red",
+    "text-2xl",
+    "mb-2",
+    "transition-all",
+    "duration-300",
+    "fas",
+    "fa-cheese",
+    "fa-seedling",
+    "fa-fire",
+    "fa-bread-slice",
+    "fa-circle",
+    "fa-leaf",
+    "fa-hands",
+    "fa-clock",
+    "fa-star",
+  ],
   theme: {
     extend: {
       borderRadius: {
@@ -61,6 +94,8 @@ export default {
           border: "var(--sidebar-border)",
           ring: "var(--sidebar-ring)",
         },
+        "tomato-red": "#FF6B35",
+        "warm-gray": "#F5F5F4",
       },
       keyframes: {
         "accordion-down": {

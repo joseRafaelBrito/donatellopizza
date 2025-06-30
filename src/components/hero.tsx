@@ -25,100 +25,10 @@ export default function Hero() {
           src="/attached_assets/356026553653461001_1749689326847.mp4"
           type="video/mp4"
         />
-<<<<<<< Updated upstream:src/components/hero.tsx
-        <source
-          src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-          type="video/mp4"
-        />
-      </video>
-
-      {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
-
-      {/* Cheese Pyramid in Center */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-15">
-        <svg
-          width="300"
-          height="260"
-          viewBox="0 0 300 260"
-          className="opacity-60"
-        >
-          {/* Pyramid Base */}
-          <path
-            d="M150 40 L250 220 L50 220 Z"
-            fill="#8B4513"
-            stroke="#654321"
-            strokeWidth="3"
-          />
-
-          {/* Pyramid Left Side */}
-          <path d="M150 40 L50 220 L150 200 Z" fill="#A0522D" />
-
-          {/* Pyramid Right Side */}
-          <path d="M150 40 L250 220 L150 200 Z" fill="#D2B48C" />
-
-          {/* Stone Block Lines */}
-          <path d="M70 200 L230 200" stroke="#654321" strokeWidth="2" />
-          <path d="M80 180 L220 180" stroke="#654321" strokeWidth="2" />
-          <path d="M90 160 L210 160" stroke="#654321" strokeWidth="2" />
-          <path d="M100 140 L200 140" stroke="#654321" strokeWidth="2" />
-          <path d="M110 120 L190 120" stroke="#654321" strokeWidth="2" />
-          <path d="M120 100 L180 100" stroke="#654321" strokeWidth="2" />
-          <path d="M130 80 L170 80" stroke="#654321" strokeWidth="2" />
-          <path d="M140 60 L160 60" stroke="#654321" strokeWidth="2" />
-
-          {/* Vertical divisions */}
-          <path d="M100 220 L130 80" stroke="#654321" strokeWidth="1.5" />
-          <path d="M150 220 L150 40" stroke="#654321" strokeWidth="1.5" />
-          <path d="M200 220 L170 80" stroke="#654321" strokeWidth="1.5" />
-
-          {/* Sun at the tip */}
-          <circle
-            cx="150"
-            cy="40"
-            r="20"
-            fill="#FFFF00"
-            stroke="#FFD700"
-            strokeWidth="2"
-            className="animate-pulse"
-          />
-
-          {/* Sun rays */}
-          <g
-            stroke="#FFFF00"
-            strokeWidth="2"
-            strokeLinecap="round"
-            className="animate-spin"
-            style={{ transformOrigin: "150px 40px", animationDuration: "15s" }}
-          >
-            <path d="M150 15 L150 8" />
-            <path d="M170 20 L175 15" />
-            <path d="M185 40 L192 40" />
-            <path d="M170 60 L175 65" />
-            <path d="M150 65 L150 72" />
-            <path d="M130 60 L125 65" />
-            <path d="M115 40 L108 40" />
-            <path d="M130 20 L125 15" />
-          </g>
-
-          {/* Inner sun core */}
-          <circle cx="150" cy="40" r="12" fill="#FFFACD" />
-
-          {/* Pyramid entrance */}
-          <path
-            d="M135 200 L150 170 L165 200 Z"
-            fill="#8B4513"
-            stroke="#654321"
-            strokeWidth="2"
-          />
-        </svg>
-      </div>
-=======
       </video>
 
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 bg-black opacity-40 z-10"></div>
->>>>>>> Stashed changes:client/src/components/hero.tsx
 
       {/* Orbiting Cheese Planet */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-16">
@@ -135,11 +45,7 @@ export default function Hero() {
                   cy="32"
                   r="30"
                   fill="#FFD700"
-<<<<<<< Updated upstream:src/components/hero.tsx
-                  stroke="#FFA500"
-=======
                   stroke="#DAA520"
->>>>>>> Stashed changes:client/src/components/hero.tsx
                   strokeWidth="2"
                 />
 
@@ -153,33 +59,21 @@ export default function Hero() {
                 {/* Cheese texture */}
                 <path
                   d="M15 20 Q25 25 35 20"
-<<<<<<< Updated upstream:src/components/hero.tsx
-                  stroke="#FFA500"
-=======
                   stroke="#DAA520"
->>>>>>> Stashed changes:client/src/components/hero.tsx
                   strokeWidth="1"
                   fill="none"
                   opacity="0.6"
                 />
                 <path
                   d="M20 35 Q30 40 40 35"
-<<<<<<< Updated upstream:src/components/hero.tsx
-                  stroke="#FFA500"
-=======
                   stroke="#DAA520"
->>>>>>> Stashed changes:client/src/components/hero.tsx
                   strokeWidth="1"
                   fill="none"
                   opacity="0.6"
                 />
                 <path
                   d="M25 50 Q35 45 45 50"
-<<<<<<< Updated upstream:src/components/hero.tsx
-                  stroke="#FFA500"
-=======
                   stroke="#DAA520"
->>>>>>> Stashed changes:client/src/components/hero.tsx
                   strokeWidth="1"
                   fill="none"
                   opacity="0.6"
@@ -209,11 +103,7 @@ export default function Hero() {
             <span className="absolute inset-0 text-yellow-300 transform translate-x-1 translate-y-1">
               Welcome to Donatello Pizza
             </span>
-<<<<<<< Updated upstream:src/components/hero.tsx
-            <span className="absolute inset-0 text-yellow-400 transform translate-x-0.5 translate-y-0.5">
-=======
             <span className="absolute inset-0 text-yellow-500 transform translate-x-0.5 translate-y-0.5">
->>>>>>> Stashed changes:client/src/components/hero.tsx
               Welcome to Donatello Pizza
             </span>
             <span className="relative text-white drop-shadow-2xl">
@@ -236,11 +126,7 @@ export default function Hero() {
               />
               <path
                 d="M0 0 Q25 6 50 0 Q75 10 100 0 Q125 8 150 0 Q175 12 200 0 Q225 6 250 0 Q275 10 300 0 Q325 8 350 0 Q375 12 400 0 Q425 6 450 0 Q475 10 500 0 Q525 8 550 0 Q575 12 600 0 Q625 6 650 0 Q675 10 700 0 Q725 8 750 0 Q775 12 800 0 L800 16 L0 16 Z"
-<<<<<<< Updated upstream:src/components/hero.tsx
-                fill="#FFD700"
-=======
                 fill="#DAA520"
->>>>>>> Stashed changes:client/src/components/hero.tsx
                 opacity="0.6"
               />
             </svg>
