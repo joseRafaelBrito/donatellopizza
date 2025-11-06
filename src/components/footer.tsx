@@ -112,7 +112,7 @@ export default function Footer() {
         <div className="border-t border-gray-600 mt-12 pt-8 text-center">
           <p className="text-gray-300">
             © 2024 Donatello Pizza. All rights reserved. 
-            <span className="text-tomato-red font-dancing ml-2">Crafted with ❤️ by Donatello</span>
+            <span className="text-tomato-red font-dancing ml-2">Crafted with ❤️ by Jose Estevez</span>
           </p>
         </div>
       </div>
