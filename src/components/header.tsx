@@ -109,7 +109,7 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8 animate-fade-in">
             <button
-              onClick={() => (window.location.href = "/menu")}
+              onClick={() => setLocation("/menu")}
               className={`transition-colors duration-300 font-bold text-lg ${
                 isMenuActive 
                   ? 'text-cheese-gold' 
@@ -177,7 +177,7 @@ export default function Header() {
               Inicio
             </button>
             <button
-              onClick={() => (window.location.href = "/menu")}
+              onClick={() => { setLocation("/menu"); setIsMenuOpen(false); }}
               className={`block w-full text-left transition-colors duration-300 font-bold py-2 text-lg ${
                 isMenuActive 
                   ? 'text-cheese-gold' 
