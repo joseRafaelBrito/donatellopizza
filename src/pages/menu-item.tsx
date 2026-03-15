@@ -78,8 +78,21 @@ function MenuItemPage() {
       updateOrCreateOGTag('og:description', menuItem.seoDescription);
       updateOrCreateOGTag('og:image', menuItem.image);
       updateOrCreateOGTag('og:type', 'product');
+      updateOrCreateOGTag('og:url', `${window.location.origin}/menu/${slug}`);
+      updateOrCreateOGTag('og:site_name', 'Donatello Pizza');
+
+      // Canonical URL
+      let canonicalTag = document.querySelector('link[rel="canonical"]');
+      if (canonicalTag) {
+        canonicalTag.setAttribute('href', `${window.location.origin}/menu/${slug}`);
+      } else {
+        const newCanonical = document.createElement('link');
+        newCanonical.setAttribute('rel', 'canonical');
+        newCanonical.setAttribute('href', `${window.location.origin}/menu/${slug}`);
+        document.head.appendChild(newCanonical);
+      }
     }
-  }, [menuItem]);
+  }, [menuItem, slug]);
 
   if (!menuItem) {
     return (
@@ -159,11 +172,23 @@ function MenuItemPage() {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": menuItem.name,
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": averageRating,
-      "reviewCount": reviews.length
+    "description": menuItem.seoDescription,
+    "image": menuItem.image,
+    "offers": {
+      "@type": "Offer",
+      "price": menuItem.priceValue,
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
     },
+    ...(reviews.length > 0 && {
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": averageRating,
+        "reviewCount": reviews.length,
+        "bestRating": 5,
+        "worstRating": 1
+      }
+    }),
     "review": reviews.map(review => ({
       "@type": "Review",
       "author": {
@@ -172,11 +197,60 @@ function MenuItemPage() {
       },
       "reviewRating": {
         "@type": "Rating",
-        "ratingValue": review.rating
+        "ratingValue": review.rating,
+        "bestRating": 5,
+        "worstRating": 1
       },
       "reviewBody": review.comment,
       "datePublished": review.date
     }))
+  };
+
+  const breadcrumbSchema: StructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": `${window.location.origin}/`
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Menu",
+        "item": `${window.location.origin}/menu`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": menuItem.name,
+        "item": `${window.location.origin}/menu/${menuItem.slug}`
+      }
+    ]
+  };
+
+  const restaurantSchema: StructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Donatello Pizza",
+    "description": "Authentic artisan pizza restaurant featuring Detroit, New York, and Sicilian-style pizzas in Santiago, Dominican Republic.",
+    "servesCuisine": ["Pizza", "Italian", "American"],
+    "url": window.location.origin,
+    "hasMenu": `${window.location.origin}/menu`,
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Santiago",
+      "addressRegion": "Santiago",
+      "addressCountry": "DO"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "19.4517",
+      "longitude": "-70.6970"
+    }
   };
 
   return (
@@ -191,6 +265,14 @@ function MenuItemPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantSchema) }}
       />
 
       <main className="pt-20 min-h-screen bg-gradient-to-b from-garlic-cream to-white">

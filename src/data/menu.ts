@@ -45,7 +45,7 @@ export const menuItems: MenuItem[] = [
     allergens: ["Gluten", "Dairy"],
     calories: 320,
     prepTime: "25-30 minutes",
-    keywords: ["detroit pizza", "square pizza", "brick cheese", "caramelized crust", "authentic detroit"]
+    keywords: ["detroit pizza", "square pizza", "brick cheese", "caramelized crust", "authentic detroit", "pizza en Santiago", "pizza Santiago DR", "Detroit pizza Santiago"]
   },
   {
     id: 2,
@@ -63,7 +63,7 @@ export const menuItems: MenuItem[] = [
     allergens: ["Gluten", "Dairy", "Pork"],
     calories: 380,
     prepTime: "25-30 minutes",
-    keywords: ["pepperoni pizza", "detroit style", "premium pepperoni", "extra cheese", "supreme pizza"]
+    keywords: ["pepperoni pizza", "detroit style", "premium pepperoni", "extra cheese", "supreme pizza", "pizza pepperoni Santiago", "pizza en Santiago DR"]
   },
   {
     id: 3,
@@ -81,7 +81,7 @@ export const menuItems: MenuItem[] = [
     allergens: ["Gluten", "Dairy"],
     calories: 290,
     prepTime: "25-30 minutes",
-    keywords: ["margherita pizza", "detroit style", "fresh mozzarella", "fresh basil", "vegetarian pizza"]
+    keywords: ["margherita pizza", "detroit style", "fresh mozzarella", "fresh basil", "vegetarian pizza", "pizza margherita Santiago", "pizza vegetariana Santiago DR"]
   },
   
   // New York-Style Pizza
@@ -101,7 +101,7 @@ export const menuItems: MenuItem[] = [
     allergens: ["Gluten", "Dairy"],
     calories: 285,
     prepTime: "15-20 minutes",
-    keywords: ["ny pizza", "cheese slice", "thin crust", "foldable pizza", "new york style"]
+    keywords: ["ny pizza", "cheese slice", "thin crust", "foldable pizza", "new york style", "pizza New York Santiago", "pizza en Santiago Dominican Republic"]
   },
   {
     id: 5,
@@ -119,7 +119,7 @@ export const menuItems: MenuItem[] = [
     allergens: ["Gluten", "Dairy", "Pork"],
     calories: 320,
     prepTime: "15-20 minutes",
-    keywords: ["ny pepperoni", "pepperoni slice", "crispy pepperoni", "thin crust", "new york pizza"]
+    keywords: ["ny pepperoni", "pepperoni slice", "crispy pepperoni", "thin crust", "new york pizza", "pizza pepperoni estilo New York Santiago", "pizza en Santiago DR"]
   },
   {
     id: 6,
@@ -137,7 +137,7 @@ export const menuItems: MenuItem[] = [
     allergens: ["Gluten", "Dairy", "Pork"],
     calories: 340,
     prepTime: "20-25 minutes",
-    keywords: ["ny combo", "sausage pizza", "supreme pizza", "whole pie", "new york style"]
+    keywords: ["ny combo", "sausage pizza", "supreme pizza", "whole pie", "new york style", "pizza combinada Santiago", "pizza entera Santiago DR"]
   },
   
   // Sicilian Pizza
@@ -157,7 +157,7 @@ export const menuItems: MenuItem[] = [
     allergens: ["Gluten", "Dairy"],
     calories: 350,
     prepTime: "30-35 minutes",
-    keywords: ["sicilian pizza", "thick crust", "square pizza", "focaccia crust", "traditional sicilian"]
+    keywords: ["sicilian pizza", "thick crust", "square pizza", "focaccia crust", "traditional sicilian", "pizza siciliana Santiago", "pizza artesanal Santiago DR"]
   },
   {
     id: 8,
@@ -175,7 +175,7 @@ export const menuItems: MenuItem[] = [
     allergens: ["Gluten", "Dairy", "Pork"],
     calories: 390,
     prepTime: "30-35 minutes",
-    keywords: ["sicilian sausage", "italian sausage", "thick crust", "peppers onions", "hearty pizza"]
+    keywords: ["sicilian sausage", "italian sausage", "thick crust", "peppers onions", "hearty pizza", "pizza con salchicha Santiago", "pizza italiana Santiago DR"]
   },
   {
     id: 9,
@@ -193,7 +193,7 @@ export const menuItems: MenuItem[] = [
     allergens: ["Gluten", "Dairy"],
     calories: 330,
     prepTime: "30-35 minutes",
-    keywords: ["white pizza", "ricotta cheese", "garlic pizza", "sicilian white", "no sauce pizza"]
+    keywords: ["white pizza", "ricotta cheese", "garlic pizza", "sicilian white", "no sauce pizza", "pizza blanca Santiago", "pizza ricotta Santiago DR"]
   }
 ];
 

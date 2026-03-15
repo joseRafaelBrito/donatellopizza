@@ -1,0 +1,48 @@
+You are an expert full-stack developer and SEO engineer. I have a React + Vite pizza website with an existing menu where some pages already have structured data, SEO meta tags, or dynamic components. Your task is to **enhance the menu and item pages** for rich Google search results **without overwriting existing working code**. Only add what’s missing.
+
+Follow these instructions:
+
+1. **Individual Pages per Menu Item:**
+   - Ensure each pizza (Detroit, Sicilian, NY style, etc.) has its own URL (`/menu/detroit-pizza`, `/menu/sicilian-pizza`, etc.).
+   - Only create a new page if it does not already exist.  
+   - Preserve any existing content, components, or props already working.
+
+2. **Structured Data (JSON-LD):**
+   - Use `schema.org/Product` and `schema.org/Restaurant` JSON-LD.
+   - Only add fields that are missing:
+     - `@context`, `@type`, `name`, `description`, `image`, `offers` (price + currency), `aggregateRating`, `review` array.
+     - Include `geo` and `address` for location relevance (e.g., Santiago, DR).  
+   - Do not overwrite existing JSON-LD or remove valid fields.
+
+3. **SEO Meta Tags:**
+   - Only add missing `<title>` and `<meta description>` dynamically per item.
+   - Include local keywords like “Detroit pizza in Santiago” without overwriting existing good meta tags.
+
+4. **Breadcrumbs & Navigation:**
+   - Implement `schema.org/BreadcrumbList` JSON-LD **only if missing**.
+   - Keep any existing working breadcrumb navigation.
+
+5. **Canonical & Open Graph:**
+   - Add canonical URL and Open Graph tags (`og:title`, `og:description`, `og:image`) **only if not already present**.
+
+6. **Rich Snippet Features:**
+   - Add review snippets and star ratings for Google rich results **only if not present**.
+   - Include price and availability in structured data only if missing.
+
+7. **Automate Page Generation:**
+   - If menu data is in JSON, automatically generate pages per item **only for items that don’t yet have a page**.
+   - Preserve existing page logic and components.
+
+8. **Validation:**
+   - Ensure all added structured data passes [Google Rich Results Test](https://search.google.com/test/rich-results) without breaking existing functionality.
+   - Ensure no console errors or broken links are introduced.
+
+9. **Git Commit & Push:**
+   - Add only the files that were changed or created.
+   - Commit with message: "Enhance menu with missing structured data, SEO, and rich results."
+   - Push to GitHub.
+
+**Important:**  
+- Do not remove or overwrite any existing working code.  
+- Only add missing structured data, SEO tags, or dynamic pages that are not yet implemented.  
+- Optimize for Google rich results and local search visibility for each pizza item and location.

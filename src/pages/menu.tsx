@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "wouter";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -11,6 +11,89 @@ import { useUrlPreview, BottomUrlPreview } from "@/components/url-preview";
 export default function Menu() {
   const [, setLocation] = useLocation();
   const { previewUrl, showPreview, hidePreview } = useUrlPreview();
+
+  useEffect(() => {
+    document.title = "Our Pizza Menu | Donatello - Detroit, NY & Sicilian Pizzas in Santiago";
+
+    const updateOrCreate = (selector: string, attr: string, value: string, attrName = "content") => {
+      let tag = document.querySelector(selector);
+      if (tag) {
+        tag.setAttribute(attrName, value);
+      } else {
+        tag = document.createElement("meta");
+        tag.setAttribute(attr, selector.match(/\[.*?="(.*?)"\]/)?.[1] ?? "");
+        tag.setAttribute(attrName, value);
+        document.head.appendChild(tag);
+      }
+    };
+
+    updateOrCreate('meta[name="description"]', "name", "Explore Donatello's full menu featuring authentic Detroit, New York, and Sicilian-style pizzas in Santiago, DR. Order online today.");
+    updateOrCreate('meta[name="keywords"]', "name", "pizza menu Santiago, pizza en Santiago DR, Detroit pizza, New York pizza, Sicilian pizza, pizza artesanal, Donatello pizza");
+
+    const updateOrCreateOGTag = (property: string, content: string) => {
+      let ogTag = document.querySelector(`meta[property="${property}"]`);
+      if (ogTag) {
+        ogTag.setAttribute("content", content);
+      } else {
+        ogTag = document.createElement("meta");
+        ogTag.setAttribute("property", property);
+        ogTag.setAttribute("content", content);
+        document.head.appendChild(ogTag);
+      }
+    };
+
+    updateOrCreateOGTag("og:title", "Our Pizza Menu | Donatello - Detroit, NY & Sicilian Pizzas");
+    updateOrCreateOGTag("og:description", "Explore Donatello's full menu featuring authentic Detroit, New York, and Sicilian-style pizzas in Santiago, DR.");
+    updateOrCreateOGTag("og:type", "website");
+    updateOrCreateOGTag("og:url", `${window.location.origin}/menu`);
+    updateOrCreateOGTag("og:site_name", "Donatello Pizza");
+
+    let canonicalTag = document.querySelector('link[rel="canonical"]');
+    if (canonicalTag) {
+      canonicalTag.setAttribute("href", `${window.location.origin}/menu`);
+    } else {
+      const newCanonical = document.createElement("link");
+      newCanonical.setAttribute("rel", "canonical");
+      newCanonical.setAttribute("href", `${window.location.origin}/menu`);
+      document.head.appendChild(newCanonical);
+    }
+  }, []);
+
+  const menuListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Donatello Pizza Menu",
+    "description": "Full menu of Detroit, New York, and Sicilian-style pizzas at Donatello Pizza in Santiago, DR",
+    "numberOfItems": menuItems.length,
+    "itemListElement": menuItems.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "url": `${window.location.origin}/menu/${item.slug}`
+    }))
+  };
+
+  const restaurantSchema = {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Donatello Pizza",
+    "description": "Authentic artisan pizza restaurant featuring Detroit, New York, and Sicilian-style pizzas in Santiago, Dominican Republic.",
+    "servesCuisine": ["Pizza", "Italian", "American"],
+    "url": window.location.origin,
+    "hasMenu": `${window.location.origin}/menu`,
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Santiago",
+      "addressRegion": "Santiago",
+      "addressCountry": "DO"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "19.4517",
+      "longitude": "-70.6970"
+    }
+  };
 
   const detroitItems = getMenuItemsByCategory("detroit");
   const newYorkItems = getMenuItemsByCategory("newYork");
@@ -38,6 +121,14 @@ export default function Menu() {
   return (
     <>
       <Header />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(menuListSchema) }}
+      />
       <main className="pt-20 min-h-screen bg-gradient-to-b from-garlic-cream to-white">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center mb-16">
