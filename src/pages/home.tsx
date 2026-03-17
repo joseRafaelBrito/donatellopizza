@@ -1,3 +1,4 @@
+import { useLocation } from "wouter";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import PizzaSections from "@/components/pizza-sections";
@@ -7,8 +8,11 @@ import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 import PizzaPyramids from "@/components/pizza-pyramids";
 import PizzaWorld from "@/components/pizza-world";
+import { barrios } from "@/data/barrios";
+import { MapPin, Pizza } from "lucide-react";
 
 export default function Home() {
+  const [, setLocation] = useLocation();
   return (
     <div className="min-h-screen">
       <Header />
@@ -83,6 +87,50 @@ export default function Home() {
       <CraftProcess />
       <Testimonials />
       <Contact />
+
+      {/* Delivery por Barrios */}
+      <section className="py-16 bg-gradient-to-b from-white to-garlic-cream">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 bg-tomato-red/10 text-tomato-red rounded-full px-4 py-2 mb-4 text-sm font-semibold">
+              <MapPin className="w-4 h-4" />
+              Delivery en Santiago
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-playfair font-bold text-warm-gray mb-4">
+              Pizza Detroit en Tu Barrio
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Hacemos delivery de auténtica pizza estilo Detroit a todos los barrios de Santiago de los Caballeros. Encuentra el tuyo.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mb-8">
+            {barrios.map((barrio) => (
+              <button
+                key={barrio.slug}
+                data-testid={`home-link-barrio-${barrio.slug}`}
+                onClick={() => setLocation(`/barrios/${barrio.slug}`)}
+                className="flex items-center gap-2 p-3 bg-white rounded-xl border border-gray-200 hover:border-tomato-red hover:shadow-md transition-all text-left group text-sm"
+              >
+                <MapPin className="w-3 h-3 text-tomato-red flex-shrink-0" />
+                <span className="text-warm-gray group-hover:text-tomato-red transition-colors font-medium truncate">
+                  {barrio.nombre}
+                </span>
+              </button>
+            ))}
+          </div>
+          <div className="text-center">
+            <button
+              onClick={() => setLocation('/barrios')}
+              className="inline-flex items-center gap-2 bg-tomato-red hover:bg-red-600 text-white font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+              data-testid="home-button-ver-barrios"
+            >
+              <Pizza className="w-5 h-5" />
+              Ver Mapa de Barrios y Pedir Pizza
+            </button>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

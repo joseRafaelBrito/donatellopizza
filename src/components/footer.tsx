@@ -1,4 +1,8 @@
+import { useLocation } from "wouter";
+import { barrios } from "@/data/barrios";
+
 export default function Footer() {
+  const [, setLocation] = useLocation();
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -9,7 +13,7 @@ export default function Footer() {
   return (
     <footer className="bg-warm-gray text-white py-16">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-5 gap-8">
           <div className="md:col-span-2">
             <div className="flex items-center space-x-4 mb-6">
               <div className="w-12 h-12 bg-gradient-to-br from-cheese-gold to-tomato-red rounded-full flex items-center justify-center">
@@ -73,10 +77,10 @@ export default function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => scrollToSection('order')}
+                  onClick={() => setLocation('/barrios')}
                   className="text-gray-300 hover:text-cheese-gold transition-colors duration-300"
                 >
-                  Order Online
+                  Pizza por Barrios
                 </button>
               </li>
               <li>
@@ -93,6 +97,30 @@ export default function Footer() {
                   className="text-gray-300 hover:text-cheese-gold transition-colors duration-300"
                 >
                   Contact
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Delivery en Santiago</h4>
+            <ul className="space-y-1">
+              {barrios.slice(0, 10).map((barrio) => (
+                <li key={barrio.slug}>
+                  <button
+                    onClick={() => setLocation(`/barrios/${barrio.slug}`)}
+                    className="text-gray-400 hover:text-cheese-gold transition-colors duration-300 text-sm"
+                  >
+                    Pizza en {barrio.nombre}
+                  </button>
+                </li>
+              ))}
+              <li>
+                <button
+                  onClick={() => setLocation('/barrios')}
+                  className="text-tomato-red hover:text-cheese-gold transition-colors duration-300 text-sm font-medium"
+                >
+                  Ver todos los barrios →
                 </button>
               </li>
             </ul>

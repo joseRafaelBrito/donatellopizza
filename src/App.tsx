@@ -7,6 +7,8 @@ import Preloader from "@/components/preloader";
 import Home from "@/pages/home";
 import Menu from "@/pages/menu";
 import MenuItemPage from "@/pages/menu-item";
+import BarriosPage from "@/pages/barrios";
+import BarrioPage from "@/pages/barrio";
 import Checkout from "@/pages/checkout";
 import OrderSuccess from "@/pages/order-success";
 import NotFound from "@/pages/not-found";
@@ -17,6 +19,8 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/menu" component={Menu} />
       <Route path="/menu/:slug" component={MenuItemPage} />
+      <Route path="/barrios" component={BarriosPage} />
+      <Route path="/barrios/:slug" component={BarrioPage} />
       <Route path="/checkout" component={Checkout} />
       <Route path="/order-success" component={OrderSuccess} />
       <Route component={NotFound} />

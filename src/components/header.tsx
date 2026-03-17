@@ -119,6 +119,12 @@ export default function Header() {
               Menú
             </button>
             <button
+              onClick={() => setLocation("/barrios")}
+              className="text-white hover:text-cheese-gold transition-colors duration-300 font-bold text-lg"
+            >
+              Barrios
+            </button>
+            <button
               onClick={() => scrollToSection("about")}
               className="text-white hover:text-cheese-gold transition-colors duration-300 font-bold text-lg"
             >
@@ -185,6 +191,12 @@ export default function Header() {
               }`}
             >
               Menú
+            </button>
+            <button
+              onClick={() => { setLocation("/barrios"); setIsMenuOpen(false); }}
+              className="block w-full text-left text-white hover:text-cheese-gold transition-colors duration-300 font-bold py-2 text-lg"
+            >
+              Barrios
             </button>
             <button
               onClick={() => scrollToSection("order")}

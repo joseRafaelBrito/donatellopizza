@@ -1,0 +1,132 @@
+{
+  "type": "FeatureCollection",
+  "name": "Barrios Santiago de los Caballeros",
+  "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+  "features": [
+    {
+      "type": "Feature", "id": "barrio_los_almacigos",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.75,19.51],[-70.72,19.51],[-70.72,19.54],[-70.75,19.54],[-70.75,19.51]]] },
+      "properties": { "nombre": "Los Almácigos", "slug": "los-almacigos", "lat": 19.525, "lng": -70.735, "descripcion": "Barrio residencial al norte de Santiago de los Caballeros, República Dominicana." }
+    },
+    {
+      "type": "Feature", "id": "barrio_villa_olimpica",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.72,19.51],[-70.69,19.51],[-70.69,19.54],[-70.72,19.54],[-70.72,19.51]]] },
+      "properties": { "nombre": "Villa Olímpica", "slug": "villa-olimpica", "lat": 19.525, "lng": -70.705, "descripcion": "Barrio al norte de Santiago con zonas residenciales y deportivas." }
+    },
+    {
+      "type": "Feature", "id": "barrio_vicentillo",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.69,19.51],[-70.66,19.51],[-70.66,19.54],[-70.69,19.54],[-70.69,19.51]]] },
+      "properties": { "nombre": "Vicentillo", "slug": "vicentillo", "lat": 19.525, "lng": -70.675, "descripcion": "Comunidad residencial al norte de Santiago de los Caballeros." }
+    },
+    {
+      "type": "Feature", "id": "barrio_bella_vista",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.66,19.51],[-70.63,19.51],[-70.63,19.54],[-70.66,19.54],[-70.66,19.51]]] },
+      "properties": { "nombre": "Bella Vista", "slug": "bella-vista", "lat": 19.525, "lng": -70.645, "descripcion": "Sector residencial en la zona norte de Santiago." }
+    },
+    {
+      "type": "Feature", "id": "barrio_el_higueral",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.63,19.51],[-70.60,19.51],[-70.60,19.54],[-70.63,19.54],[-70.63,19.51]]] },
+      "properties": { "nombre": "El Higüeral", "slug": "el-higueral", "lat": 19.525, "lng": -70.615, "descripcion": "Sector noreste de Santiago de los Caballeros." }
+    },
+    {
+      "type": "Feature", "id": "barrio_rafey",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.75,19.48],[-70.72,19.48],[-70.72,19.51],[-70.75,19.51],[-70.75,19.48]]] },
+      "properties": { "nombre": "Rafey", "slug": "rafey", "lat": 19.495, "lng": -70.735, "descripcion": "Barrio tradicional en la zona noroeste de Santiago, conocido por sus comunidades y servicios." }
+    },
+    {
+      "type": "Feature", "id": "barrio_los_pepines",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.72,19.48],[-70.69,19.48],[-70.69,19.51],[-70.72,19.51],[-70.72,19.48]]] },
+      "properties": { "nombre": "Los Pepines", "slug": "los-pepines", "lat": 19.495, "lng": -70.705, "descripcion": "Histórico barrio norteño de Santiago, con rica cultura y comunidad activa." }
+    },
+    {
+      "type": "Feature", "id": "barrio_cristo_rey",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.69,19.48],[-70.66,19.48],[-70.66,19.51],[-70.69,19.51],[-70.69,19.48]]] },
+      "properties": { "nombre": "Cristo Rey", "slug": "cristo-rey", "lat": 19.495, "lng": -70.675, "descripcion": "Barrio central al norte de Santiago, cerca del corazón de la ciudad." }
+    },
+    {
+      "type": "Feature", "id": "barrio_los_jardines",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.66,19.48],[-70.63,19.48],[-70.63,19.51],[-70.66,19.51],[-70.66,19.48]]] },
+      "properties": { "nombre": "Los Jardines", "slug": "los-jardines", "lat": 19.495, "lng": -70.645, "descripcion": "Sector residencial popular en la zona norte-este de Santiago de los Caballeros." }
+    },
+    {
+      "type": "Feature", "id": "barrio_villa_progreso",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.63,19.48],[-70.60,19.48],[-70.60,19.51],[-70.63,19.51],[-70.63,19.48]]] },
+      "properties": { "nombre": "Villa Progreso", "slug": "villa-progreso", "lat": 19.495, "lng": -70.615, "descripcion": "Ensanche en la zona este de Santiago de los Caballeros." }
+    },
+    {
+      "type": "Feature", "id": "barrio_la_joya",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.75,19.45],[-70.72,19.45],[-70.72,19.48],[-70.75,19.48],[-70.75,19.45]]] },
+      "properties": { "nombre": "La Joya", "slug": "la-joya", "lat": 19.465, "lng": -70.735, "descripcion": "Barrio al oeste del centro de Santiago, junto al Río Yaque del Norte." }
+    },
+    {
+      "type": "Feature", "id": "barrio_ensanche_bermudez",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.72,19.45],[-70.69,19.45],[-70.69,19.48],[-70.72,19.48],[-70.72,19.45]]] },
+      "properties": { "nombre": "Ensanche Bermúdez", "slug": "ensanche-bermudez", "lat": 19.465, "lng": -70.705, "descripcion": "Ensanche residencial activo al noroeste del centro de Santiago." }
+    },
+    {
+      "type": "Feature", "id": "barrio_el_centro",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.69,19.45],[-70.66,19.45],[-70.66,19.48],[-70.69,19.48],[-70.69,19.45]]] },
+      "properties": { "nombre": "El Centro", "slug": "el-centro", "lat": 19.465, "lng": -70.675, "descripcion": "Centro histórico y comercial de Santiago de los Caballeros, República Dominicana." }
+    },
+    {
+      "type": "Feature", "id": "barrio_ciudad_nueva",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.66,19.45],[-70.63,19.45],[-70.63,19.48],[-70.66,19.48],[-70.66,19.45]]] },
+      "properties": { "nombre": "Ciudad Nueva", "slug": "ciudad-nueva", "lat": 19.465, "lng": -70.645, "descripcion": "Barrio residencial moderno en la zona central-este de Santiago." }
+    },
+    {
+      "type": "Feature", "id": "barrio_reparto_confianza",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.63,19.45],[-70.60,19.45],[-70.60,19.48],[-70.63,19.48],[-70.63,19.45]]] },
+      "properties": { "nombre": "Reparto Confianza", "slug": "reparto-confianza", "lat": 19.465, "lng": -70.615, "descripcion": "Sector residencial al este de Santiago de los Caballeros." }
+    },
+    {
+      "type": "Feature", "id": "barrio_la_otra_banda",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.75,19.42],[-70.72,19.42],[-70.72,19.45],[-70.75,19.45],[-70.75,19.42]]] },
+      "properties": { "nombre": "La Otra Banda", "slug": "la-otra-banda", "lat": 19.435, "lng": -70.735, "descripcion": "Sector al otro lado del Río Yaque del Norte, en el municipio de Santiago." }
+    },
+    {
+      "type": "Feature", "id": "barrio_ensanche_espaillat",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.72,19.42],[-70.69,19.42],[-70.69,19.45],[-70.72,19.45],[-70.72,19.42]]] },
+      "properties": { "nombre": "Ensanche Espaillat", "slug": "ensanche-espaillat", "lat": 19.435, "lng": -70.705, "descripcion": "Ensanche residencial al suroeste del centro de Santiago." }
+    },
+    {
+      "type": "Feature", "id": "barrio_27_de_febrero",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.69,19.42],[-70.66,19.42],[-70.66,19.45],[-70.69,19.45],[-70.69,19.42]]] },
+      "properties": { "nombre": "27 de Febrero", "slug": "27-de-febrero", "lat": 19.435, "lng": -70.675, "descripcion": "Barrio central de Santiago, importante sector comercial y residencial." }
+    },
+    {
+      "type": "Feature", "id": "barrio_san_felipe",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.66,19.42],[-70.63,19.42],[-70.63,19.45],[-70.66,19.45],[-70.66,19.42]]] },
+      "properties": { "nombre": "San Felipe", "slug": "san-felipe", "lat": 19.435, "lng": -70.645, "descripcion": "Barrio tradicional al sur del centro de Santiago de los Caballeros." }
+    },
+    {
+      "type": "Feature", "id": "barrio_el_ejido",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.63,19.42],[-70.60,19.42],[-70.60,19.45],[-70.63,19.45],[-70.63,19.42]]] },
+      "properties": { "nombre": "El Ejido", "slug": "el-ejido", "lat": 19.435, "lng": -70.615, "descripcion": "Comunidad en la zona sureste de Santiago de los Caballeros." }
+    },
+    {
+      "type": "Feature", "id": "barrio_yaguajal",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.75,19.39],[-70.72,19.39],[-70.72,19.42],[-70.75,19.42],[-70.75,19.39]]] },
+      "properties": { "nombre": "Yaguajal", "slug": "yaguajal", "lat": 19.405, "lng": -70.735, "descripcion": "Sector al sur de Santiago, cerca del Río Yaque del Norte." }
+    },
+    {
+      "type": "Feature", "id": "barrio_la_trinitaria",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.72,19.39],[-70.69,19.39],[-70.69,19.42],[-70.72,19.42],[-70.72,19.39]]] },
+      "properties": { "nombre": "La Trinitaria", "slug": "la-trinitaria", "lat": 19.405, "lng": -70.705, "descripcion": "Barrio del sur de Santiago con historia y comunidad consolidada." }
+    },
+    {
+      "type": "Feature", "id": "barrio_los_ciruelitos",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.69,19.39],[-70.66,19.39],[-70.66,19.42],[-70.69,19.42],[-70.69,19.39]]] },
+      "properties": { "nombre": "Los Ciruelitos", "slug": "los-ciruelitos", "lat": 19.405, "lng": -70.675, "descripcion": "Comunidad residencial en la zona sur de Santiago de los Caballeros." }
+    },
+    {
+      "type": "Feature", "id": "barrio_gurabo",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.66,19.39],[-70.63,19.39],[-70.63,19.42],[-70.66,19.42],[-70.66,19.39]]] },
+      "properties": { "nombre": "Gurabo", "slug": "gurabo", "lat": 19.405, "lng": -70.645, "descripcion": "Sector en el sur-este de Santiago, con zonas residenciales y comerciales." }
+    },
+    {
+      "type": "Feature", "id": "barrio_libertad",
+      "geometry": { "type": "Polygon", "coordinates": [[[-70.63,19.39],[-70.60,19.39],[-70.60,19.42],[-70.63,19.42],[-70.63,19.39]]] },
+      "properties": { "nombre": "Libertad", "slug": "libertad", "lat": 19.405, "lng": -70.615, "descripcion": "Barrio en la zona sureste de Santiago de los Caballeros, RD." }
+    }
+  ]
+}
