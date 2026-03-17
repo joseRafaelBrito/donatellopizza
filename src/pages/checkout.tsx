@@ -19,7 +19,7 @@ export default function Checkout() {
   const [, setLocation] = useLocation();
   const { items, updateQuantity, removeFromCart, getCartTotal, clearCart } = useCart();
   const { toast } = useToast();
-  
+
   const [isProcessing, setIsProcessing] = useState(false);
   const [orderType, setOrderType] = useState<'pickup' | 'delivery'>('pickup');
   const [customer, setCustomer] = useState<Customer>({
@@ -36,7 +36,7 @@ export default function Checkout() {
   const [specialInstructions, setSpecialInstructions] = useState('');
 
   const subtotal = getCartTotal();
-  const tax = subtotal * 0.0875; // 8.75% tax rate
+  const tax = subtotal * 0.18; // 18% ITBIS República Dominicana
   const deliveryFee = orderType === 'delivery' ? 3.99 : 0;
   const total = subtotal + tax + deliveryFee;
 
@@ -60,25 +60,25 @@ export default function Checkout() {
 
   const validateForm = (): boolean => {
     if (!customer.name.trim()) {
-      toast({ title: "Error", description: "Please enter your name", variant: "destructive" });
+      toast({ title: "Error", description: "Por favor ingresa tu nombre", variant: "destructive" });
       return false;
     }
     if (!customer.phone.trim()) {
-      toast({ title: "Error", description: "Please enter your phone number", variant: "destructive" });
+      toast({ title: "Error", description: "Por favor ingresa tu número de teléfono", variant: "destructive" });
       return false;
     }
     if (!customer.email.trim()) {
-      toast({ title: "Error", description: "Please enter your email", variant: "destructive" });
+      toast({ title: "Error", description: "Por favor ingresa tu correo electrónico", variant: "destructive" });
       return false;
     }
     if (orderType === 'delivery') {
       if (!customer.address.street.trim() || !customer.address.city.trim() || !customer.address.state.trim() || !customer.address.zipCode.trim()) {
-        toast({ title: "Error", description: "Please fill in all address fields for delivery", variant: "destructive" });
+        toast({ title: "Error", description: "Por favor completa todos los campos de dirección para el delivery", variant: "destructive" });
         return false;
       }
     }
     if (items.length === 0) {
-      toast({ title: "Error", description: "Your cart is empty", variant: "destructive" });
+      toast({ title: "Error", description: "Tu carrito está vacío", variant: "destructive" });
       return false;
     }
     return true;
@@ -90,9 +90,8 @@ export default function Checkout() {
     setIsProcessing(true);
 
     try {
-      // Create order object
       const order: Order = {
-        id: `ORDER-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+        id: `ORDEN-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
         customer,
         items,
         subtotal,
@@ -105,28 +104,25 @@ export default function Checkout() {
         status: 'pending',
       };
 
-      // Send order to webhook
       const webhookResult = await WebhookService.sendOrderToWebhook(order);
 
       if (webhookResult.success) {
-        // Clear cart and redirect to success page
         clearCart();
         toast({
-          title: "Order Placed Successfully!",
-          description: `Order #${order.id} has been sent to our kitchen. You'll receive a confirmation shortly.`,
+          title: "¡Orden Realizada con Éxito!",
+          description: `La orden #${order.id} ha sido enviada a nuestra cocina. Recibirás una confirmación pronto.`,
         });
-        
-        // Store order for confirmation page
+
         localStorage.setItem('lastOrder', JSON.stringify(order));
         setLocation('/order-success');
       } else {
-        throw new Error(webhookResult.error || 'Failed to process order');
+        throw new Error(webhookResult.error || 'Error al procesar la orden');
       }
     } catch (error) {
-      console.error('Order processing error:', error);
+      console.error('Error al procesar la orden:', error);
       toast({
-        title: "Order Failed",
-        description: error instanceof Error ? error.message : "There was an error processing your order. Please try again.",
+        title: "Error en la Orden",
+        description: error instanceof Error ? error.message : "Hubo un error al procesar tu orden. Por favor intenta de nuevo.",
         variant: "destructive",
       });
     } finally {
@@ -142,16 +138,16 @@ export default function Checkout() {
           <div className="container mx-auto px-4 py-16 text-center">
             <ShoppingCart className="w-16 h-16 mx-auto mb-4 text-gray-400" />
             <h1 className="text-4xl font-playfair font-bold text-warm-gray mb-4">
-              Your Cart is Empty
+              Tu Carrito está Vacío
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Add some delicious pizzas to your cart before checking out!
+              ¡Agrega algunas pizzas deliciosas a tu carrito antes de finalizar la compra!
             </p>
             <Button
               onClick={() => setLocation("/menu")}
               className="bg-tomato-red hover:bg-red-600 text-white"
             >
-              Browse Menu
+              Ver el Menú
             </Button>
           </div>
         </main>
@@ -166,16 +162,16 @@ export default function Checkout() {
       <main className="pt-20 min-h-screen bg-gradient-to-b from-garlic-cream to-white">
         <div className="container mx-auto px-4 py-8">
           <h1 className="text-4xl font-playfair font-bold text-warm-gray mb-8 text-center">
-            Checkout
+            Finalizar Compra
           </h1>
 
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Order Summary */}
+            {/* Resumen del Pedido */}
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <ShoppingCart className="w-5 h-5" />
-                  Order Summary
+                  Resumen del Pedido
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -190,7 +186,7 @@ export default function Checkout() {
                       <div className="flex-1">
                         <h3 className="font-semibold">{item.name}</h3>
                         <p className="text-sm text-gray-600">{item.category}</p>
-                        <p className="font-bold">${item.price.toFixed(2)} each</p>
+                        <p className="font-bold">${item.price.toFixed(2)} c/u</p>
                       </div>
                       <div className="flex items-center gap-2">
                         <Button
@@ -229,12 +225,12 @@ export default function Checkout() {
                     <span>${subtotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Tax (8.75%):</span>
+                    <span>ITBIS (18%):</span>
                     <span>${tax.toFixed(2)}</span>
                   </div>
                   {orderType === 'delivery' && (
                     <div className="flex justify-between">
-                      <span>Delivery Fee:</span>
+                      <span>Cargo por Delivery:</span>
                       <span>${deliveryFee.toFixed(2)}</span>
                     </div>
                   )}
@@ -247,18 +243,18 @@ export default function Checkout() {
               </CardContent>
             </Card>
 
-            {/* Customer Information */}
+            {/* Información del Cliente */}
             <div className="space-y-6">
-              {/* Order Type */}
+              {/* Tipo de Orden */}
               <Card>
                 <CardHeader>
-                  <CardTitle>Order Type</CardTitle>
+                  <CardTitle>Tipo de Orden</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <RadioGroup value={orderType} onValueChange={(value: 'pickup' | 'delivery') => setOrderType(value)}>
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="pickup" id="pickup" />
-                      <Label htmlFor="pickup">Pickup</Label>
+                      <Label htmlFor="pickup">Recoger en tienda</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="delivery" id="delivery" />
@@ -268,46 +264,46 @@ export default function Checkout() {
                 </CardContent>
               </Card>
 
-              {/* Customer Details */}
+              {/* Datos del Cliente */}
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <CreditCard className="w-5 h-5" />
-                    Customer Information
+                    Información del Cliente
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <Label htmlFor="name">Full Name *</Label>
+                    <Label htmlFor="name">Nombre Completo *</Label>
                     <Input
                       id="name"
                       value={customer.name}
                       onChange={(e) => handleCustomerChange('name', e.target.value)}
-                      placeholder="John Doe"
+                      placeholder="Juan Pérez"
                       required
                     />
                   </div>
-                  
+
                   <div>
-                    <Label htmlFor="phone">Phone Number *</Label>
+                    <Label htmlFor="phone">Número de Teléfono *</Label>
                     <Input
                       id="phone"
                       type="tel"
                       value={customer.phone}
                       onChange={(e) => handleCustomerChange('phone', e.target.value)}
-                      placeholder="+1 (555) 123-4567"
+                      placeholder="(809) 555-0000"
                       required
                     />
                   </div>
-                  
+
                   <div>
-                    <Label htmlFor="email">Email Address *</Label>
+                    <Label htmlFor="email">Correo Electrónico *</Label>
                     <Input
                       id="email"
                       type="email"
                       value={customer.email}
                       onChange={(e) => handleCustomerChange('email', e.target.value)}
-                      placeholder="john@example.com"
+                      placeholder="juan@correo.com"
                       required
                     />
                   </div>
@@ -315,66 +311,66 @@ export default function Checkout() {
                   {orderType === 'delivery' && (
                     <>
                       <div>
-                        <Label htmlFor="street">Street Address *</Label>
+                        <Label htmlFor="street">Dirección *</Label>
                         <Input
                           id="street"
                           value={customer.address.street}
                           onChange={(e) => handleCustomerChange('address.street', e.target.value)}
-                          placeholder="123 Main Street"
+                          placeholder="Calle Principal #123"
                           required
                         />
                       </div>
-                      
+
                       <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <Label htmlFor="city">City *</Label>
+                          <Label htmlFor="city">Ciudad *</Label>
                           <Input
                             id="city"
                             value={customer.address.city}
                             onChange={(e) => handleCustomerChange('address.city', e.target.value)}
-                            placeholder="New York"
+                            placeholder="Santiago"
                             required
                           />
                         </div>
                         <div>
-                          <Label htmlFor="state">State *</Label>
+                          <Label htmlFor="state">Sector *</Label>
                           <Input
                             id="state"
                             value={customer.address.state}
                             onChange={(e) => handleCustomerChange('address.state', e.target.value)}
-                            placeholder="NY"
+                            placeholder="Los Jardines"
                             required
                           />
                         </div>
                       </div>
-                      
+
                       <div>
-                        <Label htmlFor="zipCode">ZIP Code *</Label>
+                        <Label htmlFor="zipCode">Referencia / Código Postal *</Label>
                         <Input
                           id="zipCode"
                           value={customer.address.zipCode}
                           onChange={(e) => handleCustomerChange('address.zipCode', e.target.value)}
-                          placeholder="10001"
+                          placeholder="51000"
                           required
                         />
                       </div>
                     </>
                   )}
-                  
+
                   <div>
-                    <Label htmlFor="instructions">Special Instructions</Label>
+                    <Label htmlFor="instructions">Instrucciones Especiales</Label>
                     <Textarea
                       id="instructions"
                       value={specialInstructions}
                       onChange={(e) => setSpecialInstructions(e.target.value)}
-                      placeholder="Any special requests or delivery instructions..."
+                      placeholder="Alguna solicitud especial o instrucción de entrega..."
                       rows={3}
                     />
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Place Order Button */}
+              {/* Botón de Ordenar */}
               <Button
                 onClick={handlePlaceOrder}
                 disabled={isProcessing}
@@ -384,12 +380,12 @@ export default function Checkout() {
                 {isProcessing ? (
                   <>
                     <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                    Processing Order...
+                    Procesando Orden...
                   </>
                 ) : (
                   <>
                     <CreditCard className="w-5 h-5 mr-2" />
-                    Place Order - ${total.toFixed(2)}
+                    Realizar Orden - ${total.toFixed(2)}
                   </>
                 )}
               </Button>

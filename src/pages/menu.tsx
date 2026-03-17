@@ -13,7 +13,7 @@ export default function Menu() {
   const { previewUrl, showPreview, hidePreview } = useUrlPreview();
 
   useEffect(() => {
-    document.title = "Our Pizza Menu | Donatello - Detroit, NY & Sicilian Pizzas in Santiago";
+    document.title = "Nuestro Menú de Pizzas | Donatello - Pizza Detroit, NY y Siciliana en Santiago";
 
     const updateOrCreate = (selector: string, attr: string, value: string, attrName = "content") => {
       let tag = document.querySelector(selector);
@@ -27,8 +27,8 @@ export default function Menu() {
       }
     };
 
-    updateOrCreate('meta[name="description"]', "name", "Explore Donatello's full menu featuring authentic Detroit, New York, and Sicilian-style pizzas in Santiago, DR. Order online today.");
-    updateOrCreate('meta[name="keywords"]', "name", "pizza menu Santiago, pizza en Santiago DR, Detroit pizza, New York pizza, Sicilian pizza, pizza artesanal, Donatello pizza");
+    updateOrCreate('meta[name="description"]', "name", "Explora el menú completo de Donatello con auténticas pizzas estilo Detroit, Nueva York y Siciliana en Santiago, RD. Ordena en línea hoy.");
+    updateOrCreate('meta[name="keywords"]', "name", "menú pizza Santiago, pizza en Santiago RD, pizza Detroit, pizza Nueva York, pizza siciliana, pizza artesanal, Donatello pizza");
 
     const updateOrCreateOGTag = (property: string, content: string) => {
       let ogTag = document.querySelector(`meta[property="${property}"]`);
@@ -42,8 +42,8 @@ export default function Menu() {
       }
     };
 
-    updateOrCreateOGTag("og:title", "Our Pizza Menu | Donatello - Detroit, NY & Sicilian Pizzas");
-    updateOrCreateOGTag("og:description", "Explore Donatello's full menu featuring authentic Detroit, New York, and Sicilian-style pizzas in Santiago, DR.");
+    updateOrCreateOGTag("og:title", "Nuestro Menú de Pizzas | Donatello - Pizza Detroit, NY y Siciliana");
+    updateOrCreateOGTag("og:description", "Explora el menú completo de Donatello con auténticas pizzas estilo Detroit, Nueva York y Siciliana en Santiago, RD.");
     updateOrCreateOGTag("og:type", "website");
     updateOrCreateOGTag("og:url", `${window.location.origin}/menu`);
     updateOrCreateOGTag("og:site_name", "Donatello Pizza");
@@ -62,8 +62,8 @@ export default function Menu() {
   const menuListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Donatello Pizza Menu",
-    "description": "Full menu of Detroit, New York, and Sicilian-style pizzas at Donatello Pizza in Santiago, DR",
+    "name": "Menú de Donatello Pizza",
+    "description": "Menú completo de pizzas estilo Detroit, Nueva York y Siciliana en Donatello Pizza, Santiago, RD",
     "numberOfItems": menuItems.length,
     "itemListElement": menuItems.map((item, index) => ({
       "@type": "ListItem",
@@ -77,8 +77,8 @@ export default function Menu() {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "Donatello Pizza",
-    "description": "Authentic artisan pizza restaurant featuring Detroit, New York, and Sicilian-style pizzas in Santiago, Dominican Republic.",
-    "servesCuisine": ["Pizza", "Italian", "American"],
+    "description": "Restaurante de pizza artesanal con pizzas estilo Detroit, Nueva York y Siciliana en Santiago, República Dominicana.",
+    "servesCuisine": ["Pizza", "Italiana", "Americana"],
     "url": window.location.origin,
     "hasMenu": `${window.location.origin}/menu`,
     "priceRange": "$$",
@@ -133,21 +133,21 @@ export default function Menu() {
         <div className="container mx-auto px-4 py-16">
           <div className="text-center mb-16">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-playfair font-bold text-warm-gray mb-4">
-              Our Pizza Menu
+              Nuestro Menú de Pizzas
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Authentic pizzas from Detroit, New York, and Sicily crafted with love and baked to perfection
+              Pizzas auténticas de Detroit, Nueva York y Sicilia, elaboradas con amor y horneadas a la perfección
             </p>
           </div>
 
-          {/* Detroit-Style Pizza Section */}
+          {/* Sección Pizza Estilo Detroit */}
           <div className="mb-16">
             <div className="text-center mb-8">
               <h2 className="text-3xl sm:text-4xl font-playfair font-bold text-warm-gray mb-2">
-                Detroit-Style Pizza
+                Pizza Estilo Detroit
               </h2>
               <p className="text-lg text-gray-600">
-                Square pizzas with caramelized crust edges and sauce on top
+                Pizzas cuadradas con bordes caramelizados y salsa por encima
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -176,7 +176,7 @@ export default function Menu() {
                         </h3>
                       </div>
                     </div>
-                    
+
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-3">
                         <Badge variant="secondary" className="bg-cheese-gold text-warm-gray">
@@ -191,14 +191,14 @@ export default function Menu() {
                           </div>
                         )}
                       </div>
-                      
+
                       <h3 className="text-xl font-playfair font-bold text-warm-gray mb-3 group-hover:text-tomato-red transition-colors duration-300">
                         {pizza.name}
                       </h3>
                       <p className="text-gray-600 mb-4 leading-relaxed text-sm">
                         {pizza.description}
                       </p>
-                      
+
                       <Button
                         className="w-full font-semibold py-3 rounded-lg transition-all duration-300 bg-tomato-red hover:bg-red-600 text-white"
                         onClick={(e) => {
@@ -206,7 +206,7 @@ export default function Menu() {
                           handleItemClick(pizza.slug);
                         }}
                       >
-                        View Details
+                        Ver Detalles
                       </Button>
                     </div>
                   </div>
@@ -215,14 +215,14 @@ export default function Menu() {
             </div>
           </div>
 
-          {/* New York-Style Pizza Section */}
+          {/* Sección Pizza Estilo Nueva York */}
           <div className="mb-16">
             <div className="text-center mb-8">
               <h2 className="text-3xl sm:text-4xl font-playfair font-bold text-warm-gray mb-2">
-                New York-Style Pizza
+                Pizza Estilo Nueva York
               </h2>
               <p className="text-lg text-gray-600">
-                Thin, foldable slices and classic whole pies
+                Porciones delgadas y plegables, y pizzas enteras clásicas
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -251,7 +251,7 @@ export default function Menu() {
                         </h3>
                       </div>
                     </div>
-                    
+
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-3">
                         <Badge variant="secondary" className="bg-cheese-gold text-warm-gray">
@@ -266,14 +266,14 @@ export default function Menu() {
                           </div>
                         )}
                       </div>
-                      
+
                       <h3 className="text-xl font-playfair font-bold text-warm-gray mb-3 group-hover:text-tomato-red transition-colors duration-300">
                         {pizza.name}
                       </h3>
                       <p className="text-gray-600 mb-4 leading-relaxed text-sm">
                         {pizza.description}
                       </p>
-                      
+
                       <Button
                         className="w-full font-semibold py-3 rounded-lg transition-all duration-300 bg-tomato-red hover:bg-red-600 text-white"
                         onClick={(e) => {
@@ -281,7 +281,7 @@ export default function Menu() {
                           handleItemClick(pizza.slug);
                         }}
                       >
-                        View Details
+                        Ver Detalles
                       </Button>
                     </div>
                   </div>
@@ -290,14 +290,14 @@ export default function Menu() {
             </div>
           </div>
 
-          {/* Sicilian Pizza Section */}
+          {/* Sección Pizza Siciliana */}
           <div className="mb-16">
             <div className="text-center mb-8">
               <h2 className="text-3xl sm:text-4xl font-playfair font-bold text-warm-gray mb-2">
-                Sicilian Pizza
+                Pizza Siciliana
               </h2>
               <p className="text-lg text-gray-600">
-                Thick, airy crust squares with traditional and modern toppings
+                Cuadrados con corteza gruesa y esponjosa, con ingredientes tradicionales y modernos
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -326,7 +326,7 @@ export default function Menu() {
                         </h3>
                       </div>
                     </div>
-                    
+
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-3">
                         <Badge variant="secondary" className="bg-cheese-gold text-warm-gray">
@@ -341,14 +341,14 @@ export default function Menu() {
                           </div>
                         )}
                       </div>
-                      
+
                       <h3 className="text-xl font-playfair font-bold text-warm-gray mb-3 group-hover:text-tomato-red transition-colors duration-300">
                         {pizza.name}
                       </h3>
                       <p className="text-gray-600 mb-4 leading-relaxed text-sm">
                         {pizza.description}
                       </p>
-                      
+
                       <Button
                         className="w-full font-semibold py-3 rounded-lg transition-all duration-300 bg-tomato-red hover:bg-red-600 text-white"
                         onClick={(e) => {
@@ -356,7 +356,7 @@ export default function Menu() {
                           handleItemClick(pizza.slug);
                         }}
                       >
-                        View Details
+                        Ver Detalles
                       </Button>
                     </div>
                   </div>
@@ -370,7 +370,7 @@ export default function Menu() {
               className="bg-cheese-gold hover:bg-yellow-500 text-warm-gray font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
             >
               <i className="fas fa-phone mr-2"></i>
-              Call to Order: (555) 123-4567
+              Llamar para Ordenar: (809) 555-1234
             </Button>
           </div>
         </div>

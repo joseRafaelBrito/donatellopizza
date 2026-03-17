@@ -1,26 +1,26 @@
 export default function Testimonials() {
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      review: "The best pizza I've ever had! The Detroit style is absolutely incredible - crispy edges, perfect cheese, and that sauce on top is genius!",
+      name: "Carlos Martínez",
+      review: "¡La mejor pizza que he probado! El estilo Detroit es absolutamente increíble: bordes crujientes, queso perfecto y esa salsa por encima es un genio.",
       rating: 5
     },
     {
-      name: "Mike Rodriguez",
-      review: "Authentic New York style pizza that takes me back to my childhood in Brooklyn. The wood-fired oven makes all the difference!",
+      name: "María Rodríguez",
+      review: "Pizza auténtica estilo Nueva York que me transporta de vuelta a mis viajes. ¡El horno de leña marca la diferencia!",
       rating: 5
     },
     {
-      name: "Emily Chen",
-      review: "The craft and attention to detail is evident in every bite. You can truly taste the passion that goes into every pizza!",
+      name: "José Peña",
+      review: "La artesanía y atención al detalle se nota en cada bocado. ¡Se siente la pasión que hay detrás de cada pizza!",
       rating: 5
     }
   ];
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
-      <i 
-        key={i} 
+      <i
+        key={i}
         className={`fas fa-star ${i < rating ? 'text-yellow-400' : 'text-gray-300'}`}
       ></i>
     ));
@@ -31,14 +31,14 @@ export default function Testimonials() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-playfair font-bold text-warm-gray mb-4">
-            What Our Customers Say
+            Lo Que Dicen Nuestros Clientes
           </h2>
-          <p className="text-xl text-gray-600">Taste the difference that passion makes</p>
+          <p className="text-xl text-gray-600">Siente la diferencia que hace la pasión</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div 
+            <div
               key={index}
               className="bg-garlic-cream p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-scale-in"
               style={{ animationDelay: `${index * 0.2}s` }}

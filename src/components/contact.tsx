@@ -11,14 +11,12 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
+
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
+
     setIsSubmitting(false);
     setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
+
     setTimeout(() => {
       setIsSubmitted(false);
       (e.target as HTMLFormElement).reset();
@@ -36,92 +34,95 @@ export default function Contact() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-playfair font-bold text-warm-gray mb-4">
-            Visit Our Kitchen
+            Visita Nuestra Cocina
           </h2>
-          <p className="text-xl text-gray-600">Experience the craft firsthand</p>
+          <p className="text-xl text-gray-600">Vive la artesanía de primera mano</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-2xl font-playfair font-bold text-warm-gray mb-6">Get in Touch</h3>
+            <h3 className="text-2xl font-playfair font-bold text-warm-gray mb-6">Contáctanos</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <Label htmlFor="name" className="block text-sm font-medium text-warm-gray mb-2">Name</Label>
-                <Input 
+                <Label htmlFor="name" className="block text-sm font-medium text-warm-gray mb-2">Nombre</Label>
+                <Input
                   id="name"
-                  type="text" 
+                  type="text"
+                  placeholder="Tu nombre completo"
                   required
                   className="w-full focus:ring-2 focus:ring-tomato-red focus:border-transparent transition-colors duration-300"
                 />
               </div>
               <div>
-                <Label htmlFor="email" className="block text-sm font-medium text-warm-gray mb-2">Email</Label>
-                <Input 
+                <Label htmlFor="email" className="block text-sm font-medium text-warm-gray mb-2">Correo electrónico</Label>
+                <Input
                   id="email"
-                  type="email" 
+                  type="email"
+                  placeholder="tu@correo.com"
                   required
                   className="w-full focus:ring-2 focus:ring-tomato-red focus:border-transparent transition-colors duration-300"
                 />
               </div>
               <div>
-                <Label htmlFor="message" className="block text-sm font-medium text-warm-gray mb-2">Message</Label>
-                <Textarea 
+                <Label htmlFor="message" className="block text-sm font-medium text-warm-gray mb-2">Mensaje</Label>
+                <Textarea
                   id="message"
-                  rows={4} 
+                  rows={4}
+                  placeholder="Escribe tu mensaje aquí..."
                   required
                   className="w-full focus:ring-2 focus:ring-tomato-red focus:border-transparent transition-colors duration-300"
                 />
               </div>
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 disabled={isSubmitting || isSubmitted}
                 className={`font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 ${
-                  isSubmitted 
-                    ? 'bg-green-500 hover:bg-green-600' 
+                  isSubmitted
+                    ? 'bg-green-500 hover:bg-green-600'
                     : 'bg-tomato-red hover:bg-red-600'
                 } text-white`}
               >
-                {isSubmitting ? 'Sending...' : isSubmitted ? 'Message Sent!' : 'Send Message'}
+                {isSubmitting ? 'Enviando...' : isSubmitted ? '¡Mensaje Enviado!' : 'Enviar Mensaje'}
               </Button>
             </form>
           </div>
 
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-playfair font-bold text-warm-gray mb-6">Location & Hours</h3>
+              <h3 className="text-2xl font-playfair font-bold text-warm-gray mb-6">Ubicación y Horarios</h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <i className="fas fa-map-marker-alt text-tomato-red text-xl mt-1"></i>
                   <div>
-                    <p className="font-semibold text-warm-gray">123 Artisan Street</p>
-                    <p className="text-gray-600">Craft District, CD 12345</p>
+                    <p className="font-semibold text-warm-gray">Av. Juan Pablo Duarte</p>
+                    <p className="text-gray-600">Santiago de los Caballeros, RD</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <i className="fas fa-clock text-tomato-red text-xl mt-1"></i>
                   <div>
-                    <p className="font-semibold text-warm-gray">Opening Hours</p>
-                    <p className="text-gray-600">Mon-Thu: 11am - 10pm</p>
-                    <p className="text-gray-600">Fri-Sat: 11am - 11pm</p>
-                    <p className="text-gray-600">Sun: 12pm - 9pm</p>
+                    <p className="font-semibold text-warm-gray">Horario de Atención</p>
+                    <p className="text-gray-600">Lun–Jue: 11am – 10pm</p>
+                    <p className="text-gray-600">Vie–Sáb: 11am – 11pm</p>
+                    <p className="text-gray-600">Dom: 12pm – 9pm</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <i className="fas fa-phone text-tomato-red text-xl mt-1"></i>
                   <div>
-                    <p className="font-semibold text-warm-gray">Phone</p>
-                    <p className="text-gray-600">(555) 123-4567</p>
+                    <p className="font-semibold text-warm-gray">Teléfono</p>
+                    <p className="text-gray-600">(809) 555-1234</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Map Placeholder */}
+            {/* Mapa */}
             <div className="bg-gray-300 h-64 rounded-xl flex items-center justify-center">
               <div className="text-center">
                 <i className="fas fa-map text-4xl text-gray-500 mb-2"></i>
-                <p className="text-gray-600">Interactive Map</p>
-                <p className="text-sm text-gray-500">Google Maps integration</p>
+                <p className="text-gray-600">Mapa Interactivo</p>
+                <p className="text-sm text-gray-500">Santiago de los Caballeros, RD</p>
               </div>
             </div>
           </div>

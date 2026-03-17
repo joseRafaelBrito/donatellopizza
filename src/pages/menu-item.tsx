@@ -33,12 +33,10 @@ function MenuItemPage() {
   const reviews = menuItem ? getReviewsByMenuItemId(menuItem.id) : [];
   const averageRating = menuItem ? getAverageRating(menuItem.id) : 0;
 
-  // Update page title and meta tags for SEO
   useEffect(() => {
     if (menuItem) {
       document.title = `${menuItem.name} - Donatello Pizza | ${menuItem.categoryName}`;
-      
-      // Update meta description
+
       const metaDescription = document.querySelector('meta[name="description"]');
       if (metaDescription) {
         metaDescription.setAttribute('content', menuItem.seoDescription);
@@ -49,7 +47,6 @@ function MenuItemPage() {
         document.head.appendChild(newMetaDescription);
       }
 
-      // Update meta keywords
       const metaKeywords = document.querySelector('meta[name="keywords"]');
       const keywords = menuItem.keywords.join(', ');
       if (metaKeywords) {
@@ -61,7 +58,6 @@ function MenuItemPage() {
         document.head.appendChild(newMetaKeywords);
       }
 
-      // Open Graph meta tags
       const updateOrCreateOGTag = (property: string, content: string) => {
         let ogTag = document.querySelector(`meta[property="${property}"]`);
         if (ogTag) {
@@ -81,7 +77,6 @@ function MenuItemPage() {
       updateOrCreateOGTag('og:url', `${window.location.origin}/menu/${slug}`);
       updateOrCreateOGTag('og:site_name', 'Donatello Pizza');
 
-      // Canonical URL
       let canonicalTag = document.querySelector('link[rel="canonical"]');
       if (canonicalTag) {
         canonicalTag.setAttribute('href', `${window.location.origin}/menu/${slug}`);
@@ -101,17 +96,17 @@ function MenuItemPage() {
         <main className="pt-20 min-h-screen bg-gradient-to-b from-garlic-cream to-white">
           <div className="container mx-auto px-4 py-16 text-center">
             <h1 className="text-4xl font-playfair font-bold text-warm-gray mb-4">
-              Menu Item Not Found
+              Producto no encontrado
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              The menu item you're looking for doesn't exist.
+              El producto que buscas no existe en nuestro menú.
             </p>
             <Button
               onClick={() => setLocation("/menu")}
               className="bg-tomato-red hover:bg-red-600 text-white"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Menu
+              Volver al Menú
             </Button>
           </div>
         </main>
@@ -122,8 +117,7 @@ function MenuItemPage() {
 
   const handleSubmitReview = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would submit to an API
-    console.log("New review:", newReview);
+    console.log("Nueva reseña:", newReview);
     setNewReview({ name: "", rating: 5, comment: "" });
     setShowReviewForm(false);
   };
@@ -144,7 +138,6 @@ function MenuItemPage() {
     );
   };
 
-  // Schema.org structured data
   const menuItemSchema: StructuredData = {
     "@context": "https://schema.org",
     "@type": "MenuItem",
@@ -161,7 +154,7 @@ function MenuItemPage() {
       "@type": "NutritionInformation",
       "calories": menuItem.calories
     },
-    "suitableForDiet": menuItem.allergens.includes("Pork") ? [] : ["https://schema.org/HalalDiet"],
+    "suitableForDiet": menuItem.allergens.includes("Cerdo") ? [] : ["https://schema.org/HalalDiet"],
     "menuAddOn": menuItem.ingredients.map(ingredient => ({
       "@type": "MenuAddOn",
       "name": ingredient
@@ -213,13 +206,13 @@ function MenuItemPage() {
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Home",
+        "name": "Inicio",
         "item": `${window.location.origin}/`
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Menu",
+        "name": "Menú",
         "item": `${window.location.origin}/menu`
       },
       {
@@ -235,8 +228,8 @@ function MenuItemPage() {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "Donatello Pizza",
-    "description": "Authentic artisan pizza restaurant featuring Detroit, New York, and Sicilian-style pizzas in Santiago, Dominican Republic.",
-    "servesCuisine": ["Pizza", "Italian", "American"],
+    "description": "Restaurante de pizza artesanal con pizzas estilo Detroit, Nueva York y Siciliana en Santiago, República Dominicana.",
+    "servesCuisine": ["Pizza", "Italiana", "Americana"],
     "url": window.location.origin,
     "hasMenu": `${window.location.origin}/menu`,
     "priceRange": "$$",
@@ -256,8 +249,7 @@ function MenuItemPage() {
   return (
     <>
       <Header />
-      
-      {/* Schema.org structured data */}
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(menuItemSchema) }}
@@ -277,7 +269,7 @@ function MenuItemPage() {
 
       <main className="pt-20 min-h-screen bg-gradient-to-b from-garlic-cream to-white">
         <div className="container mx-auto px-4 py-8">
-          {/* Breadcrumb Navigation */}
+          {/* Migas de pan */}
           <nav className="flex items-center space-x-2 text-sm text-gray-600 mb-6">
             <button
               onClick={() => setLocation("/")}
@@ -286,7 +278,7 @@ function MenuItemPage() {
               className="flex items-center hover:text-tomato-red transition-colors duration-200"
             >
               <Home className="w-4 h-4 mr-1" />
-              Home
+              Inicio
             </button>
             <ChevronRight className="w-4 h-4" />
             <button
@@ -295,13 +287,13 @@ function MenuItemPage() {
               onMouseLeave={hidePreview}
               className="hover:text-tomato-red transition-colors duration-200"
             >
-              Menu
+              Menú
             </button>
             <ChevronRight className="w-4 h-4" />
             <span className="text-warm-gray font-medium">{menuItem.name}</span>
           </nav>
 
-          {/* Back to Menu Button */}
+          {/* Botón volver al menú */}
           <Button
             variant="ghost"
             onClick={() => setLocation("/menu")}
@@ -310,13 +302,12 @@ function MenuItemPage() {
             className="mb-6 text-warm-gray hover:text-tomato-red"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Menu
+            Volver al Menú
           </Button>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {/* Main Content */}
+            {/* Contenido principal */}
             <div className="lg:col-span-2">
-              {/* Hero Section */}
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
                 <div className="relative">
                   <img
@@ -328,7 +319,7 @@ function MenuItemPage() {
                     {menuItem.price}
                   </div>
                 </div>
-                
+
                 <div className="p-8">
                   <div className="flex items-center gap-2 mb-4">
                     <Badge variant="secondary" className="bg-cheese-gold text-warm-gray">
@@ -337,7 +328,7 @@ function MenuItemPage() {
                     <div className="flex items-center gap-1">
                       {renderStars(averageRating)}
                       <span className="text-sm text-gray-600 ml-2">
-                        ({reviews.length} reviews)
+                        ({reviews.length} {reviews.length === 1 ? "reseña" : "reseñas"})
                       </span>
                     </div>
                   </div>
@@ -345,7 +336,7 @@ function MenuItemPage() {
                   <h1 className="text-4xl sm:text-5xl font-playfair font-bold text-warm-gray mb-4">
                     {menuItem.name}
                   </h1>
-                  
+
                   <p className="text-xl text-gray-700 mb-6 leading-relaxed">
                     {menuItem.seoDescription}
                   </p>
@@ -354,26 +345,26 @@ function MenuItemPage() {
                     <div className="flex items-center gap-3">
                       <Clock className="w-5 h-5 text-tomato-red" />
                       <div>
-                        <div className="font-semibold text-warm-gray">Prep Time</div>
+                        <div className="font-semibold text-warm-gray">Tiempo de Preparación</div>
                         <div className="text-gray-600">{menuItem.prepTime}</div>
                       </div>
                     </div>
-                    
+
                     {menuItem.calories && (
                       <div className="flex items-center gap-4 mb-6">
                         <Users className="w-5 h-5 text-tomato-red" />
                         <div>
-                          <div className="font-semibold text-warm-gray">Calories</div>
-                          <div className="text-gray-600">{menuItem.calories} per serving</div>
+                          <div className="font-semibold text-warm-gray">Calorías</div>
+                          <div className="text-gray-600">{menuItem.calories} por porción</div>
                         </div>
                       </div>
                     )}
                   </div>
 
-                  {/* Ingredients */}
+                  {/* Ingredientes */}
                   <div className="mb-8">
                     <h3 className="text-2xl font-playfair font-bold text-warm-gray mb-4">
-                      Ingredients
+                      Ingredientes
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {menuItem.ingredients.map((ingredient, index) => (
@@ -384,11 +375,11 @@ function MenuItemPage() {
                     </div>
                   </div>
 
-                  {/* Allergens */}
+                  {/* Alérgenos */}
                   {menuItem.allergens.length > 0 && (
                     <div className="mb-8">
                       <h3 className="text-lg font-semibold text-warm-gray mb-2">
-                        Contains Allergens:
+                        Contiene Alérgenos:
                       </h3>
                       <div className="flex flex-wrap gap-2">
                         {menuItem.allergens.map((allergen, index) => (
@@ -400,7 +391,7 @@ function MenuItemPage() {
                     </div>
                   )}
 
-                  {/* Price and Add to Cart */}
+                  {/* Precio y Agregar al Carrito */}
                   <div className="flex items-center gap-4 mb-6">
                     <span className="text-3xl font-bold text-tomato-red">
                       {menuItem.price}
@@ -424,31 +415,31 @@ function MenuItemPage() {
                       </Button>
                     </div>
                   </div>
-                  
+
                   <Button
                     size="lg"
                     className="w-full sm:w-auto bg-tomato-red hover:bg-red-600 text-white font-bold py-4 px-8 rounded-lg text-lg"
                     onClick={() => {
                       addToCart(menuItem, quantity);
                       toast({
-                        title: "Added to Cart!",
-                        description: `${quantity}x ${menuItem.name} added to your cart.`,
+                        title: "¡Agregado al Carrito!",
+                        description: `${quantity}x ${menuItem.name} agregado a tu carrito.`,
                       });
                     }}
                   >
                     <ShoppingCart className="w-5 h-5 mr-2" />
-                    Add to Cart
+                    Agregar al Carrito
                   </Button>
                 </div>
               </div>
             </div>
 
-            {/* Sidebar */}
+            {/* Barra lateral */}
             <div className="lg:col-span-1">
               <Card className="sticky top-24">
                 <CardHeader>
                   <CardTitle className="flex items-center justify-between">
-                    <span>Customer Reviews</span>
+                    <span>Reseñas de Clientes</span>
                     <div className="flex items-center gap-1">
                       {renderStars(averageRating)}
                       <span className="text-sm text-gray-600 ml-1">
@@ -458,7 +449,7 @@ function MenuItemPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  {/* Reviews List */}
+                  {/* Lista de Reseñas */}
                   <div className="space-y-4 mb-6 max-h-96 overflow-y-auto">
                     {reviews.map((review) => (
                       <div key={review.id} className="border-b pb-4 last:border-b-0">
@@ -468,54 +459,54 @@ function MenuItemPage() {
                             {renderStars(review.rating)}
                             {review.verified && (
                               <Badge variant="secondary" className="text-xs ml-2">
-                                Verified
+                                Verificado
                               </Badge>
                             )}
                           </div>
                         </div>
                         <p className="text-sm text-gray-600 mb-1">{review.comment}</p>
                         <div className="text-xs text-gray-400">
-                          {new Date(review.date).toLocaleDateString()}
+                          {new Date(review.date).toLocaleDateString('es-DO')}
                         </div>
                       </div>
                     ))}
                   </div>
 
-                  {/* Add Review Button */}
+                  {/* Botón Agregar Reseña */}
                   {!showReviewForm ? (
                     <Button
                       onClick={() => setShowReviewForm(true)}
                       variant="outline"
                       className="w-full"
                     >
-                      Leave a Review
+                      Dejar una Reseña
                     </Button>
                   ) : (
                     <form onSubmit={handleSubmitReview} className="space-y-4">
                       <Input
-                        placeholder="Your name"
+                        placeholder="Tu nombre"
                         value={newReview.name}
                         onChange={(e) => setNewReview({ ...newReview, name: e.target.value })}
                         required
                       />
-                      
+
                       <div>
-                        <label className="block text-sm font-medium mb-2">Rating</label>
-                        {renderStars(newReview.rating, true, (rating) => 
+                        <label className="block text-sm font-medium mb-2">Calificación</label>
+                        {renderStars(newReview.rating, true, (rating) =>
                           setNewReview({ ...newReview, rating })
                         )}
                       </div>
-                      
+
                       <Textarea
-                        placeholder="Write your review..."
+                        placeholder="Escribe tu reseña..."
                         value={newReview.comment}
                         onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
                         required
                       />
-                      
+
                       <div className="flex gap-2">
                         <Button type="submit" size="sm" className="flex-1">
-                          Submit
+                          Enviar
                         </Button>
                         <Button
                           type="button"
@@ -523,7 +514,7 @@ function MenuItemPage() {
                           size="sm"
                           onClick={() => setShowReviewForm(false)}
                         >
-                          Cancel
+                          Cancelar
                         </Button>
                       </div>
                     </form>
@@ -534,7 +525,7 @@ function MenuItemPage() {
           </div>
         </div>
       </main>
-      
+
       <Footer />
       <BottomUrlPreview url={previewUrl} />
     </>

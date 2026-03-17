@@ -61,10 +61,9 @@ export default function Header() {
 
   const handlePreorderSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate preorder submission
     toast({
-      title: "Preorder Confirmed!",
-      description: `Your ${preorderForm.pizza} pizza will be ready for pickup at ${preorderForm.pickupTime}. We'll call you at ${preorderForm.phone}.`,
+      title: "¡Preorden Confirmada!",
+      description: `Tu pizza ${preorderForm.pizza} estará lista para recoger a las ${preorderForm.pickupTime}. Te llamaremos al ${preorderForm.phone}.`,
     });
     setIsPreorderModalOpen(false);
     setPreorderForm({
@@ -154,7 +153,7 @@ export default function Header() {
               onClick={() => setIsPreorderModalOpen(true)}
               className="preorder-button"
             >
-              PREORDER
+              PREORDENAR
             </button>
           </div>
 
@@ -221,14 +220,14 @@ export default function Header() {
               className="flex items-center justify-center w-full text-white hover:text-cheese-gold transition-colors duration-300 font-medium py-2"
             >
               <ShoppingCart className="w-5 h-5 mr-2" />
-              Cart ({getCartItemCount()}) - ${getCartTotal().toFixed(2)}
+              Carrito ({getCartItemCount()}) - ${getCartTotal().toFixed(2)}
             </button>
             <div className="mt-2 flex justify-center">
               <button
                 onClick={() => setIsPreorderModalOpen(true)}
                 className="preorder-button-mobile"
               >
-                PREORDER
+                PREORDENAR
               </button>
             </div>
           </div>
@@ -245,9 +244,10 @@ export default function Header() {
           </DialogHeader>
           <form onSubmit={handlePreorderSubmit} className="space-y-4">
             <div>
-              <Label htmlFor="name">Name</Label>
+              <Label htmlFor="name">Nombre</Label>
               <Input
                 id="name"
+                placeholder="Tu nombre completo"
                 value={preorderForm.name}
                 onChange={(e) =>
                   setPreorderForm({ ...preorderForm, name: e.target.value })
@@ -256,10 +256,11 @@ export default function Header() {
               />
             </div>
             <div>
-              <Label htmlFor="phone">Phone Number</Label>
+              <Label htmlFor="phone">Número de Teléfono</Label>
               <Input
                 id="phone"
                 type="tel"
+                placeholder="(809) 555-0000"
                 value={preorderForm.phone}
                 onChange={(e) =>
                   setPreorderForm({ ...preorderForm, phone: e.target.value })
@@ -268,7 +269,7 @@ export default function Header() {
               />
             </div>
             <div>
-              <Label htmlFor="pizza">Pizza Type</Label>
+              <Label htmlFor="pizza">Tipo de Pizza</Label>
               <Select
                 value={preorderForm.pizza}
                 onValueChange={(value) =>
@@ -276,7 +277,7 @@ export default function Header() {
                 }
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Choose your pizza" />
+                  <SelectValue placeholder="Elige tu pizza" />
                 </SelectTrigger>
                 <SelectContent>
                   {menuItems.map((item) => (
@@ -288,7 +289,7 @@ export default function Header() {
               </Select>
             </div>
             <div>
-              <Label htmlFor="quantity">Quantity</Label>
+              <Label htmlFor="quantity">Cantidad</Label>
               <Select
                 value={preorderForm.quantity}
                 onValueChange={(value) =>
@@ -308,7 +309,7 @@ export default function Header() {
               </Select>
             </div>
             <div>
-              <Label htmlFor="pickupTime">Pickup Time</Label>
+              <Label htmlFor="pickupTime">Hora de Recogida</Label>
               <Input
                 id="pickupTime"
                 type="time"

@@ -3,19 +3,18 @@ import React from 'react';
 export default function PizzaPyramids() {
   return (
     <div className="relative flex flex-col items-center py-16 bg-gradient-to-b from-orange-100 to-yellow-50">
-      {/* Title */}
+      {/* Título */}
       <div className="mb-12">
         <h2 className="text-4xl sm:text-5xl font-playfair font-bold text-warm-gray text-center">
-          The God of Pizza
+          El Dios de la Pizza
         </h2>
       </div>
 
-      {/* Pyramids Container */}
+      {/* Contenedor de Pirámides */}
       <div className="flex items-end justify-center space-x-8">
-        {/* Left Pizza Slice - Smallest */}
+        {/* Porción izquierda - Pequeña */}
         <div className="relative">
           <svg width="120" height="100" viewBox="0 0 120 100" className="hover-scale">
-            {/* Pizza Slice Base with gradient */}
             <defs>
               <linearGradient id="pizzaGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#FFA500"/>
@@ -29,23 +28,20 @@ export default function PizzaPyramids() {
                 <stop offset="100%" stopColor="#FF8C00"/>
               </radialGradient>
             </defs>
-            
-            {/* Pizza base */}
+
             <path
               d="M10 90 L60 10 L110 90 Z"
               fill="url(#pizzaGrad1)"
               stroke="#B8860B"
               strokeWidth="2"
             />
-            
-            {/* Cheese layer */}
+
             <path
               d="M15 85 L60 15 L105 85 Z"
               fill="url(#cheese1)"
               opacity="0.9"
             />
-            
-            {/* Crust with texture */}
+
             <path
               d="M10 90 L110 90"
               stroke="#CD853F"
@@ -59,8 +55,7 @@ export default function PizzaPyramids() {
               strokeLinecap="round"
               opacity="0.7"
             />
-            
-            {/* Pepperoni with realistic shading */}
+
             <g>
               <circle cx="40" cy="55" r="5" fill="#B22222" stroke="#8B0000" strokeWidth="1"/>
               <circle cx="42" cy="53" r="1.5" fill="#DC143C" opacity="0.6"/>
@@ -71,8 +66,7 @@ export default function PizzaPyramids() {
               <circle cx="76" cy="58" r="1.2" fill="#DC143C" opacity="0.6"/>
               <circle cx="73" cy="62" r="0.7" fill="#8B0000" opacity="0.4"/>
             </g>
-            
-            {/* Third Eye */}
+
             <g className="pizza-pyramid-eye">
               <circle cx="60" cy="45" r="8" fill="white" stroke="#8B4513" strokeWidth="1"/>
               <circle cx="60" cy="45" r="5" fill="#4169E1" className="pyramid-eye-movement"/>
@@ -82,10 +76,9 @@ export default function PizzaPyramids() {
           </svg>
         </div>
 
-        {/* Center Pizza Slice - Largest */}
+        {/* Porción central - Grande */}
         <div className="relative">
           <svg width="150" height="130" viewBox="0 0 150 130" className="hover-scale">
-            {/* Pizza Slice Base with gradient */}
             <defs>
               <linearGradient id="pizzaGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#FFB347"/>
@@ -100,23 +93,20 @@ export default function PizzaPyramids() {
                 <stop offset="100%" stopColor="#FF8C00"/>
               </radialGradient>
             </defs>
-            
-            {/* Pizza base */}
+
             <path
               d="M10 120 L75 10 L140 120 Z"
               fill="url(#pizzaGrad2)"
               stroke="#B8860B"
               strokeWidth="2"
             />
-            
-            {/* Cheese layer */}
+
             <path
               d="M18 115 L75 18 L132 115 Z"
               fill="url(#cheese2)"
               opacity="0.85"
             />
-            
-            {/* Crust with texture */}
+
             <path
               d="M10 120 L140 120"
               stroke="#CD853F"
@@ -137,8 +127,7 @@ export default function PizzaPyramids() {
               strokeLinecap="round"
               opacity="0.5"
             />
-            
-            {/* Pepperoni with realistic shading */}
+
             <g>
               <circle cx="50" cy="65" r="6" fill="#B22222" stroke="#8B0000" strokeWidth="1"/>
               <circle cx="52" cy="63" r="2" fill="#DC143C" opacity="0.6"/>
@@ -159,8 +148,7 @@ export default function PizzaPyramids() {
               <circle cx="106" cy="78" r="1.3" fill="#DC143C" opacity="0.6"/>
               <circle cx="103" cy="82" r="0.7" fill="#8B0000" opacity="0.4"/>
             </g>
-            
-            {/* Third Eye */}
+
             <g className="pizza-pyramid-eye">
               <circle cx="75" cy="55" r="10" fill="white" stroke="#8B4513" strokeWidth="1"/>
               <circle cx="75" cy="55" r="6" fill="#4169E1" className="pyramid-eye-movement"/>
@@ -170,10 +158,9 @@ export default function PizzaPyramids() {
           </svg>
         </div>
 
-        {/* Right Pizza Slice - Medium */}
+        {/* Porción derecha - Mediana */}
         <div className="relative">
           <svg width="130" height="110" viewBox="0 0 130 110" className="hover-scale">
-            {/* Pizza Slice Base with gradient */}
             <defs>
               <linearGradient id="pizzaGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#FFCC5C"/>
@@ -188,23 +175,20 @@ export default function PizzaPyramids() {
                 <stop offset="100%" stopColor="#FFA500"/>
               </radialGradient>
             </defs>
-            
-            {/* Pizza base */}
+
             <path
               d="M10 100 L65 10 L120 100 Z"
               fill="url(#pizzaGrad3)"
               stroke="#B8860B"
               strokeWidth="2"
             />
-            
-            {/* Cheese layer */}
+
             <path
               d="M16 95 L65 16 L114 95 Z"
               fill="url(#cheese3)"
               opacity="0.88"
             />
-            
-            {/* Crust with texture */}
+
             <path
               d="M10 100 L120 100"
               stroke="#CD853F"
@@ -225,8 +209,7 @@ export default function PizzaPyramids() {
               strokeLinecap="round"
               opacity="0.5"
             />
-            
-            {/* Pepperoni with realistic shading */}
+
             <g>
               <circle cx="45" cy="60" r="5.5" fill="#B22222" stroke="#8B0000" strokeWidth="1"/>
               <circle cx="47" cy="58" r="1.8" fill="#DC143C" opacity="0.6"/>
@@ -242,8 +225,7 @@ export default function PizzaPyramids() {
               <circle cx="62" cy="73" r="1.3" fill="#DC143C" opacity="0.6"/>
               <circle cx="58" cy="77" r="0.7" fill="#8B0000" opacity="0.4"/>
             </g>
-            
-            {/* Third Eye */}
+
             <g className="pizza-pyramid-eye">
               <circle cx="65" cy="50" r="9" fill="white" stroke="#8B4513" strokeWidth="1"/>
               <circle cx="65" cy="50" r="6" fill="#4169E1" className="pyramid-eye-movement"/>
@@ -254,10 +236,10 @@ export default function PizzaPyramids() {
         </div>
       </div>
 
-      {/* "In God we trust" text under center pyramid */}
+      {/* Texto bajo la pirámide central */}
       <div className="mt-8">
         <p className="text-2xl sm:text-3xl font-playfair font-bold text-warm-gray text-center tracking-wider">
-          In God we trust
+          En el oficio confiamos
         </p>
       </div>
 

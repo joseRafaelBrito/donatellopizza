@@ -21,62 +21,66 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-2xl font-playfair font-bold">Donatello</h3>
-                <p className="text-sm text-cheese-gold font-dancing">We believe in the craft</p>
+                <p className="text-sm text-cheese-gold font-dancing">Creemos en el oficio</p>
               </div>
             </div>
             <p className="text-gray-300 mb-6">
-              Crafting artisan pizzas with passion and tradition since day one. 
-              Every pizza tells a story of quality, craft, and culinary excellence.
+              Elaboramos pizzas artesanales con pasión y tradición desde el primer día.
+              Cada pizza cuenta una historia de calidad, artesanía y excelencia culinaria.
             </p>
             <div className="flex space-x-4">
-              <a 
-                href="#" 
+              <a
+                href="#"
+                aria-label="Facebook de Donatello Pizza"
                 className="w-10 h-10 bg-tomato-red rounded-full flex items-center justify-center hover:bg-red-600 transition-colors duration-300"
               >
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
+                aria-label="Instagram de Donatello Pizza"
                 className="w-10 h-10 bg-tomato-red rounded-full flex items-center justify-center hover:bg-red-600 transition-colors duration-300"
               >
                 <i className="fab fa-instagram"></i>
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
+                aria-label="Twitter de Donatello Pizza"
                 className="w-10 h-10 bg-tomato-red rounded-full flex items-center justify-center hover:bg-red-600 transition-colors duration-300"
               >
                 <i className="fab fa-twitter"></i>
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
+                aria-label="Yelp de Donatello Pizza"
                 className="w-10 h-10 bg-tomato-red rounded-full flex items-center justify-center hover:bg-red-600 transition-colors duration-300"
               >
                 <i className="fab fa-yelp"></i>
               </a>
             </div>
           </div>
-          
+
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4">Navegación</h4>
             <ul className="space-y-2">
               <li>
-                <button 
+                <button
                   onClick={() => scrollToSection('home')}
                   className="text-gray-300 hover:text-cheese-gold transition-colors duration-300"
                 >
-                  Home
+                  Inicio
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('menu')}
+                <button
+                  onClick={() => setLocation('/menu')}
                   className="text-gray-300 hover:text-cheese-gold transition-colors duration-300"
                 >
-                  Menu
+                  Menú
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   onClick={() => setLocation('/barrios')}
                   className="text-gray-300 hover:text-cheese-gold transition-colors duration-300"
                 >
@@ -84,19 +88,19 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   onClick={() => scrollToSection('about')}
                   className="text-gray-300 hover:text-cheese-gold transition-colors duration-300"
                 >
-                  About Us
+                  Sobre Nosotros
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   onClick={() => scrollToSection('contact')}
                   className="text-gray-300 hover:text-cheese-gold transition-colors duration-300"
                 >
-                  Contact
+                  Contacto
                 </button>
               </li>
             </ul>
@@ -125,22 +129,22 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          
+
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
+            <h4 className="text-lg font-semibold mb-4">Información de Contacto</h4>
             <div className="space-y-2 text-gray-300">
-              <p>123 Artisan Street</p>
-              <p>Craft District, CD 12345</p>
-              <p>(555) 123-4567</p>
-              <p>hello@donatello.pizza</p>
+              <p>Av. Juan Pablo Duarte</p>
+              <p>Santiago de los Caballeros, RD</p>
+              <p>(809) 555-1234</p>
+              <p>hola@donatello.pizza</p>
             </div>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-600 mt-12 pt-8 text-center">
           <p className="text-gray-300">
-            © 2024 Donatello Pizza. All rights reserved. 
-            <span className="text-tomato-red font-dancing ml-2">Crafted with ❤️ by Jose Estevez</span>
+            © 2024 Donatello Pizza. Todos los derechos reservados.
+            <span className="text-tomato-red font-dancing ml-2">Hecho con ❤️ por Jose Estevez</span>
           </p>
         </div>
       </div>
