@@ -220,7 +220,7 @@ export default function Header() {
               className="flex items-center justify-center w-full text-white hover:text-cheese-gold transition-colors duration-300 font-medium py-2"
             >
               <ShoppingCart className="w-5 h-5 mr-2" />
-              Carrito ({getCartItemCount()}) - ${getCartTotal().toFixed(2)}
+              Carrito ({getCartItemCount()}) - RD${getCartTotal().toFixed(2)}
             </button>
             <div className="mt-2 flex justify-center">
               <button

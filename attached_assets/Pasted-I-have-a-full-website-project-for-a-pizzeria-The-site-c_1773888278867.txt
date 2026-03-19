@@ -1,0 +1,68 @@
+I have a full website project for a pizzeria. The site currently has English text, menus, labels, SEO metadata, structured data, and hidden UI text. I want the entire site translated to Spanish for launch in the Dominican Republic.
+
+Please do a **complete, exhaustive translation** — nothing should remain in English.
+
+---
+
+### 🔹 Translation Requirements
+
+1. **Frontend (React, HTML, TSX, JSX, CSS labels)**
+
+* All headings, paragraphs, buttons, navigation menus
+* Menu items and pizza descriptions
+* Footer text
+* Hero sections and tagline text
+* Map labels, Leaflet popups
+* Tooltips, placeholders, small labels, corner keywords, minor UI text
+
+2. **Backend**
+
+* API responses returned to the frontend
+* Strings in Node.js, server scripts, JSON files
+* Any text that users may see
+
+3. **SEO Metadata**
+
+* Titles, meta descriptions, meta keywords
+* Open Graph (og:title, og:description)
+* Canonical URLs with English text replaced
+* Sitemap entries if text-based
+
+4. **Structured Data / JSON-LD**
+
+* Restaurant/LocalBusiness fields: name, description, servesCuisine, areaServed, address
+* Translate all user-facing or SEO-relevant text to Spanish
+* Keep barrio names and the brand name (Donatello) as-is
+
+5. **Hidden / Small / Corner text**
+
+* Image alt attributes
+* Footer small text
+* Input placeholders
+* Map labels
+* Any text not immediately visible to users but important for SEO or accessibility
+
+---
+
+### 🔹 Localization Rules
+
+* Translate all English to **Dominican Spanish**
+* Preserve brand name: **Donatello**
+* Preserve barrio names
+* Update currency where needed to **RD$**
+* Maintain routes, functionality, and app structure exactly
+* Ensure **no English text remains** anywhere
+
+---
+
+### 🔹 Deliverables
+
+* Updated frontend pages fully in Spanish
+* Updated backend code with all user-facing text in Spanish
+* SEO metadata, structured data, JSON-LD, and alt text fully translated
+* Map labels, popups, tooltips, and hidden UI text translated
+* Ensure all functionality is unchanged and the website works perfectly after translation
+
+---
+
+**Goal:** The website must be fully Spanish, including **all corners of the site and backend**, ready to launch in Santiago de los Caballeros, Dominican Republic.

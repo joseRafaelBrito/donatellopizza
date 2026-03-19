@@ -136,7 +136,7 @@ export default function BarrioPage() {
     "@type": "Restaurant",
     "name": "Donatello Pizza",
     "description": `Auténtica pizza estilo Detroit con delivery en ${barrio.nombre}, Santiago de los Caballeros, República Dominicana.`,
-    "servesCuisine": ["Detroit Style Pizza", "Pizza", "Italian-American"],
+    "servesCuisine": ["Pizza Estilo Detroit", "Pizza", "Ítalo-Americana"],
     "url": `${window.location.origin}/barrios/${barrio.slug}`,
     "hasMenu": `${window.location.origin}/menu`,
     "priceRange": "$$",

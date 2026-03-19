@@ -186,7 +186,7 @@ export default function Checkout() {
                       <div className="flex-1">
                         <h3 className="font-semibold">{item.name}</h3>
                         <p className="text-sm text-gray-600">{item.category}</p>
-                        <p className="font-bold">${item.price.toFixed(2)} c/u</p>
+                        <p className="font-bold">RD${item.price.toFixed(2)} c/u</p>
                       </div>
                       <div className="flex items-center gap-2">
                         <Button
@@ -222,22 +222,22 @@ export default function Checkout() {
                 <div className="space-y-2">
                   <div className="flex justify-between">
                     <span>Subtotal:</span>
-                    <span>${subtotal.toFixed(2)}</span>
+                    <span>RD${subtotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span>ITBIS (18%):</span>
-                    <span>${tax.toFixed(2)}</span>
+                    <span>RD${tax.toFixed(2)}</span>
                   </div>
                   {orderType === 'delivery' && (
                     <div className="flex justify-between">
                       <span>Cargo por Delivery:</span>
-                      <span>${deliveryFee.toFixed(2)}</span>
+                      <span>RD${deliveryFee.toFixed(2)}</span>
                     </div>
                   )}
                   <Separator />
                   <div className="flex justify-between text-lg font-bold">
                     <span>Total:</span>
-                    <span>${total.toFixed(2)}</span>
+                    <span>RD${total.toFixed(2)}</span>
                   </div>
                 </div>
               </CardContent>
@@ -258,7 +258,7 @@ export default function Checkout() {
                     </div>
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="delivery" id="delivery" />
-                      <Label htmlFor="delivery">Delivery (+$3.99)</Label>
+                      <Label htmlFor="delivery">Delivery (+RD$3.99)</Label>
                     </div>
                   </RadioGroup>
                 </CardContent>
@@ -385,7 +385,7 @@ export default function Checkout() {
                 ) : (
                   <>
                     <CreditCard className="w-5 h-5 mr-2" />
-                    Realizar Orden - ${total.toFixed(2)}
+                    Realizar Orden - RD${total.toFixed(2)}
                   </>
                 )}
               </Button>

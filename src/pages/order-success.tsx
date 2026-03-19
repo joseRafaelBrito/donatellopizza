@@ -77,7 +77,7 @@ export default function OrderSuccess() {
                   <div>
                     <strong>Total:</strong>
                     <p className="text-lg font-bold text-tomato-red">
-                      ${order.total.toFixed(2)}
+                      RD${order.total.toFixed(2)}
                     </p>
                   </div>
                 </div>
@@ -88,7 +88,7 @@ export default function OrderSuccess() {
                     {order.items.map((item, index) => (
                       <div key={index} className="flex justify-between items-center">
                         <span>{item.quantity}x {item.name}</span>
-                        <span>${(item.price * item.quantity).toFixed(2)}</span>
+                        <span>RD${(item.price * item.quantity).toFixed(2)}</span>
                       </div>
                     ))}
                   </div>

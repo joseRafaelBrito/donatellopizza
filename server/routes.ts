@@ -24,8 +24,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
     );
     res.sendFile(filePath, (err) => {
       if (err) {
-        console.error(`Error serving file ${filePath}:`, err);
-        res.status(404).send("File not found");
+        console.error(`Error al servir el archivo ${filePath}:`, err);
+        res.status(404).send("Archivo no encontrado");
       }
     });
   });

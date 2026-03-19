@@ -41,7 +41,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
         </div>
         
         <p className="text-warm-gray animate-bounce-gentle">
-          Preparing your artisan experience...
+          Preparando tu experiencia artesanal...
         </p>
       </div>
     </div>

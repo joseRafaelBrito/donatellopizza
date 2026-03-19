@@ -147,7 +147,7 @@ function MenuItemPage() {
     "offers": {
       "@type": "Offer",
       "price": menuItem.priceValue,
-      "priceCurrency": "USD",
+      "priceCurrency": "DOP",
       "availability": "https://schema.org/InStock"
     },
     "nutrition": {
@@ -170,7 +170,7 @@ function MenuItemPage() {
     "offers": {
       "@type": "Offer",
       "price": menuItem.priceValue,
-      "priceCurrency": "USD",
+      "priceCurrency": "DOP",
       "availability": "https://schema.org/InStock"
     },
     ...(reviews.length > 0 && {

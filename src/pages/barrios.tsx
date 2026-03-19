@@ -149,7 +149,7 @@ export default function BarriosPage() {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "Donatello Pizza",
-    "servesCuisine": ["Detroit Style Pizza", "Pizza"],
+    "servesCuisine": ["Pizza Estilo Detroit", "Pizza"],
     "url": typeof window !== "undefined" ? window.location.origin : "",
     "areaServed": barrios.map((b) => ({
       "@type": "City",
