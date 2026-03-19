@@ -1,0 +1,93 @@
+I need you to perform a COMPLETE Spanish translation of my entire website project. The previous attempt failed and left many parts in English.
+
+This time, do NOT skip anything.
+
+🔴 CRITICAL INSTRUCTIONS:
+
+* Scan EVERY file in the project (frontend + backend + config + data files)
+* Replace ALL English text with Spanish
+* Do NOT leave ANY English text visible to users or in SEO fields
+* Keep functionality exactly the same
+
+---
+
+### ✅ TRANSLATE EVERYTHING (NO EXCEPTIONS)
+
+1. FRONTEND (React / TSX / JSX / HTML)
+
+* All headings, paragraphs, buttons, menus
+* Navigation: Menu, About Us, Contact, Order, etc.
+* Product names and descriptions
+* Footer content
+* Hero text like “We believe in the craft”
+* Any visible UI text
+
+2. BACKEND
+
+* API responses
+* Strings returned to frontend
+* Logs/messages that users may see
+
+3. SEO / METADATA
+
+* meta title
+* meta description
+* keywords
+* Open Graph (og:title, og:description)
+* canonical tags (if text-based)
+
+4. STRUCTURED DATA (JSON-LD)
+
+* name
+* description
+* servesCuisine → translate to Spanish
+* areaServed
+* address fields where applicable
+
+5. HIDDEN TEXT / SMALL DETAILS
+
+* alt text (images)
+* placeholders (inputs)
+* tooltips
+* map popups (Leaflet)
+* footer small text
+* button hover text
+* any small corner text
+
+---
+
+### 🇩🇴 LOCALIZE FOR DOMINICAN REPUBLIC
+
+Adapt the tone to Dominican Spanish:
+
+Examples:
+
+* “We believe in the craft” → “Creemos en el arte de la pizza”
+* “Order Online” → “Ordenar en línea”
+* “Call to Order” → “Llama para ordenar”
+* “Our Pizza Menu” → “Nuestro Menú de Pizzas”
+* “Detroit-Style Pizza” → “Pizza estilo Detroit”
+* “New York-Style Pizza” → “Pizza estilo Nueva York”
+* “Sicilian Pizza” → “Pizza estilo Siciliano”
+
+Currency:
+
+* Replace $ with RD$ where appropriate
+
+---
+
+### ⚠️ IMPORTANT RULES
+
+* DO NOT translate brand name: Donatello
+* DO NOT translate barrio names
+* KEEP routes and functionality unchanged
+* DO NOT break the app
+* DO NOT remove any features
+
+---
+
+### 🔁 AFTER CHANGES
+
+* Rebuild all pages
+* Ensure ALL pages are 100% Spanish
+* Ensure n
