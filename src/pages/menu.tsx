@@ -27,8 +27,8 @@ export default function Menu() {
       }
     };
 
-    updateOrCreate('meta[name="description"]', "name", "Explora el menú completo de Donatello con auténticas pizzas estilo Detroit, Nueva York y Siciliana en Santiago, RD. Ordena en línea hoy.");
-    updateOrCreate('meta[name="keywords"]', "name", "menú pizza Santiago, pizza en Santiago RD, pizza Detroit, pizza Nueva York, pizza siciliana, pizza artesanal, Donatello pizza");
+    updateOrCreate('meta[name="description"]', "name", "Explora el menú completo de Donatello con auténticas pizzas estilo Detroit, Nueva York y Siciliana en Santiago de los Caballeros, RD. Ordena en línea hoy.");
+    updateOrCreate('meta[name="keywords"]', "name", "menú pizza Santiago, pizza Detroit Santiago de los Caballeros, pizza Nueva York Santiago, pizza siciliana Santiago, pizza artesanal RD, Donatello Pizza menu, pizzería Santiago RD");
 
     const updateOrCreateOGTag = (property: string, content: string) => {
       let ogTag = document.querySelector(`meta[property="${property}"]`);
@@ -42,9 +42,10 @@ export default function Menu() {
       }
     };
 
-    updateOrCreateOGTag("og:title", "Nuestro Menú de Pizzas | Donatello - Pizza Detroit, NY y Siciliana");
-    updateOrCreateOGTag("og:description", "Explora el menú completo de Donatello con auténticas pizzas estilo Detroit, Nueva York y Siciliana en Santiago, RD.");
+    updateOrCreateOGTag("og:title", "Nuestro Menú de Pizzas | Donatello - Pizzería Detroit Santiago RD");
+    updateOrCreateOGTag("og:description", "Explora el menú completo de Donatello con auténticas pizzas estilo Detroit, Nueva York y Siciliana en Santiago de los Caballeros, RD.");
     updateOrCreateOGTag("og:type", "website");
+    updateOrCreateOGTag("og:locale", "es_DO");
     updateOrCreateOGTag("og:url", `${window.location.origin}/menu`);
     updateOrCreateOGTag("og:site_name", "Donatello Pizza");
 
@@ -77,15 +78,24 @@ export default function Menu() {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "Donatello Pizza",
-    "description": "Restaurante de pizza artesanal con pizzas estilo Detroit, Nueva York y Siciliana en Santiago, República Dominicana.",
-    "servesCuisine": ["Pizza", "Italiana", "Americana"],
+    "description": "Pizzería artesanal con auténticas pizzas estilo Detroit, Nueva York y Siciliana en Santiago de los Caballeros, República Dominicana.",
+    "telephone": "(809) 555-1234",
+    "email": "hola@donatello.pizza",
+    "servesCuisine": ["Pizza Estilo Detroit", "Pizza Estilo Nueva York", "Pizza Siciliana"],
     "url": window.location.origin,
     "hasMenu": `${window.location.origin}/menu`,
-    "priceRange": "$$",
+    "priceRange": "RD$",
+    "currenciesAccepted": "DOP",
+    "areaServed": {
+      "@type": "City",
+      "name": "Santiago de los Caballeros"
+    },
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Santiago",
+      "streetAddress": "Av. Juan Pablo Duarte",
+      "addressLocality": "Santiago de los Caballeros",
       "addressRegion": "Santiago",
+      "postalCode": "51000",
       "addressCountry": "DO"
     },
     "geo": {

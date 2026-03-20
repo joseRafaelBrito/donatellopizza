@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useLocation } from "wouter";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
@@ -13,6 +14,98 @@ import { MapPin, Pizza } from "lucide-react";
 
 export default function Home() {
   const [, setLocation] = useLocation();
+
+  useEffect(() => {
+    document.title = "Donatello Pizza | Pizzería Detroit en Santiago de los Caballeros";
+
+    const upsertMeta = (name: string, content: string) => {
+      let tag = document.querySelector(`meta[name="${name}"]`);
+      if (tag) { tag.setAttribute("content", content); return; }
+      tag = document.createElement("meta");
+      tag.setAttribute("name", name);
+      tag.setAttribute("content", content);
+      document.head.appendChild(tag);
+    };
+
+    const upsertOG = (property: string, content: string) => {
+      let tag = document.querySelector(`meta[property="${property}"]`);
+      if (tag) { tag.setAttribute("content", content); return; }
+      tag = document.createElement("meta");
+      tag.setAttribute("property", property);
+      tag.setAttribute("content", content);
+      document.head.appendChild(tag);
+    };
+
+    upsertMeta("description", "Disfruta las mejores pizzas artesanales al estilo Detroit en Santiago de los Caballeros. RD$, entregas rápidas y deliciosas.");
+    upsertMeta("keywords", "pizza Detroit Santiago, Donatello Pizza, pizza artesanal Santiago, pizza delivery Santiago, pizza Detroit DR, pizza Santiago de los Caballeros, pizzería Santiago RD");
+    upsertOG("og:title", "Donatello Pizza | Pizzería Detroit en Santiago de los Caballeros");
+    upsertOG("og:description", "Disfruta las mejores pizzas artesanales al estilo Detroit en Santiago de los Caballeros. Entregas rápidas y deliciosas.");
+    upsertOG("og:type", "restaurant");
+    upsertOG("og:url", window.location.origin);
+    upsertOG("og:site_name", "Donatello Pizza");
+    upsertOG("og:locale", "es_DO");
+
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) { canonical.setAttribute("href", window.location.origin); }
+    else {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      canonical.setAttribute("href", window.location.origin);
+      document.head.appendChild(canonical);
+    }
+
+    const restaurantSchema = {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Donatello Pizza",
+      "description": "Auténtica pizzería artesanal con pizzas estilo Detroit, Nueva York y Siciliana en Santiago de los Caballeros, República Dominicana.",
+      "url": window.location.origin,
+      "telephone": "(809) 555-1234",
+      "email": "hola@donatello.pizza",
+      "servesCuisine": ["Pizza Estilo Detroit", "Pizza Estilo Nueva York", "Pizza Siciliana"],
+      "priceRange": "RD$",
+      "hasMenu": `${window.location.origin}/menu`,
+      "currenciesAccepted": "DOP",
+      "paymentAccepted": "Efectivo, Tarjeta de crédito",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Juan Pablo Duarte",
+        "addressLocality": "Santiago de los Caballeros",
+        "addressRegion": "Santiago",
+        "postalCode": "51000",
+        "addressCountry": "DO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "19.4517",
+        "longitude": "-70.6970"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Santiago de los Caballeros"
+      },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "11:00", "closes": "22:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday"], "opens": "11:00", "closes": "23:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "12:00", "closes": "21:00" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.8,
+        "reviewCount": 47,
+        "bestRating": 5
+      }
+    };
+
+    let schemaScript = document.querySelector('script[data-schema="home-restaurant"]');
+    if (!schemaScript) {
+      schemaScript = document.createElement("script");
+      schemaScript.setAttribute("type", "application/ld+json");
+      schemaScript.setAttribute("data-schema", "home-restaurant");
+      document.head.appendChild(schemaScript);
+    }
+    schemaScript.textContent = JSON.stringify(restaurantSchema);
+  }, []);
   return (
     <div className="min-h-screen">
       <Header />

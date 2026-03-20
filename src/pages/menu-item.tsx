@@ -228,15 +228,24 @@ function MenuItemPage() {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "Donatello Pizza",
-    "description": "Restaurante de pizza artesanal con pizzas estilo Detroit, Nueva York y Siciliana en Santiago, República Dominicana.",
-    "servesCuisine": ["Pizza", "Italiana", "Americana"],
+    "description": "Pizzería artesanal con auténticas pizzas estilo Detroit, Nueva York y Siciliana en Santiago de los Caballeros, República Dominicana.",
+    "telephone": "(809) 555-1234",
+    "email": "hola@donatello.pizza",
+    "servesCuisine": ["Pizza Estilo Detroit", "Pizza Estilo Nueva York", "Pizza Siciliana"],
     "url": window.location.origin,
     "hasMenu": `${window.location.origin}/menu`,
-    "priceRange": "$$",
+    "priceRange": "RD$",
+    "currenciesAccepted": "DOP",
+    "areaServed": {
+      "@type": "City",
+      "name": "Santiago de los Caballeros"
+    },
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Santiago",
+      "streetAddress": "Av. Juan Pablo Duarte",
+      "addressLocality": "Santiago de los Caballeros",
       "addressRegion": "Santiago",
+      "postalCode": "51000",
       "addressCountry": "DO"
     },
     "geo": {

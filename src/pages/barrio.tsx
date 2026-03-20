@@ -48,7 +48,8 @@ export default function BarrioPage() {
     };
 
     upsertMeta("description", pageDescription);
-    upsertMeta("keywords", `pizza ${barrio.nombre} Santiago, Detroit pizza ${barrio.nombre}, pizza delivery ${barrio.nombre}, pizza a domicilio Santiago DR`);
+    upsertMeta("keywords", `pizza ${barrio.nombre} Santiago, pizza Detroit ${barrio.nombre} Santiago de los Caballeros, pizza delivery ${barrio.nombre}, pizza a domicilio Santiago DR, pizzería ${barrio.nombre}, Donatello Pizza Santiago`);
+    upsertOG("og:locale", "es_DO");
     upsertOG("og:title", pageTitle);
     upsertOG("og:description", pageDescription);
     upsertOG("og:type", "restaurant");
@@ -136,18 +137,23 @@ export default function BarrioPage() {
     "@type": "Restaurant",
     "name": "Donatello Pizza",
     "description": `Auténtica pizza estilo Detroit con delivery en ${barrio.nombre}, Santiago de los Caballeros, República Dominicana.`,
-    "servesCuisine": ["Pizza Estilo Detroit", "Pizza", "Ítalo-Americana"],
+    "telephone": "(809) 555-1234",
+    "email": "hola@donatello.pizza",
+    "servesCuisine": ["Pizza Estilo Detroit", "Pizza Estilo Nueva York", "Pizza Siciliana"],
     "url": `${window.location.origin}/barrios/${barrio.slug}`,
     "hasMenu": `${window.location.origin}/menu`,
-    "priceRange": "$$",
+    "priceRange": "RD$",
+    "currenciesAccepted": "DOP",
     "areaServed": {
       "@type": "Place",
       "name": `${barrio.nombre}, Santiago de los Caballeros`,
     },
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Av. Juan Pablo Duarte",
       "addressLocality": "Santiago de los Caballeros",
       "addressRegion": "Santiago",
+      "postalCode": "51000",
       "addressCountry": "DO",
     },
     "geo": {

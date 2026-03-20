@@ -45,7 +45,7 @@ export const menuItems: MenuItem[] = [
     allergens: ["Gluten", "Lácteos"],
     calories: 320,
     prepTime: "25-30 minutos",
-    keywords: ["pizza Detroit", "pizza cuadrada", "queso brick", "borde caramelizado", "pizza auténtica", "pizza en Santiago", "pizza Santiago RD", "pizza Detroit Santiago"]
+    keywords: ["pizza Detroit", "pizza cuadrada", "queso brick", "borde caramelizado", "pizza auténtica", "pizza en Santiago", "pizza Santiago RD", "pizza Detroit Santiago", "pizza Detroit Santiago de los Caballeros"]
   },
   {
     id: 2,
@@ -63,7 +63,7 @@ export const menuItems: MenuItem[] = [
     allergens: ["Gluten", "Lácteos", "Cerdo"],
     calories: 380,
     prepTime: "25-30 minutos",
-    keywords: ["pizza de pepperoni", "estilo Detroit", "pepperoni premium", "queso extra", "pizza suprema", "pizza pepperoni Santiago", "pizza en Santiago RD"]
+    keywords: ["pizza de pepperoni", "estilo Detroit", "pepperoni premium", "queso extra", "pizza suprema", "pizza pepperoni Santiago", "pizza en Santiago RD", "pizza pepperoni Santiago de los Caballeros"]
   },
   {
     id: 3,
@@ -81,7 +81,7 @@ export const menuItems: MenuItem[] = [
     allergens: ["Gluten", "Lácteos"],
     calories: 290,
     prepTime: "25-30 minutos",
-    keywords: ["pizza margherita", "estilo Detroit", "mozzarella fresca", "albahaca fresca", "pizza vegetariana", "pizza margherita Santiago", "pizza vegetariana Santiago RD"]
+    keywords: ["pizza margherita", "estilo Detroit", "mozzarella fresca", "albahaca fresca", "pizza vegetariana", "pizza margherita Santiago", "pizza vegetariana Santiago RD", "pizza Margherita Santiago de los Caballeros"]
   },
 
   // Pizza Estilo Nueva York
@@ -101,7 +101,7 @@ export const menuItems: MenuItem[] = [
     allergens: ["Gluten", "Lácteos"],
     calories: 285,
     prepTime: "15-20 minutos",
-    keywords: ["pizza NY", "porción de queso", "masa delgada", "pizza plegable", "estilo Nueva York", "pizza Nueva York Santiago", "pizza en Santiago República Dominicana"]
+    keywords: ["pizza NY", "porción de queso", "masa delgada", "pizza plegable", "estilo Nueva York", "pizza Nueva York Santiago", "pizza en Santiago República Dominicana", "pizza Nueva York Santiago de los Caballeros"]
   },
   {
     id: 5,
@@ -119,7 +119,7 @@ export const menuItems: MenuItem[] = [
     allergens: ["Gluten", "Lácteos", "Cerdo"],
     calories: 320,
     prepTime: "15-20 minutos",
-    keywords: ["pepperoni NY", "porción de pepperoni", "pepperoni crujiente", "masa delgada", "pizza Nueva York", "pizza pepperoni estilo Nueva York Santiago", "pizza en Santiago RD"]
+    keywords: ["pepperoni NY", "porción de pepperoni", "pepperoni crujiente", "masa delgada", "pizza Nueva York", "pizza pepperoni estilo Nueva York Santiago", "pizza en Santiago RD", "pizza pepperoni Nueva York Santiago de los Caballeros"]
   },
   {
     id: 6,
@@ -137,7 +137,7 @@ export const menuItems: MenuItem[] = [
     allergens: ["Gluten", "Lácteos", "Cerdo"],
     calories: 340,
     prepTime: "20-25 minutos",
-    keywords: ["pizza combinada NY", "pizza con salchicha", "pizza suprema", "pizza entera", "estilo Nueva York", "pizza combinada Santiago", "pizza entera Santiago RD"]
+    keywords: ["pizza combinada NY", "pizza con salchicha", "pizza suprema", "pizza entera", "estilo Nueva York", "pizza combinada Santiago", "pizza entera Santiago RD", "pizza combinada Santiago de los Caballeros"]
   },
 
   // Pizza Siciliana
@@ -157,7 +157,7 @@ export const menuItems: MenuItem[] = [
     allergens: ["Gluten", "Lácteos"],
     calories: 350,
     prepTime: "30-35 minutos",
-    keywords: ["pizza siciliana", "masa gruesa", "pizza cuadrada", "masa focaccia", "siciliana tradicional", "pizza siciliana Santiago", "pizza artesanal Santiago RD"]
+    keywords: ["pizza siciliana", "masa gruesa", "pizza cuadrada", "masa focaccia", "siciliana tradicional", "pizza siciliana Santiago", "pizza artesanal Santiago RD", "pizza siciliana Santiago de los Caballeros"]
   },
   {
     id: 8,
@@ -175,7 +175,7 @@ export const menuItems: MenuItem[] = [
     allergens: ["Gluten", "Lácteos", "Cerdo"],
     calories: 390,
     prepTime: "30-35 minutos",
-    keywords: ["siciliana con salchicha", "salchicha italiana", "masa gruesa", "pimientos cebollas", "pizza contundente", "pizza con salchicha Santiago", "pizza italiana Santiago RD"]
+    keywords: ["siciliana con salchicha", "salchicha italiana", "masa gruesa", "pimientos cebollas", "pizza contundente", "pizza con salchicha Santiago", "pizza italiana Santiago RD", "pizza siciliana con salchicha Santiago de los Caballeros"]
   },
   {
     id: 9,
@@ -193,7 +193,7 @@ export const menuItems: MenuItem[] = [
     allergens: ["Gluten", "Lácteos"],
     calories: 330,
     prepTime: "30-35 minutos",
-    keywords: ["pizza blanca", "queso ricotta", "pizza de ajo", "siciliana blanca", "pizza sin salsa", "pizza blanca Santiago", "pizza ricotta Santiago RD"]
+    keywords: ["pizza blanca", "queso ricotta", "pizza de ajo", "siciliana blanca", "pizza sin salsa", "pizza blanca Santiago", "pizza ricotta Santiago RD", "pizza blanca Santiago de los Caballeros"]
   }
 ];
 

@@ -46,12 +46,13 @@ export default function BarriosPage() {
       document.head.appendChild(tag);
     };
     updateOrCreateMeta("description", "Encuentra pizza Detroit estilo en tu barrio de Santiago de los Caballeros. Donatello Pizza hace delivery a todos los barrios de Santiago, RD.");
-    updateOrCreateMeta("keywords", "pizza Santiago barrios, pizza delivery Santiago DR, Detroit pizza delivery, pizza a domicilio Santiago");
-    updateOrCreateOG("og:title", "Pizza por Barrios en Santiago | Donatello Pizza");
-    updateOrCreateOG("og:description", "Mapa interactivo de barrios de Santiago. Busca pizza Detroit estilo en tu barrio.");
+    updateOrCreateMeta("keywords", "pizza Santiago de los Caballeros barrios, pizza delivery Santiago RD, Detroit pizza delivery Santiago, pizza a domicilio Santiago, pizzería Santiago de los Caballeros, Donatello Pizza barrios");
+    updateOrCreateOG("og:title", "Pizza por Barrios en Santiago de los Caballeros | Donatello Pizza");
+    updateOrCreateOG("og:description", "Mapa interactivo de barrios de Santiago de los Caballeros. Busca pizza Detroit artesanal en tu barrio con entrega rápida.");
     updateOrCreateOG("og:type", "website");
     updateOrCreateOG("og:url", `${window.location.origin}/barrios`);
     updateOrCreateOG("og:site_name", "Donatello Pizza");
+    updateOrCreateOG("og:locale", "es_DO");
     let canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) { canonical.setAttribute("href", `${window.location.origin}/barrios`); }
     else {
@@ -149,16 +150,30 @@ export default function BarriosPage() {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "Donatello Pizza",
-    "servesCuisine": ["Pizza Estilo Detroit", "Pizza"],
+    "description": "Pizzería artesanal con delivery en todos los barrios de Santiago de los Caballeros, República Dominicana.",
+    "telephone": "(809) 555-1234",
+    "email": "hola@donatello.pizza",
+    "servesCuisine": ["Pizza Estilo Detroit", "Pizza Estilo Nueva York", "Pizza Siciliana"],
     "url": typeof window !== "undefined" ? window.location.origin : "",
+    "hasMenu": typeof window !== "undefined" ? `${window.location.origin}/menu` : "",
+    "priceRange": "RD$",
+    "currenciesAccepted": "DOP",
     "areaServed": barrios.map((b) => ({
-      "@type": "City",
-      "name": `${b.nombre}, Santiago`,
+      "@type": "Place",
+      "name": `${b.nombre}, Santiago de los Caballeros`,
     })),
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Santiago",
+      "streetAddress": "Av. Juan Pablo Duarte",
+      "addressLocality": "Santiago de los Caballeros",
+      "addressRegion": "Santiago",
+      "postalCode": "51000",
       "addressCountry": "DO",
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "19.4517",
+      "longitude": "-70.6970"
     },
   };
 
