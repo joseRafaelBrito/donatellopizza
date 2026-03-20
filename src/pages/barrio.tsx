@@ -218,7 +218,7 @@ export default function BarrioPage() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl font-playfair font-bold text-warm-gray mb-4">
-                Detroit Pizza en {barrio.nombre}
+                Pizza Detroit en {barrio.nombre}, Santiago de los Caballeros
               </h1>
 
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">

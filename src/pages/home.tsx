@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation } from "wouter";
+import { Link, useLocation } from "wouter";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import PizzaSections from "@/components/pizza-sections";
@@ -196,29 +196,60 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mb-8">
             {barrios.map((barrio) => (
-              <button
+              <Link
                 key={barrio.slug}
+                href={`/barrios/${barrio.slug}`}
                 data-testid={`home-link-barrio-${barrio.slug}`}
-                onClick={() => setLocation(`/barrios/${barrio.slug}`)}
                 className="flex items-center gap-2 p-3 bg-white rounded-xl border border-gray-200 hover:border-tomato-red hover:shadow-md transition-all text-left group text-sm"
               >
                 <MapPin className="w-3 h-3 text-tomato-red flex-shrink-0" />
                 <span className="text-warm-gray group-hover:text-tomato-red transition-colors font-medium truncate">
                   {barrio.nombre}
                 </span>
-              </button>
+              </Link>
             ))}
           </div>
           <div className="text-center">
-            <button
-              onClick={() => setLocation('/barrios')}
+            <Link
+              href="/barrios"
               className="inline-flex items-center gap-2 bg-tomato-red hover:bg-red-600 text-white font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
               data-testid="home-button-ver-barrios"
             >
               <Pizza className="w-5 h-5" />
               Ver Mapa de Barrios y Pedir Pizza
-            </button>
+            </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Bloque de enlaces internos SEO */}
+      <section className="py-12 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4">
+          <h2 className="text-xl font-playfair font-bold text-warm-gray mb-6 text-center">
+            Explora Donatello Pizza — Santiago de los Caballeros
+          </h2>
+          <nav aria-label="Secciones principales del sitio" className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            <Link href="/menu" className="flex flex-col items-center p-4 bg-garlic-cream rounded-xl hover:bg-cheese-gold/20 transition-colors group text-center">
+              <Pizza className="w-6 h-6 text-tomato-red mb-2" />
+              <span className="font-semibold text-warm-gray group-hover:text-tomato-red text-sm">Menú de Pizzas</span>
+              <span className="text-xs text-gray-500 mt-1">Detroit, NY y Siciliana</span>
+            </Link>
+            <Link href="/barrios" className="flex flex-col items-center p-4 bg-garlic-cream rounded-xl hover:bg-cheese-gold/20 transition-colors group text-center">
+              <MapPin className="w-6 h-6 text-tomato-red mb-2" />
+              <span className="font-semibold text-warm-gray group-hover:text-tomato-red text-sm">Delivery por Barrios</span>
+              <span className="text-xs text-gray-500 mt-1">25 barrios de Santiago</span>
+            </Link>
+            <Link href="/checkout" className="flex flex-col items-center p-4 bg-garlic-cream rounded-xl hover:bg-cheese-gold/20 transition-colors group text-center">
+              <Pizza className="w-6 h-6 text-tomato-red mb-2" />
+              <span className="font-semibold text-warm-gray group-hover:text-tomato-red text-sm">Ordenar Ahora</span>
+              <span className="text-xs text-gray-500 mt-1">Pickup o delivery</span>
+            </Link>
+            <a href="/#contact" className="flex flex-col items-center p-4 bg-garlic-cream rounded-xl hover:bg-cheese-gold/20 transition-colors group text-center">
+              <MapPin className="w-6 h-6 text-tomato-red mb-2" />
+              <span className="font-semibold text-warm-gray group-hover:text-tomato-red text-sm">Contáctanos</span>
+              <span className="text-xs text-gray-500 mt-1">Av. Juan Pablo Duarte, Santiago</span>
+            </a>
+          </nav>
         </div>
       </section>
 

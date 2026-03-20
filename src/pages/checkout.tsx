@@ -20,6 +20,14 @@ export default function Checkout() {
   const { items, updateQuantity, removeFromCart, getCartTotal, clearCart } = useCart();
   const { toast } = useToast();
 
+  React.useEffect(() => {
+    document.title = "Finalizar Pedido | Donatello Pizza - Santiago de los Caballeros";
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.setAttribute("content", "Completa tu pedido de pizza artesanal en Donatello Pizza, Santiago de los Caballeros. Delivery y recogida disponibles.");
+    const robots = document.querySelector('meta[name="robots"]');
+    if (robots) robots.setAttribute("content", "noindex, nofollow");
+  }, []);
+
   const [isProcessing, setIsProcessing] = useState(false);
   const [orderType, setOrderType] = useState<'pickup' | 'delivery'>('pickup');
   const [customer, setCustomer] = useState<Customer>({

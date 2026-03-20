@@ -1,4 +1,4 @@
-import { useLocation } from "wouter";
+import { Link, useLocation } from "wouter";
 import { barrios } from "@/data/barrios";
 
 export default function Footer() {
@@ -64,44 +64,29 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Navegación</h4>
             <ul className="space-y-2">
               <li>
-                <button
-                  onClick={() => scrollToSection('home')}
-                  className="text-gray-300 hover:text-cheese-gold transition-colors duration-300"
-                >
+                <Link href="/" className="text-gray-300 hover:text-cheese-gold transition-colors duration-300">
                   Inicio
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => setLocation('/menu')}
-                  className="text-gray-300 hover:text-cheese-gold transition-colors duration-300"
-                >
-                  Menú
-                </button>
+                <Link href="/menu" className="text-gray-300 hover:text-cheese-gold transition-colors duration-300">
+                  Menú de Pizzas
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => setLocation('/barrios')}
-                  className="text-gray-300 hover:text-cheese-gold transition-colors duration-300"
-                >
+                <Link href="/barrios" className="text-gray-300 hover:text-cheese-gold transition-colors duration-300">
                   Pizza por Barrios
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('about')}
-                  className="text-gray-300 hover:text-cheese-gold transition-colors duration-300"
-                >
-                  Sobre Nosotros
-                </button>
+                <Link href="/checkout" className="text-gray-300 hover:text-cheese-gold transition-colors duration-300">
+                  Ordenar Ahora
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('contact')}
-                  className="text-gray-300 hover:text-cheese-gold transition-colors duration-300"
-                >
+                <a href="/#contact" className="text-gray-300 hover:text-cheese-gold transition-colors duration-300">
                   Contacto
-                </button>
+                </a>
               </li>
             </ul>
           </div>
@@ -111,21 +96,21 @@ export default function Footer() {
             <ul className="space-y-1">
               {barrios.slice(0, 10).map((barrio) => (
                 <li key={barrio.slug}>
-                  <button
-                    onClick={() => setLocation(`/barrios/${barrio.slug}`)}
+                  <Link
+                    href={`/barrios/${barrio.slug}`}
                     className="text-gray-400 hover:text-cheese-gold transition-colors duration-300 text-sm"
                   >
                     Pizza en {barrio.nombre}
-                  </button>
+                  </Link>
                 </li>
               ))}
               <li>
-                <button
-                  onClick={() => setLocation('/barrios')}
+                <Link
+                  href="/barrios"
                   className="text-tomato-red hover:text-cheese-gold transition-colors duration-300 text-sm font-medium"
                 >
                   Ver todos los barrios →
-                </button>
+                </Link>
               </li>
             </ul>
           </div>

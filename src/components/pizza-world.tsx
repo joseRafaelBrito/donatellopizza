@@ -1,3 +1,5 @@
+import { Link } from "wouter";
+
 export default function PizzaWorld() {
   return (
     <div className="relative min-h-[500px] bg-gradient-to-br from-tomato-red via-orange-500 to-cheese-gold overflow-hidden"
@@ -108,9 +110,12 @@ export default function PizzaWorld() {
           Pizzas Artesanales Estilo Detroit y Nueva York
         </p>
 
-        <button className="bg-tomato-red hover:bg-red-600 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 animate-scale-in shadow-xl hover-lift hover:scale-110 mb-8">
-          Ver Menú
-        </button>
+        <Link
+          href="/menu"
+          className="bg-tomato-red hover:bg-red-600 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 animate-scale-in shadow-xl hover-lift hover:scale-110 mb-8 inline-block"
+        >
+          Ver Menú Completo
+        </Link>
 
         {/* Flecha animada hacia abajo */}
         <div className="animate-bounce">

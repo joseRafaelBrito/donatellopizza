@@ -189,10 +189,10 @@ export default function BarriosPage() {
           <div className="text-center mb-10">
             <Badge className="bg-tomato-red text-white mb-4">Delivery por barrio</Badge>
             <h1 className="text-4xl sm:text-5xl font-playfair font-bold text-warm-gray mb-4">
-              Pizza Detroit en tu Barrio
+              Pizza Detroit en tu Barrio de Santiago de los Caballeros
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Donatello lleva pizza auténtica estilo Detroit a todos los barrios de Santiago de los Caballeros. Busca tu barrio en el mapa.
+              Donatello Pizza lleva pizza artesanal estilo Detroit a todos los barrios de Santiago de los Caballeros, República Dominicana. Busca tu barrio en el mapa y ordena ahora.
             </p>
           </div>
 

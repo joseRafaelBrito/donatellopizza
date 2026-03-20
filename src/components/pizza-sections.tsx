@@ -80,7 +80,7 @@ export default function PizzaSections() {
             <div className="order-1 lg:order-2">
               <img
                 src="https://images.unsplash.com/photo-1628840042765-356cda07504e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-                alt="Pizza estilo Detroit con corteza dorada caramelizada"
+                alt="Pizza artesanal estilo Detroit de Donatello - Bordes caramelizados y queso brick en Santiago de los Caballeros"
                 className="w-full h-auto rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
               />
             </div>
@@ -93,7 +93,7 @@ export default function PizzaSections() {
             <div>
               <img
                 src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-                alt="Pizza estilo Nueva York con corteza delgada"
+                alt="Pizza artesanal estilo Nueva York de Donatello - Corteza delgada y crujiente en Santiago de los Caballeros"
                 className="w-full h-auto rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
               />
             </div>

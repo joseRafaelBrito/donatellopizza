@@ -1,9 +1,16 @@
+import { useEffect } from "react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Pizza, Home, ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
   const [, setLocation] = useLocation();
+
+  useEffect(() => {
+    document.title = "Página No Encontrada | Donatello Pizza - Santiago de los Caballeros";
+    const robots = document.querySelector('meta[name="robots"]');
+    if (robots) robots.setAttribute("content", "noindex, follow");
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-garlic-cream to-white flex items-center justify-center px-4">

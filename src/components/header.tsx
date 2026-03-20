@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "wouter";
+import { Link, useLocation } from "wouter";
 // import logoImage from "../attached_assets/logo_1_1_320x320_1749689353534.png";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -91,7 +91,7 @@ export default function Header() {
             <div className="w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center hover:shadow-xl hover-glow transition-all duration-300 overflow-hidden animate-float">
               <img
                 src="/attached_assets/logo_1_1_320x320_1749689353534.png"
-                alt="Donatello Logo"
+                alt="Logo Donatello Pizza - Pizzería Artesanal Detroit en Santiago de los Caballeros"
                 className="w-full h-full object-cover rounded-full transform hover:scale-110 transition-transform duration-300"
               />
             </div>
@@ -107,8 +107,8 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8 animate-fade-in">
-            <button
-              onClick={() => setLocation("/menu")}
+            <Link
+              href="/menu"
               className={`transition-colors duration-300 font-bold text-lg ${
                 isMenuActive 
                   ? 'text-cheese-gold' 
@@ -116,13 +116,13 @@ export default function Header() {
               }`}
             >
               Menú
-            </button>
-            <button
-              onClick={() => setLocation("/barrios")}
+            </Link>
+            <Link
+              href="/barrios"
               className="text-white hover:text-cheese-gold transition-colors duration-300 font-bold text-lg"
             >
               Barrios
-            </button>
+            </Link>
             <button
               onClick={() => scrollToSection("about")}
               className="text-white hover:text-cheese-gold transition-colors duration-300 font-bold text-lg"

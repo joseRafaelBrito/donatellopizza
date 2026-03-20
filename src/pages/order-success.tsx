@@ -12,6 +12,12 @@ export default function OrderSuccess() {
   const [order, setOrder] = useState<Order | null>(null);
 
   useEffect(() => {
+    document.title = "¡Orden Confirmada! | Donatello Pizza - Santiago de los Caballeros";
+    const robots = document.querySelector('meta[name="robots"]');
+    if (robots) robots.setAttribute("content", "noindex, nofollow");
+  }, []);
+
+  useEffect(() => {
     const savedOrder = localStorage.getItem('lastOrder');
     if (savedOrder) {
       try {
