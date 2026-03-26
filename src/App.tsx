@@ -29,13 +29,20 @@ function Router() {
 }
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(
+    () => !sessionStorage.getItem("donatello_loaded")
+  );
+
+  const handlePreloaderComplete = () => {
+    sessionStorage.setItem("donatello_loaded", "1");
+    setIsLoading(false);
+  };
 
   return (
     <CartProvider>
       <TooltipProvider>
         <Toaster />
-        {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
+        {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
         <div className="scroll-smooth">
           <Router />
         </div>

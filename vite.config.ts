@@ -38,5 +38,8 @@ export default defineConfig({
       strict: true,
       deny: ["**/.*"],
     },
+    watch: {
+      ignored: ["**/.local/**", "**/node_modules/**"],
+    },
   },
 });
