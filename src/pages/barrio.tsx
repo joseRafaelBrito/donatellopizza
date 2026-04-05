@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, ArrowLeft, Pizza, Phone, Clock, Star } from "lucide-react";
 import { getBarrioBySlug, barrios } from "@/data/barrios";
+import { publicAssetUrl } from "@/lib/publicAssetUrl";
 import "leaflet/dist/leaflet.css";
 
 export default function BarrioPage() {
@@ -82,7 +83,11 @@ export default function BarrioPage() {
         maxZoom: 18,
       }).addTo(map);
 
-      fetch("/barrios_santiago.geojson")
+      map.whenReady(() => {
+        requestAnimationFrame(() => map.invalidateSize());
+      });
+
+      fetch(publicAssetUrl("barrios_santiago.geojson"))
         .then((r) => r.json())
         .then((data) => {
           L.default.geoJSON(data, {

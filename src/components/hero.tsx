@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { publicAssetUrl } from "@/lib/publicAssetUrl";
 
 export default function Hero() {
   return (
@@ -22,7 +23,7 @@ export default function Hero() {
         }}
       >
         <source
-          src="/attached_assets/356026553653461001_1749689326847.mp4"
+          src={publicAssetUrl("attached_assets/356026553653461001_1749689326847.mp4")}
           type="video/mp4"
         />
       </video>

@@ -11,6 +11,7 @@ import PizzaPyramids from "@/components/pizza-pyramids";
 import PizzaWorld from "@/components/pizza-world";
 import { barrios } from "@/data/barrios";
 import { MapPin, Pizza } from "lucide-react";
+import { homeHashUrl } from "@/lib/publicAssetUrl";
 
 export default function Home() {
   const [, setLocation] = useLocation();
@@ -244,7 +245,7 @@ export default function Home() {
               <span className="font-semibold text-warm-gray group-hover:text-tomato-red text-sm">Ordenar Ahora</span>
               <span className="text-xs text-gray-500 mt-1">Pickup o delivery</span>
             </Link>
-            <a href="/#contact" className="flex flex-col items-center p-4 bg-garlic-cream rounded-xl hover:bg-cheese-gold/20 transition-colors group text-center">
+            <a href={homeHashUrl("contact")} className="flex flex-col items-center p-4 bg-garlic-cream rounded-xl hover:bg-cheese-gold/20 transition-colors group text-center">
               <MapPin className="w-6 h-6 text-tomato-red mb-2" />
               <span className="font-semibold text-warm-gray group-hover:text-tomato-red text-sm">Contáctanos</span>
               <span className="text-xs text-gray-500 mt-1">Av. Juan Pablo Duarte, Santiago</span>

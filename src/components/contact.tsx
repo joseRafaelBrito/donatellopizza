@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import ContactLocationMap from "@/components/contact-location-map";
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -117,13 +118,10 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Mapa */}
-            <div className="bg-gray-300 h-64 rounded-xl flex items-center justify-center">
-              <div className="text-center">
-                <i className="fas fa-map text-4xl text-gray-500 mb-2"></i>
-                <p className="text-gray-600">Mapa Interactivo</p>
-                <p className="text-sm text-gray-500">Santiago de los Caballeros, RD</p>
-              </div>
+            <div>
+              <p className="text-sm font-medium text-warm-gray mb-2">Mapa interactivo</p>
+              <ContactLocationMap />
+              <p className="text-xs text-gray-500 mt-2">Av. Juan Pablo Duarte, Santiago de los Caballeros</p>
             </div>
           </div>
         </div>

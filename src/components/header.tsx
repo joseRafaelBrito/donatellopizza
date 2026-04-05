@@ -23,6 +23,7 @@ import { ShoppingCart } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useCart } from "@/hooks/use-cart";
 import { menuItems } from "@/data/menu";
+import { publicAssetUrl } from "@/lib/publicAssetUrl";
 
 export default function Header() {
   const [location, setLocation] = useLocation();
@@ -91,7 +92,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <div className="w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center hover:shadow-xl hover-glow transition-all duration-300 overflow-hidden animate-float">
               <img
-                src="/attached_assets/logo_1_1_320x320_1749689353534.png"
+                src={publicAssetUrl("attached_assets/logo_1_1_320x320_1749689353534.png")}
                 alt="Logo Donatello Pizza - Pizzería Artesanal Detroit en Santiago de los Caballeros"
                 className="w-full h-full object-cover rounded-full transform hover:scale-110 transition-transform duration-300"
               />

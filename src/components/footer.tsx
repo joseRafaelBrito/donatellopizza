@@ -1,5 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { barrios } from "@/data/barrios";
+import { homeHashUrl } from "@/lib/publicAssetUrl";
 
 export default function Footer() {
   const [, setLocation] = useLocation();
@@ -84,7 +85,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="/#contact" className="text-gray-300 hover:text-cheese-gold transition-colors duration-300">
+                <a href={homeHashUrl("contact")} className="text-gray-300 hover:text-cheese-gold transition-colors duration-300">
                   Contacto
                 </a>
               </li>

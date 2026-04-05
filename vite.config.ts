@@ -8,7 +8,8 @@ import { apiPlugin } from "./server/api-plugin";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  base: "/",
+  // GitHub Pages project URL: set VITE_BASE_PATH=/donatellopizza/ when building for gh-pages (see npm run build:gh-pages).
+  base: process.env.VITE_BASE_PATH || "/",
   plugins: [
     react(),
     runtimeErrorOverlay(),

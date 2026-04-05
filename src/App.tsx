@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Switch, Route } from "wouter";
+import { Switch, Route, Router } from "wouter";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartProvider } from "@/hooks/use-cart";
@@ -16,7 +16,7 @@ import NotFound from "@/pages/not-found";
 
 const BANNER_H = 80;
 
-function Router() {
+function AppRoutes() {
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -30,6 +30,8 @@ function Router() {
     </Switch>
   );
 }
+
+const routerBase = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 function App() {
   const [isLoading, setIsLoading] = useState(
@@ -84,7 +86,9 @@ function App() {
           <EmailBanner onDismiss={handleBannerDismiss} hidden={scrolledPast} />
         )}
         <div className="scroll-smooth">
-          <Router />
+          <Router base={routerBase}>
+            <AppRoutes />
+          </Router>
         </div>
       </TooltipProvider>
     </CartProvider>
