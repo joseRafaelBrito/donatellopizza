@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 
 interface EmailBannerProps {
   onDismiss: () => void;
+  hidden?: boolean;
 }
 
-export default function EmailBanner({ onDismiss }: EmailBannerProps) {
+export default function EmailBanner({ onDismiss, hidden = false }: EmailBannerProps) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
@@ -42,7 +43,13 @@ export default function EmailBanner({ onDismiss }: EmailBannerProps) {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 w-full bg-gradient-to-r from-tomato-red via-red-600 to-tomato-red py-3 px-4 z-[70] shadow-md">
+    <div
+      className="fixed top-0 left-0 right-0 w-full bg-gradient-to-r from-tomato-red via-red-600 to-tomato-red py-3 px-4 z-[70] shadow-md"
+      style={{
+        transform: hidden ? "translateY(-100%)" : "translateY(0)",
+        transition: "transform 0.35s ease",
+      }}
+    >
       <button
         onClick={onDismiss}
         className="absolute right-3 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-lg leading-none"

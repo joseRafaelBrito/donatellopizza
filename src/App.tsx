@@ -14,6 +14,8 @@ import Checkout from "@/pages/checkout";
 import OrderSuccess from "@/pages/order-success";
 import NotFound from "@/pages/not-found";
 
+const BANNER_H = 44;
+
 function Router() {
   return (
     <Switch>
@@ -33,14 +35,35 @@ function App() {
   const [isLoading, setIsLoading] = useState(
     () => !sessionStorage.getItem("donatello_loaded")
   );
-  const [bannerVisible, setBannerVisible] = useState(
-    () => !sessionStorage.getItem("banner_dismissed")
+  // Permanently dismissed (clicked X or submitted email)
+  const [dismissed, setDismissed] = useState(
+    () => !!sessionStorage.getItem("banner_dismissed")
   );
+  // Hidden because user scrolled past the hero
+  const [scrolledPast, setScrolledPast] = useState(false);
 
+  const bannerVisible = !dismissed && !scrolledPast;
+
+  // Update CSS variable whenever banner visibility changes
   useEffect(() => {
-    const h = bannerVisible ? "44px" : "0px";
-    document.documentElement.style.setProperty("--banner-h", h);
+    document.documentElement.style.setProperty(
+      "--banner-h",
+      bannerVisible ? `${BANNER_H}px` : "0px"
+    );
   }, [bannerVisible]);
+
+  // Hide banner when scrolling past ~80% of the viewport height (end of hero)
+  useEffect(() => {
+    if (dismissed) return;
+    const threshold = window.innerHeight * 0.8;
+
+    const handleScroll = () => {
+      setScrolledPast(window.scrollY > threshold);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [dismissed]);
 
   const handlePreloaderComplete = () => {
     sessionStorage.setItem("donatello_loaded", "1");
@@ -49,7 +72,7 @@ function App() {
 
   const handleBannerDismiss = () => {
     sessionStorage.setItem("banner_dismissed", "1");
-    setBannerVisible(false);
+    setDismissed(true);
   };
 
   return (
@@ -57,8 +80,8 @@ function App() {
       <TooltipProvider>
         <Toaster />
         {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
-        {!isLoading && bannerVisible && (
-          <EmailBanner onDismiss={handleBannerDismiss} />
+        {!isLoading && !dismissed && (
+          <EmailBanner onDismiss={handleBannerDismiss} hidden={scrolledPast} />
         )}
         <div className="scroll-smooth">
           <Router />

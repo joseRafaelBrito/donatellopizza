@@ -78,8 +78,8 @@ export default function Header() {
   return (
     <header
       id="header"
-      style={{ top: "var(--banner-h, 0px)" }}
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      style={{ top: "var(--banner-h, 0px)", transition: "top 0.35s ease, background-color 0.3s" }}
+      className={`fixed w-full z-50 ${
         isScrolled
           ? "bg-warm-gray bg-opacity-95 nav-blur shadow-lg"
           : "bg-transparent"
