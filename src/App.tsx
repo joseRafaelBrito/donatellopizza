@@ -14,7 +14,7 @@ import Checkout from "@/pages/checkout";
 import OrderSuccess from "@/pages/order-success";
 import NotFound from "@/pages/not-found";
 
-const BANNER_H = 44;
+const BANNER_H = 60;
 
 function Router() {
   return (
