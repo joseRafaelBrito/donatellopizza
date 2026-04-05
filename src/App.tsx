@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartProvider } from "@/hooks/use-cart";
 import Preloader from "@/components/preloader";
+import EmailBanner from "@/components/email-banner";
 import Home from "@/pages/home";
 import Menu from "@/pages/menu";
 import MenuItemPage from "@/pages/menu-item";
@@ -43,6 +44,7 @@ function App() {
       <TooltipProvider>
         <Toaster />
         {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
+        {!isLoading && <EmailBanner />}
         <div className="scroll-smooth">
           <Router />
         </div>
