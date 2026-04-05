@@ -1,0 +1,94 @@
+Build a modern, visually stunning, responsive website for a gourmet pizzeria called Donatello. The design should evoke an artisan, craft-based vibe, celebrating the tradition of handmade pizza. The site should feature micro animations, rich colors inspired by cheese, tomatoes, and garlic (think: creamy yellows, rich reds, and rustic whites), and a warm, inviting yet modern aesthetic.
+
+Requirements:
+Logo Placeholder:
+
+A round logo container placed in the header that allows for uploading or embedding an image later.
+
+It should be central or top-left, slightly elevated with soft shadows.
+
+Tagline:
+
+Prominently display:
+“We believe in the craft.”
+Use an elegant serif font for a traditional touch.
+
+Hero Section (Top of Page):
+
+Embed a full-width autoplay video background that starts immediately when the user lands.
+
+The video should showcase pizza making, dough stretching, or wood-fired oven scenes (placeholder video for now).
+
+Overlay a bold heading:
+“Welcome to Donatello – Artisan Pizza, Born in Fire”
+with a call-to-action button: “See Our Pizzas”.
+
+Pizzas Section:
+
+Create sections for:
+
+Detroit Style Pizza
+
+New York Style Pizza
+
+Each section should include:
+
+Image placeholders
+
+Descriptions
+
+Optional ingredient highlights with subtle animations (like hovering toppings/icons)
+
+Color Palette:
+
+Use a warm color scheme:
+
+Cheese Gold (#FFD95A or similar)
+
+Tomato Red (#E63946 or similar)
+
+Garlic Cream/White (#FAF3E0 or similar)
+
+Use natural textures subtly (like wood grain, parchment backgrounds).
+
+Micro Animations:
+
+Animate buttons, scroll effects, pizza images on hover, and transitions between sections.
+
+Use smooth scrolling and a gentle parallax effect where appropriate.
+
+Navigation:
+
+Sticky nav bar with links to: Home, Menu, Order, About Us, Contact.
+
+On scroll, the nav bar slightly shrinks or changes background color for readability.
+
+Mobile-First & Responsive:
+
+Must look excellent on smartphones and tablets.
+
+Mobile menu with hamburger icon.
+
+Footer:
+
+Include social media icons
+
+Address and opening hours
+
+“Crafted with ❤️ by Donatello”
+
+Bonus (optional but desirable):
+
+Allow adding reviews/testimonials
+
+Contact form with map
+
+Add favicon
+
+Tech Stack Suggestions:
+Use HTML, CSS, JavaScript (or React if using a framework).
+
+Add GSAP or Lottie for micro animations (optional).
+
+Style using TailwindCSS or clean custom CSS.
+

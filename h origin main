@@ -1,0 +1,35 @@
+[33mcommit 697c379a96cabf99123ef45709aa561a9e1863b7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31mgitsafe-backup/main[m[33m)[m
+Author: pixelmarketing0 <45937190-pixelmarketing0@users.noreply.replit.com>
+Date:   Thu Mar 19 02:48:06 2026 +0000
+
+    Translate the entire website to Dominican Spanish and update currency to RD$
+    
+    Translate all user-facing text, SEO metadata, and backend strings to Dominican Spanish, update currency symbols from '$' to 'RD$', and change JSON-LD priceCurrency from 'USD' to 'DOP'.
+    
+    Replit-Commit-Author: Agent
+    Replit-Commit-Session-Id: 15ef054e-fa2c-4433-9caf-6649e035bad0
+    Replit-Commit-Checkpoint-Type: full_checkpoint
+    Replit-Commit-Event-Id: 2c18c250-8798-4b5e-9183-35a381191535
+    Replit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/9595d462-0d4d-497d-b844-2eedd0e9b671/15ef054e-fa2c-4433-9caf-6649e035bad0/ivMA5UF
+    Replit-Helium-Checkpoint-Created: true
+
+[33mcommit 237848d058216ff4a3086bbb0768ce0a4f5148f8[m
+Author: pixelmarketing0 <45937190-pixelmarketing0@users.noreply.replit.com>
+Date:   Thu Mar 19 02:42:14 2026 +0000
+
+    Update project configuration to improve compatibility and resolve build issues
+    
+    Adjust `react-leaflet` peer dependency to a compatible version and set `allowedHosts` to true in `vite.config.ts`.
+    
+    Replit-Commit-Author: Agent
+    Replit-Commit-Session-Id: 15ef054e-fa2c-4433-9caf-6649e035bad0
+    Replit-Commit-Checkpoint-Type: full_checkpoint
+    Replit-Commit-Event-Id: 95b8553a-1e67-426f-9e43-00ad4dfb8ef9
+    Replit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/9595d462-0d4d-497d-b844-2eedd0e9b671/15ef054e-fa2c-4433-9caf-6649e035bad0/qUnVJbp
+    Replit-Helium-Checkpoint-Created: true
+
+[33mcommit af2527706638ac7f8eafc25a5332e8cdfe2a5429[m[33m ([m[1;34mgrafted[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Jose Brito <20448146+joseRafaelBrito@users.noreply.github.com>
+Date:   Thu Mar 19 02:25:57 2026 +0000
+
+    Translate entire website to Spanish, update SEO, frontend and backend text

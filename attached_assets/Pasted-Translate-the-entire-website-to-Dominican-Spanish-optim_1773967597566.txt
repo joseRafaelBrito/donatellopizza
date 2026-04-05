@@ -1,0 +1,44 @@
+Translate the entire website to Dominican Spanish, optimize for local SEO in Santiago de los Caballeros, and update structured data.
+
+Tasks to perform:
+
+1. Translate all **frontend and backend text** (all visible text, buttons, labels, footer, meta tags, and small corner keywords) to **Dominican Spanish**.
+
+2. Update **currency**:
+   - Change all "$" to "RD$"
+   - Update JSON-LD `priceCurrency` from 'USD' to 'DOP'.
+
+3. Update **meta tags for local SEO**:
+   - Homepage `<title>`: "Donatello Pizza | Pizzería Detroit en Santiago de los Caballeros"
+   - Homepage `<meta name="description">`: "Disfruta las mejores pizzas artesanales al estilo Detroit en Santiago de los Caballeros. RD$, entregas rápidas y deliciosas."
+   - Add `<meta name="keywords">`: "pizza Detroit Santiago, Donatello Pizza, pizza artesanal Santiago, pizza delivery Santiago, pizza Detroit DR"
+   - Apply similar Spanish titles, descriptions, and keywords for each page (`/barrios`, `/barrios/:slug`, `/menu`, `/contacto`, etc.)
+
+4. Update **JSON-LD structured data** for each page:
+   - `@type`: Restaurant
+   - `name`: Donatello Pizza
+   - `address`: Santiago de los Caballeros, Dominican Republic
+   - `geo`: Latitude and Longitude of Santiago
+   - `servesCuisine`: Pizza
+   - `areaServed`: Santiago de los Caballeros
+   - `priceRange`: RD$
+   - `url`: website URL
+   - `telephone`: your phone number
+
+5. Ensure **all barrios map pages** have:
+   - Meta tags in Spanish
+   - JSON-LD with correct coordinates
+   - Page headings (H1/H2) in Spanish including “Santiago de los Caballeros” and “pizza Detroit”
+
+6. Make sure **every corner keyword, small footer text, and dynamic text** is translated to Spanish.
+
+7. Create or update a `sitemap.xml` including all pages and submit it to Google Search Console.
+
+8. Output a **ready-to-deploy version** for Vercel or Replit hosting.
+
+Replit-Commit-Author: Agent
+Replit-Commit-Session-Id: [AUTO]
+Replit-Commit-Checkpoint-Type: full_checkpoint
+Replit-Commit-Event-Id: [AUTO]
+Replit-Commit-Screenshot-Url: [AUTO]
+Replit-Helium-Checkpoint-Created: true
