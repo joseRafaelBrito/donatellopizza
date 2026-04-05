@@ -1,14 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function EmailBanner() {
+interface EmailBannerProps {
+  onDismiss: () => void;
+}
+
+export default function EmailBanner({ onDismiss }: EmailBannerProps) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
 
+  useEffect(() => {
+    if (status === "success") {
+      const t = setTimeout(onDismiss, 3000);
+      return () => clearTimeout(t);
+    }
+  }, [status, onDismiss]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
-
     setStatus("loading");
     try {
       const res = await fetch("/api/subscribe", {
@@ -32,8 +42,13 @@ export default function EmailBanner() {
   };
 
   return (
-    <div className="w-full bg-gradient-to-r from-tomato-red via-red-600 to-tomato-red py-3 px-4 z-[60] relative shadow-md">
-      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 text-white">
+    <div className="fixed top-0 left-0 right-0 w-full bg-gradient-to-r from-tomato-red via-red-600 to-tomato-red py-3 px-4 z-[70] shadow-md">
+      <button
+        onClick={onDismiss}
+        className="absolute right-3 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-lg leading-none"
+        aria-label="Cerrar"
+      >✕</button>
+      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 text-white pr-6">
         {status === "success" ? (
           <p className="font-semibold text-sm sm:text-base text-center animate-fade-in">
             {message}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Switch, Route } from "wouter";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -33,10 +33,23 @@ function App() {
   const [isLoading, setIsLoading] = useState(
     () => !sessionStorage.getItem("donatello_loaded")
   );
+  const [bannerVisible, setBannerVisible] = useState(
+    () => !sessionStorage.getItem("banner_dismissed")
+  );
+
+  useEffect(() => {
+    const h = bannerVisible ? "44px" : "0px";
+    document.documentElement.style.setProperty("--banner-h", h);
+  }, [bannerVisible]);
 
   const handlePreloaderComplete = () => {
     sessionStorage.setItem("donatello_loaded", "1");
     setIsLoading(false);
+  };
+
+  const handleBannerDismiss = () => {
+    sessionStorage.setItem("banner_dismissed", "1");
+    setBannerVisible(false);
   };
 
   return (
@@ -44,7 +57,9 @@ function App() {
       <TooltipProvider>
         <Toaster />
         {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
-        {!isLoading && <EmailBanner />}
+        {!isLoading && bannerVisible && (
+          <EmailBanner onDismiss={handleBannerDismiss} />
+        )}
         <div className="scroll-smooth">
           <Router />
         </div>
