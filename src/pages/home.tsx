@@ -15,6 +15,7 @@ import { homeHashUrl, publicAssetUrl } from "@/lib/publicAssetUrl";
 
 export default function Home() {
   const [, setLocation] = useLocation();
+  const donatelloVideoUrl = `${publicAssetUrl("attached_assets/356026553653461001_1749689326847.mp4")}?v=2`;
 
   useEffect(() => {
     document.title = "Donatello Pizza | Pizzería Detroit en Santiago de los Caballeros";
@@ -160,10 +161,7 @@ export default function Home() {
                   video.play().catch(console.error);
                 }}
               >
-                <source
-                  src={publicAssetUrl("attached_assets/356026553653461001_1749689326847.mp4")}
-                  type="video/mp4"
-                />
+                <source src={donatelloVideoUrl} type="video/mp4" />
               </video>
             </div>
           </div>
