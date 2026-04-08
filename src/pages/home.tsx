@@ -11,7 +11,7 @@ import PizzaPyramids from "@/components/pizza-pyramids";
 import PizzaWorld from "@/components/pizza-world";
 import { barrios } from "@/data/barrios";
 import { MapPin, Pizza } from "lucide-react";
-import { homeHashUrl } from "@/lib/publicAssetUrl";
+import { homeHashUrl, publicAssetUrl } from "@/lib/publicAssetUrl";
 
 export default function Home() {
   const [, setLocation] = useLocation();
@@ -160,8 +160,10 @@ export default function Home() {
                   video.play().catch(console.error);
                 }}
               >
-                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-                <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" type="video/mp4" />
+                <source
+                  src={publicAssetUrl("attached_assets/356026553653461001_1749689326847.mp4")}
+                  type="video/mp4"
+                />
               </video>
             </div>
           </div>
