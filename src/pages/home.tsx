@@ -149,7 +149,7 @@ export default function Home() {
             </div>
 
             {/* Video pequeño en la esquina superior derecha */}
-            <div className="w-full max-w-md h-64 sm:h-72 rounded-2xl overflow-hidden shadow-2xl bg-black flex-shrink-0">
+            <div className="w-full lg:w-[520px] h-80 sm:h-96 lg:h-[420px] rounded-2xl overflow-hidden shadow-2xl bg-black flex-shrink-0">
               <video
                 autoPlay
                 loop
