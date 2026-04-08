@@ -40,7 +40,7 @@ export default function EmailBanner({ onDismiss, hidden = false }: EmailBannerPr
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 w-full bg-gradient-to-r from-tomato-red via-red-600 to-tomato-red py-[14px] px-4 z-[70] shadow-md"
+      className="fixed top-0 left-0 right-0 w-full bg-gradient-to-r from-tomato-red via-red-600 to-tomato-red h-[80px] flex items-center px-4 z-[70] shadow-md"
       style={{
         transform: hidden ? "translateY(-100%)" : "translateY(0)",
         transition: "transform 0.35s ease",
