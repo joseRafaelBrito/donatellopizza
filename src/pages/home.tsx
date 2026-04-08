@@ -149,13 +149,13 @@ export default function Home() {
             </div>
 
             {/* Video pequeño en la esquina superior derecha */}
-            <div className="w-full max-w-sm h-52 sm:h-56 rounded-2xl overflow-hidden shadow-2xl bg-black flex-shrink-0">
+            <div className="w-full max-w-md h-64 sm:h-72 rounded-2xl overflow-hidden shadow-2xl bg-black flex-shrink-0">
               <video
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 onLoadedData={(e) => {
                   const video = e.target as HTMLVideoElement;
                   video.play().catch(console.error);
