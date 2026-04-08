@@ -129,8 +129,8 @@ export default function Home() {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex items-center justify-between min-h-[400px]">
-            <div className="flex-1 pr-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 min-h-[400px] py-8 lg:py-0">
+            <div className="w-full flex-1 lg:pr-8 text-center lg:text-left">
               {/* Contador de producción diaria */}
               <div className="mb-6">
                 <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 animate-bounce-in">
@@ -139,16 +139,16 @@ export default function Home() {
                 </div>
               </div>
 
-              <h2 className="text-6xl sm:text-7xl lg:text-8xl font-playfair font-bold text-white mb-6 animate-fade-in drop-shadow-lg leading-tight [text-shadow:_2px_2px_0_#000,_-2px_-2px_0_#000,_2px_-2px_0_#000,_-2px_2px_0_#000]">
+              <h2 className="text-4xl sm:text-6xl lg:text-8xl font-playfair font-bold text-white mb-6 animate-fade-in drop-shadow-lg leading-tight [text-shadow:_2px_2px_0_#000,_-2px_-2px_0_#000,_2px_-2px_0_#000,_-2px_2px_0_#000]">
                 Respeta el oficio
               </h2>
-              <p className="text-xl text-white max-w-2xl animate-slide-up drop-shadow-md">
+              <p className="text-lg sm:text-xl text-white max-w-2xl mx-auto lg:mx-0 animate-slide-up drop-shadow-md">
                 Cada pizza es una obra maestra, elaborada a mano con pasión y horneada a la perfección en nuestros hornos de leña.
               </p>
             </div>
 
             {/* Video pequeño en la esquina superior derecha */}
-            <div className="w-80 h-48 rounded-2xl overflow-hidden shadow-2xl bg-black flex-shrink-0">
+            <div className="w-full max-w-sm h-52 sm:h-56 rounded-2xl overflow-hidden shadow-2xl bg-black flex-shrink-0">
               <video
                 autoPlay
                 loop
